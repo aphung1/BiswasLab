@@ -14,7 +14,7 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" >
     <a href="#" class="navbar-brand">
       <img src="Images/UMDLogo.jpg" alt="UMD Logo" id="UMDLogo">
       <span id="LabTitle">BISWAS LAB</span>
@@ -31,7 +31,7 @@
           <a href="#" class="nav-link">RESEARCH</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">PUBLICATIONS</a>
+          <a href="publications.html" class="nav-link">PUBLICATIONS</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">ABOUT THE LAB</a>
@@ -57,7 +57,7 @@
         <img class="d-block w-100" src="Images/culture.jpg" alt="Bacteria on a petri dish">
         <div class="carousel-caption centered">
           <h1>The Biswas Lab</h1>
-          <p>A lab dedicated to improving food safety.<br>Learn more about our work at the University of Maryland</p>
+          <p> A lab dedicated to improving food safety.<br>Learn more about our work at the University of Maryland</p>
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="10000">
@@ -76,7 +76,7 @@
       </div>
       <div class="carousel-item" data-bs-interval="10000">
         <img class="d-block w-100" src="Images/umd.jpg" alt="University of Maryland campus">
-        <div class="carousel-caption centered">
+        <div class="carousel-caption centered" style="top: 45%;">
           <h1>Lab Update and News</h1>
           <table id="lab-updates" class="centered">
             <tr>
@@ -129,7 +129,7 @@
 
   <!-- Research Objectives Section -->
 
-  <div class="container-fluid centered">
+  <div id="research-objectives" class="container-fluid centered">
     <div class="row">
       <div class="col-12 text-center">
         <h1>
@@ -138,63 +138,64 @@
       </div>
     </div>
     <hr class="centered" style="width:75%; margin-bottom:1rem;">
-    <section class="parallax">
-      <div class="parallax-inner">
-        <div class="row justify-content-center">
-          <div class="card col-sm-6 h-100">
-            <img src="Images/salmonella.jpg" class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Food Safety</h5>
-              <p class="card-text">Reducing levels of these bacterial pathogens in 
-                food-producing animals and prevent the cross contamination in the food 
-                processing plants are effective ways to reduce food safety risks for humans</p>
-            </div>
-          </div>
-          <div class="card col-sm-6">
-            <img src="Images/poultry farm.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Contamination</h5>
-              <p class="card-text">Reduction of pre- and post-harvest levels of colonization and contamination
-                 with foodborne bacterial pathogens including E. coli O157, Campylobacter jejuni and Salmonella
-                  enterica in foods specifically meat and meat products and development of vaccines that prevent 
-                  colonization of animals by these enteric pathogens which may reduce human gastrointestinal infections
-              </p>
-            </div>
-          </div>
+    <div class="row justify-content-center">
+      <div class="card col-sm-6">
+        <img src="Images/salmonella.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Food Safety</h5>
+          <p class="card-text">Reducing levels of these bacterial pathogens in 
+            food-producing animals and prevent the cross contamination in the food 
+            processing plants are effective ways to reduce food safety risks for humans
+          </p>
         </div>
-        <div class="row justify-content-center">
-          <div class="card col-sm-6">
-            <img src="Images/pills.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Probiotic</h5>
-              <p class="card-text">Development of bioactive pre-biotics, probiotics, and/or its combination (synbitics) for
-                 alternative source of therapeutic and sub-therapeutic (growth promoter) components for organic and conventional
-                  farm animal production and stimulate the growth probiotic and the production of its metabolites by genetically
-                   engineered beneficial bacteria.
-              </p>
-            </div>
-          </div>
-          <div class="card col-sm-6">
-            <img src="Images/tube.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Detection</h5>
-              <p class="card-text">Develop the efficient and faster technology to improve the detection of foodborne enteric bacterial
-                 pathogens in food products and other polluted materials
-              </p>
-            </div>
-          </div>
-        </div>
+        <a href="#" class="btn btn-primary shadow-none mb-3 ms-3" style="vertical-align: text-bottom; width:fit-content;">Read More</a>
       </div>
-    </section>
+      <div class="card col-sm-6">
+        <img src="Images/poultry farm.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Contamination</h5>
+          <p class="card-text">Reduction of pre- and post-harvest levels of colonization and contamination
+              with foodborne bacterial pathogens including E. coli O157, Campylobacter jejuni and Salmonella
+              enterica in foods specifically meat and meat products and development of vaccines that prevent 
+              colonization of animals by these enteric pathogens which may reduce human gastrointestinal infections
+          </p>
+        </div>
+        <a href="#" class="btn btn-primary shadow-none mb-3 ms-3" style="vertical-align: text-bottom; width:fit-content;">Read More</a>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="card col-sm-6">
+        <img src="Images/pills.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Probiotic</h5>
+          <p class="card-text">Development of bioactive pre-biotics, probiotics, and/or its combination (synbitics) for
+              alternative source of therapeutic and sub-therapeutic (growth promoter) components for organic and conventional
+              farm animal production and stimulate the growth probiotic and the production of its metabolites by genetically
+                engineered beneficial bacteria.
+          </p>
+        </div>
+        <a href="#" class="btn btn-primary shadow-none mb-3 ms-3" style="vertical-align: text-bottom; width:fit-content;">Read More</a>
+      </div>
+      <div class="card col-sm-6">
+        <img src="Images/tube.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Detection</h5>
+          <p class="card-text">Develop the efficient and faster technology to improve the detection of foodborne enteric bacterial
+              pathogens in food products and other polluted materials
+          </p>
+        </div>
+        <a href="#" class="btn btn-primary shadow-none mb-3 ms-3" style="vertical-align: text-bottom; width:fit-content;">Read More</a>
+      </div>
+    </div>
   </div>
 
   <!-- About Dr. Biswas Section -->
   <div class="container-fluid body-section">
     <div class="row justify-content-center">
-      <div class="col-lg-6">
-        <img class="img-fluid" style="height:350px;" src="Images/biswas.jpg" alt="Picture of Dr.Biswas" style="">
+      <div class="col-lg-4 mb-3" style="text-align: center;">
+        <img  class="img-fluid" style="min-height:350px; object-fit: cover; display:inline-block;" src="Images/biswas.jpg" alt="Picture of Dr.Biswas">
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-8 ">
         <h1>
           About <span class="highlight">Dr. Biswas</span>
         </h1>
@@ -214,6 +215,10 @@
     </div>
   </div>
 
+  <footer class="text-center bg-light text-muted">
+    <p>&#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://ansc.umd.edu/" target="_blank">University of Maryland</a> &nbsp;| &nbsp;
+      <a href="https://www.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a></p>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
   <script src="homepage.js"></script>
 </body>
