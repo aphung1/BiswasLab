@@ -1,0 +1,116 @@
+
+
+#UMDLogo{
+  height: 75px;
+  width: 75px;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+#LabTitle{
+  font-family: 'Raleway', sans-serif;
+  font-size: 35px;
+}
+
+.carousel-caption{
+  font-family: 'Raleway', sans-serif;
+  width: 50%;
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+}
+
+.navbar-light .navbar-nav .active .nav-link {
+  color: #73A959;
+}
+
+.highlight {
+  color: #73A959;
+}
+
+.carousel-inner {
+  height: 700px;
+  width: 100%;
+}
+
+.carousel-inner img {
+  filter: brightness(35%);
+  object-fit: cover;
+  height: 700px;
+  object-position: center;
+  background: rgb(49, 49, 49);
+}
+
+.centered {
+  margin:auto;
+}
+
+#lab-updates td {
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 20%
+}
+
+.body-section {
+  padding: 4rem 2rem;
+  width: 60%;
+}
+
+.parallax {
+  background-size: cover;
+}
+
+.card {
+  width: 25rem;
+  margin: 1rem;
+  padding: 0;
+}
+
+.card-img-top{
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  filter: brightness(80%);
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  
+  .carousel-inner {
+    height: 400px;
+    width: 100%;
+  }
+  .carousel-inner img{
+    height: 400px;
+  }
+
+  .carousel-caption{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-55%);
+  }
+
+  
+
+} 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 767px) {
+  .carousel-inner {
+    height: 300px;
+    width: 100%;
+  }
+
+  .carousel-inner img{
+    height: 300px;
+  }
+
+  .carousel-caption{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+  }
+}

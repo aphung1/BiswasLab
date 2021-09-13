@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Biswas Lab</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a href="#" class="navbar-brand">
+      <img src="Images/UMDLogo.jpg" alt="UMD Logo" id="UMDLogo">
+      <span id="LabTitle">BISWAS LAB</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <a href="#" class="nav-link">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">RESEARCH</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">PUBLICATIONS</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">ABOUT THE LAB</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">CONTACT</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Slideshow -->
+  <div id="slideshow" class ="carousel slide" data-bs-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-bs-target="#slideshow" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#slideshow" data-bs-slide-to="1"></li>
+      <li data-bs-target="#slideshow" data-bs-slide-to="2"></li>
+      <li data-bs-target="#slideshow" data-bs-slide-to="3"></li>
+    </ul>
+    <div class="carousel-inner centered">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img class="d-block w-100" src="Images/culture.jpg" alt="Bacteria on a petri dish">
+        <div class="carousel-caption centered">
+          <h1>The Biswas Lab</h1>
+          <p>A lab dedicated to improving food safety.<br>Learn more about our work at the University of Maryland</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="10000">
+        <img class="d-block w-100" src="Images/fowls.jpg" alt="Chickens on a farm">
+        <div class="carousel-caption centered">
+          <h1>Foodborne Illnesses Worldwide</h1>
+          <p>Food unsafe for consumption causes 600 million cases of foodborne diseases and 420,000 deaths every year, and 56 million people die each year (Ritchie and Roser, 2018; WHO, 2015).</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="10000">
+        <img class="d-block w-100" src="Images/berries.jpg" alt="Berries">
+        <div class="carousel-caption centered">
+          <h1>Berry Pomace</h1>
+          <p>In 2019, lab members studied the prebiotic-effects of compounds found in berry pomace to stimulate the growth of beneficial microbes and simultaneously compete with bacterial pathogens.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="10000">
+        <img class="d-block w-100" src="Images/umd.jpg" alt="University of Maryland campus">
+        <div class="carousel-caption centered">
+          <h1>Lab Update and News</h1>
+          <table id="lab-updates" class="centered">
+            <tr>
+              <td>12/30/21</td>
+              <td>Website launched!</td>
+            </tr>
+            <tr>
+              <td>7/18/21</td>
+              <td>Attended IAFP Annual Meeting at Arizona</td>
+            </tr>
+            <tr>
+              <td>6/1/21</td>
+              <td>Welcome to the team, Matthew Wall and Phuong Nyuyen</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#slideshow" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#slideshow" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+  <!-- Who We Are Section -->
+  <div class="container-fluid body-section">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <h1>
+          Who <span class="highlight">We</span> Are
+        </h1>
+        <hr>
+        <p>
+          filler text filler text filler textfiller text filler text filler text filler text filler text filler text
+          filler text filler text filler text
+          filler text filler text filler text
+          filler text filler text filler text
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <img class="img-fluid" src="Images/UMD-aerial.jpg" alt="Picture of UMD campus">
+      </div>
+    </div>
+  </div>
+
+  <!-- Research Objectives Section -->
+
+  <div class="container-fluid centered">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h1>
+          <span class="highlight">Research</span> Focuses
+        </h1>
+      </div>
+    </div>
+    <hr class="centered" style="width:75%; margin-bottom:1rem;">
+    <section class="parallax">
+      <div class="parallax-inner">
+        <div class="row justify-content-center">
+          <div class="card col-sm-6 h-100">
+            <img src="Images/salmonella.jpg" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Food Safety</h5>
+              <p class="card-text">Reducing levels of these bacterial pathogens in 
+                food-producing animals and prevent the cross contamination in the food 
+                processing plants are effective ways to reduce food safety risks for humans</p>
+            </div>
+          </div>
+          <div class="card col-sm-6">
+            <img src="Images/poultry farm.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Contamination</h5>
+              <p class="card-text">Reduction of pre- and post-harvest levels of colonization and contamination
+                 with foodborne bacterial pathogens including E. coli O157, Campylobacter jejuni and Salmonella
+                  enterica in foods specifically meat and meat products and development of vaccines that prevent 
+                  colonization of animals by these enteric pathogens which may reduce human gastrointestinal infections
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="card col-sm-6">
+            <img src="Images/pills.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Probiotic</h5>
+              <p class="card-text">Development of bioactive pre-biotics, probiotics, and/or its combination (synbitics) for
+                 alternative source of therapeutic and sub-therapeutic (growth promoter) components for organic and conventional
+                  farm animal production and stimulate the growth probiotic and the production of its metabolites by genetically
+                   engineered beneficial bacteria.
+              </p>
+            </div>
+          </div>
+          <div class="card col-sm-6">
+            <img src="Images/tube.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Detection</h5>
+              <p class="card-text">Develop the efficient and faster technology to improve the detection of foodborne enteric bacterial
+                 pathogens in food products and other polluted materials
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- About Dr. Biswas Section -->
+  <div class="container-fluid body-section">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <img class="img-fluid" style="height:350px;" src="Images/biswas.jpg" alt="Picture of Dr.Biswas" style="">
+      </div>
+      <div class="col-lg-6">
+        <h1>
+          About <span class="highlight">Dr. Biswas</span>
+        </h1>
+        <hr>
+        <p>
+          Dr. Debabrata Biswas is an Assistant Professor of Food Safety in the Department of Animal and Avian Sciences, 
+          and the Center for Food Safety and Security Systems (CFS3) at the University of Maryland, College Park. Dr. Biswas 
+          is a bacteriologist and has committed to develop crosscutting research programs in food safety area. In recent years, 
+          he has initiated several research projects on bacteriology specifically host-foodborne bacteria interactions with
+           the researchers from Food Science, Biological Engineering, Plant, and Animal Sciences. To achieve the goal, his 
+           researches target to control of enteric bacterial pathogens including Salmonella, enterohemorrhagic E. coli (0157:H7), 
+           Listeria monocytogenes and Campylobacter jejuni in foods and their colonization in animal reservoirs. His research 
+           also investigates the role of natural organic products in control of foodborne bacterial colonization in animals and
+            mechanism of antimicrobial activity of these components. 
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script src="homepage.js"></script>
+</body>
+</html>
