@@ -29,13 +29,19 @@
 }
 
 /* Page Headers */
-#publications-title {
+.page-header {
   text-align: center;
   color: white;
   position: relative;
+  font-size: 50px;
 }
 #publications-image {
   background: url("Images/writing.jpeg") no-repeat fixed;
+  background-size: cover;
+  height: 500px;
+}
+#research-image {
+  background: url("Images/media.jpeg") no-repeat fixed;
   background-size: cover;
   height: 500px;
 }
@@ -98,7 +104,13 @@
 }
 
 .body-section {
-  padding: 6rem 0;
+  margin-top: 6rem;
+  width: 60%;
+}
+
+.secondary-section {
+  margin-top: 1rem;
+  padding: 2rem 0;
   width: 60%;
 }
 
@@ -146,6 +158,16 @@ footer a:hover{
 #publications-list li {
   padding: 0.5rem 0;
 }
+
+/* Research Page */
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.dark {
+  background-color: #f4f5f8;
+}
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   
@@ -192,5 +214,10 @@ footer a:hover{
   .carousel-caption td{
     font-size: 15px;
     padding: 0rem;
+  }
+
+  .body-section {
+    margin-top: 6rem;
+    width: 80%;
   }
 }
