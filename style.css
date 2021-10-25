@@ -70,6 +70,12 @@
   height: 500px;
 }
 
+#members-image {
+  background: url("Images/group-pic.jpeg") no-repeat fixed;
+  background-size: cover;
+  height: 500px;
+}
+
 .parallax::before {
   content: '';
   display: block;
@@ -138,16 +144,24 @@
   width: 60%;
 }
 
-.card {
+.research-obj{
   width: 25rem;
   margin: 1rem;
   padding: 0;
 }
 
+
 .card-img-top{
   width: 100%;
   height: 15rem;
   object-fit: cover;
+}
+
+.profile{
+  width: 175px;
+  height: 200px;
+  object-fit: cover;
+  align-self: center;
 }
 
 .btn-primary {
