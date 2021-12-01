@@ -1,0 +1,265 @@
+html, body {
+  height: 100%;
+}
+
+* {
+  font-family: 'Raleway', sans-serif;
+  font-size: large;
+}
+
+.hr-theme-slash-2 {
+  display: flex;
+  margin: auto;
+  width: 75%;
+  align-items: center;
+}
+
+.icon{
+  background-image: url('Images/icon.svg');
+  background-repeat: no-repeat;
+  background-position:center;
+  background-color: inherit;
+  width: 70px;
+  height: 35px;
+  border: none;
+}
+
+.hr-line {
+  width: 100%;
+  position: relative;
+  margin: 2rem;
+  border-bottom: 1px solid rgb(161, 161, 161);
+}
+
+/* Navigation Bar */
+#UMDLogo{
+  height: 75px;
+  width: 75px;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+#LabTitle{
+  font-family: 'Raleway', sans-serif;
+  font-size: 35px;
+}
+
+.navbar-light .navbar-nav .active .nav-link {
+  color: #73A959;
+}
+
+
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: rgb(49, 49, 49);
+}
+
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #4b7237;
+}
+
+/* Page Headers */
+.page-header {
+  text-align: center;
+  color: white;
+  position: relative;
+  font-size: 50px;
+}
+#publications-image {
+  background: url("Images/writing.jpeg") no-repeat fixed;
+  background-size: cover;
+  height: 500px;
+}
+#research-image {
+  background: url("Images/media.jpeg") no-repeat fixed;
+  background-size: cover;
+  height: 500px;
+}
+
+#members-image {
+  background: url("Images/group-pic.jpeg") no-repeat fixed;
+  background-size: cover;
+  height: 500px;
+}
+
+#contact-image {
+  background: url("Images/lab.jpeg") no-repeat fixed;
+  background-size: cover;
+  height: 500px;
+}
+
+.parallax{
+  margin-bottom: 4rem;
+}
+
+.parallax::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.5;
+  width: 100%;
+  height: 500px;
+}
+
+.parallax-inner {
+  padding-top: 230px;
+  padding-bottom: 250px;
+}
+
+
+/* Carousel */
+#slideshow{
+  margin-bottom: 4rem;
+}
+
+.carousel-caption{
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+  left:0%;
+  right:0%;
+  bottom:0%;
+  padding: 12rem 20%;
+  background-position: center;
+}
+
+.carousel-inner {
+  width: 100%;
+}
+
+.carousel-inner img {
+  filter: brightness(35%);
+  object-fit: cover;
+  object-position: center;
+  height: inherit;
+  background: rgb(49, 49, 49);
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 20%
+}
+
+/* Lab Updates and News */
+.lab-updates td {
+  text-align: left;
+  padding: 0.25rem;
+}
+
+.accordion-button{
+  font-size: 25px;
+}
+
+.accordion-button:focus{
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #4b7237;
+  background-color: #f4f5f8;
+}
+
+.accordion-button:not(.collapsed)::after{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2367a349'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+
+}
+
+/* General Body */
+.highlight {
+  color: #73A959;
+  font-size: inherit;
+}
+
+.centered {
+  margin:auto;
+}
+
+.body-section {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  width: 60%;
+}
+
+.secondary-section {
+  margin-top: 1rem;
+  padding: 2rem 0;
+  width: 60%;
+}
+
+.research-obj{
+  width: 25rem;
+  margin: 1rem;
+  padding: 0;
+}
+
+
+.card-img-top{
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.profile{
+  width: 175px;
+  height: 200px;
+  object-fit: cover;
+  align-self: center;
+}
+
+.btn-primary {
+  background-color:rgb(49, 49, 49);
+  border-color:rgb(49, 49, 49);
+}
+
+.btn-primary:hover {
+  background-color: #73A959;
+  border-color: #73A959;
+}
+
+.btn-primary:focus {
+  background-color: #4b7237;
+  border-color: #4b7237;
+}
+
+/* Footer */
+footer {
+  padding: 2rem 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover{
+  color: #73A959;
+}
+
+/* Publication Page */
+#publications-list li {
+  padding: 0.5rem 0;
+}
+
+/* Research Page */
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.dark {
+  background-color: #f4f5f8;
+}
+
+.figure {
+  margin-top: 2rem;
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+} 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 767px) {
+  .body-section {
+    margin-top: 6rem;
+    width: 80%;
+  }
+}
