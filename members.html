@@ -21,10 +21,12 @@
     </head>
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-xl navbar-light bg-light">
             <a href="index.html" class="navbar-brand">
-                <img src="Images/UMDLogo.jpg" alt="UMD Logo" id="UMDLogo" />
-                <span id="LabTitle">BISWAS LAB</span>
+                <div id="LogoHolder">
+                    <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
+                    <span id="LabTitle">BISWAS LAB</span>
+                </div>
             </a>
             <button
                 class="navbar-toggler"
@@ -42,14 +44,26 @@
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">HOME</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="research.html" class="nav-link">RESEARCH</a>
-                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="research.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        RESEARCH
+                      </a>
+                        <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="farm2.html">Mixed Farm Research</a>
+                        </div>
+                      </li>
                     <li class="nav-item">
                         <a href="publications.html" class="nav-link">PUBLICATIONS</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="conferences.html" class="nav-link">CONFERENCES</a>
+                    </li>
                     <li class="nav-item active">
                         <a href="members.html" class="nav-link">MEMBERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="media.html" class="nav-link">LAB PHOTOS</a>
                     </li>
                     <li class="nav-item">
                         <a href="contact.html" class="nav-link">CONTACT</a>
@@ -66,9 +80,9 @@
         </section>
 
         <!-- About Dr. Biswas Section -->
-        <div class="container-fluid body-section">
-            <div class="row justify-content-center" style="text-align: center">
-                <h1>Principal<span class="highlight"> Investigator</span></h1>
+        <div class="container-fluid body-section" id="Biswas">
+            <div class="row justify-content-center">
+                <h1><span class="highlight">Principal Investigator</span></h1>
                 <hr />
                 <div class="col-lg-4 mb-3">
                     <img
@@ -80,17 +94,16 @@
                 </div>
                 <div class="col-lg-8" style="text-align: justify">
                     <p>
-                        Dr. Debabrata Biswas is an Assistant Professor of Food Safety in the Department of Animal and
-                        Avian Sciences, and the Center for Food Safety and Security Systems (CFS3) at the University of
-                        Maryland, College Park. Dr. Biswas is a bacteriologist and has committed to develop crosscutting
-                        research programs in food safety area. In recent years, he has initiated several research
-                        projects on bacteriology specifically host-foodborne bacteria interactions with the researchers
-                        from Food Science, Biological Engineering, Plant, and Animal Sciences. To achieve the goal, his
-                        researches target to control of enteric bacterial pathogens including Salmonella,
-                        enterohemorrhagic E. coli (0157:H7), Listeria monocytogenes and Campylobacter jejuni in foods
-                        and their colonization in animal reservoirs. His research also investigates the role of natural
-                        organic products in control of foodborne bacterial colonization in animals and mechanism of
-                        antimicrobial activity of these components.
+                        Dr. Debabrata Biswas is a Professor of Food Safety in the Department of Animal and Avian Sciences, 
+                        and the Center for Food Safety and Security Systems (CFS3) at the University of Maryland, College Park.
+                         Dr. Biswas is a bacteriologist and has committed to develop crosscutting research programs in food 
+                         safety area. In recent years, he has initiated several research projects on bacteriology specifically
+                          host-foodborne bacteria interactions with the researchers from Food Science, Biological Engineering, 
+                          Plant, and Animal Sciences. To achieve the goal, his researches target to control of enteric bacterial
+                           pathogens including Salmonella, enterohemorrhagic E. coli (0157:H7), Listeria monocytogenes and 
+                           Campylobacter jejuni in foods and their colonization in animal reservoirs. His research also investigates
+                            the role of natural organic products in control of foodborne bacterial colonization in animals and 
+                            mechanism of antimicrobial activity of these components. 
                     </p>
                     <p>
                         <strong>Email: </strong>
@@ -104,7 +117,14 @@
         <!-- Graduate Students Section -->
         <div class="container-fluid body-section">
             <div class="row justify-content-center">
-                <h1><span class="highlight"> Graduate </span> Students</h1>
+                <h1><span class="highlight">Postdoctoral Research Associates </span></h1>
+                <hr />
+            </div>
+        </div>
+        <!-- Graduate Students Section -->
+        <div class="container-fluid body-section">
+            <div class="row justify-content-center">
+                <h1><span class="highlight"> Graduate Students </span></h1>
                 <hr />
                 <!-- Start of Card -->
                 <div class="card border-0 mb-3">
@@ -125,6 +145,10 @@
                                     <strong>Email: </strong>
                                     aaditya1@umd.edu
                                     <a href="mailto:aaditya1@umd.edu"><img src="Images/envelope.svg" /></a>
+                                    <br>
+                                    <strong>LinkedIn Profile: </strong><a href="https://www.linkedin.com/in/arpita-aditya-a7404922/">
+                                        <img src="Images/linkedin.svg" style="max-height: 20px">
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -138,7 +162,7 @@
                         </div>
                         <div class="col-lg-8 col-xl-9">
                             <div class="card-body">
-                                <h5 class="card-title mb-0">Zabdiel Alvarado Martinez</h5>
+                                <h5 class="card-title mb-0">Zabdiel Alvarado-Martinez</h5>
                                 <p class="card-text"><span class="text-muted">Graduate Research Assistant</span></p>
                                 <p class="card-text">
                                     <strong>Research Interests: </strong> This is a wider card with supporting text
@@ -149,6 +173,10 @@
                                     <strong>Email: </strong>
                                     zalvara1@umd.edu
                                     <a href="mailto:zalvara1@umd.edu"><img src="Images/envelope.svg" /></a>
+                                    <br>
+                                    <strong>LinkedIn Profile: </strong><a href="https://www.linkedin.com/in/zabdiel-alvarado-mart%C3%ADnez-02206112b/">
+                                        <img src="Images/linkedin.svg" style="max-height: 20px">
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -173,6 +201,10 @@
                                     <strong>Email: </strong>
                                     ztabashs@umd.edu
                                     <a href="mailto:ztabashs@umd.edu"><img src="Images/envelope.svg" /></a>
+                                    <br>
+                                    <strong>LinkedIn Profile: </strong><a href="https://www.linkedin.com/in/zajeba-tabashsum-b8861685/">
+                                        <img src="Images/linkedin.svg" style="max-height: 20px">
+                                    </a>
                                 </p>
                             </div>
                         </div>
@@ -208,7 +240,7 @@
         <!-- Undergraduate Students Section -->
         <div class="container-fluid body-section">
             <div class="row justify-content-center">
-                <h1><span class="highlight"> Undergraduate </span> Students</h1>
+                <h1><span class="highlight"> Undergraduate Students </span></h1>
                 <hr />
                 <!-- Start of Card -->
                 <div class="card border-0 mb-3">
@@ -319,30 +351,151 @@
             <hr />
             <h2>Postdoctoral:</h2>
             <ul>
-                <li>filler</li>
-                <li>filler</li>
+                <li>Mengfei Peng; July, 2018</li>
+                <li>Serajus Salaheen; July, 2017</li>
+                <li>Seon Woo Kim; April, 2015</li>
+                <li>Vinod Nagarangan; September, 2017; Scientist at Seoul University, Seoul, Korea</li>
+                <li>Jungsoo Joo; September, 2015 - March, 2017; Researcher at Washington, DC</li>
+                <li>Nitto Chowdhury; December, 2013 - October, 2014; Research Scientist at Penn State University
+                <li>Hongshun Yang; April, 2013 - Sptember, 2013; Assistant Professor at Singapore National University, Singapore </li>
+                <li>Shuvra K. Dey; December, 2011 - November, 2012; Assistant Professor at JN University, Dhaka</li>
             </ul>
 
-            <h2>Graduate:</h2>
+            <h2>Doctoral:</h2>
             <ul>
-                <li>filler</li>
-                <li>filler</li>
+                <li>Sanjaya Mijar; 2019 - 2023; Animal and Avian Sciences; Pursuing Ph.D.</li>
+                <li>Zajeba Tabashsum; 2018 - 2021; Mol. and Cellular Biology; Pursuing Ph.D.</li>
+                <li>Zabdiel Martinez; 2017 - 2020; Mol. and Cellular Biology; Pursuing Ph.D.</li>
+                <li>Arpita Aditiya; 2017 - 2020; Animal and Avian Sciences; Pursuing Ph.D.</li>
+                <li>Mengfei Peng; 2012 - 2017; Mol. & Cellular Biology Ph.D.; Graduated</li>
+                <li>Serajus Salaheen; 2012 - 2017; Animal and Avian Sciences Ph.D.; Graduated</li>
+            </ul>
+
+            <h2>Master's:</h2>
+            <ul>
+                <li>Zajeba Tabashsum; 2016 - 2017; Animal and Avian Sciences; Graduated </li>
+                <li>Cassandra Federman; 2013 - 2015; Animal and Avian Sciences; Graduated </li>
+                <li>Laura Del-Colo; 2014 - 2015; Animal and Avian Sciences; Graduated </li>
+                <li>Jose A. Almario; 2011 - 2014; Animal and Avian Sciences; Graduated </li>      
             </ul>
 
             <h2>Undergraduate:</h2>
             <ul>
-                <li>filler</li>
-                <li>filler</li>
+                <li>Jacob Bhatti; Fall 2019; Biology</li>
+                <li>Nana-Frekua Kennedy; Fall 2019; Biology</li>
+                <li>Yoav Daniel Heymann; Fall 2019; Biology</li>
+                <li>Andy Tourng; Fall 2019; Biology (Research Scholar)</li>
+                <li>Mayur Ananth Krishana; Fall 2019; Biology</li>
+                <li>Mia Anne Lang; Fall 2019; Biology</li>
+                <li>Ashely Houser; Spring 2019; Animal and Avian Sciences</li>
+                <li>Ahlam Akmel; Spring 2019; Animal and Avian Sciences</li>
+                <li>Nana-Frekua Kennedy; Spring 2019; Biology</li>
+                <li>Nishi Shah; Spring 2019; Biology</li>
+                <li>Joselyn Padilla; Spring 2019; Biology</li>
+                <li>Alana Young; Spring 2019; Animal and Avian Sciences</li>
+                <li>Mia Anne Lang; Spring 2019; Biology</li>
+                <li>Andy Tourng; Fall 2018; Biology (Research Scholar)</li>
+                <li>Ashely Houser; Fall 2018; Animal and Avian Sciences</li>
+                <li>Ahlam Akmel; Fall 2018; Animal and Avian Sciences</li>
+                <li>Avinaash Sadhu; Fall 2018; Biological Sciences</li>
+                <li>Blair Arriola; Fall 2018; Biochemistry</li>
+                <li>Jacob Bhatti; Fall 2018; Biology</li>
+                <li>Joselyn Padilla; Fall 2018; Biology</li>
+                <li>Jacob Bhatti; Spring 2018; Biology</li>
+                <li>Ahlam Akmel; Spring 2018; Animal and Avian Sciences</li>
+                <li>Avinaash Sadhu; Spring 2018; Biological Sciences</li>
+                <li>Eliana April; Spring 2018; Animal and Avian Sciences</li>
+                <li>Iliana Kahan; Spring 2018; Public Health</li>
+                <li>Joselyn Padilla; Spring 2018; Biology</li>
+                <li>Eliana April; Fall 2017; Animal and Avian Sciences</li>
+                <li>Eliana Kahan; Fall 2017; Special Animal Science Research</li>
+                <li>Jocelynn Padilla; Fall 2017; Biology</li>
+                <li>Michael Carrion; Fall 2017; Biology (Research Scholar)</li>
+                <li>Puja Patel; Fall 2017; Biology</li>
+                <li>Anne Tavera; Fall 2017; Animal and Avian Sciences</li>
+                <li>Cassandra Bernhardt; Fall 2017; Animal and Avian Sciences</li>
+                <li>Iliana Kahan; Fall 2017; Public Health</li>
+                <li>Juliana April; Fall 2017; Special Animal Science Research</li>
+                <li>Neerav Patel; Fall 2017; Biochemistry</li>
+                <li>Puja Patel; Summer 2017; Biology</li>
+                <li>Neerav Patel; Summer 2017; Biochemistry</li>
+                <li>Michael Carrion; Summer 2017; Biology (Research Scholar)</li>
+                <li>Allison Lee; Spring 2017; Special Animal Science Research</li>
+                <li>Christine Mui; Spring 2017; Special Animal Science Research</li>
+                <li>Eliana Kahan; Spring 2017; Special Animal Science Research</li>
+                <li>Neerav Patel; Spring 2017; Biochemistry</li>
+                <li>Eliana April; Spring 2017; Animal and Avian Sciences</li>
+                <li>Catherine Comis; Spring 2017; Experimental studies</li>
+                <li>Alexandra Dolegui; Fall 2016; Public Health</li>
+                <li>Anthony Dattilio; Fall 2016; Biochemistry</li>
+                <li>Catherine Comis; Fall 2016; Animal and Avian Sciences</li>
+                <li>Thomas Tran; Fall 2016; Biology</li>
+                <li>Allison Lee; Fall 2016; Special Animal Science Research</li>
+                <li>Vivian Mui; Fall 2016; Animal and Avian Sciences</li>
+                <li>Anne Tavera; Summer 2016; Animal and Avian Sciences</li>
+                <li>Hironori Teramoto; Summer 2016; Biochemistry</li>
+                <li>Lauren Termine; Summer 2016; Biology</li>
+                <li>Cassandra Bernhardt; Summer 2016; Animal and Avian Sciences</li>
+                <li>Kevin Tsang; Summer 2016; Biology</li>
+                <li>Anthony Dattilio; Summer 2016; Biology</li>
+                <li>Catherine Comis; Summer 2016; Animal and Avian Sciences</li>
+                <li>Vivian Mui; Summer 2016; Animal and Avian Sciences</li>
+                <li>Kevin Tsang; Spring 2016; Biology</li>
+                <li>Nicole Falus; Spring 2016; Biology</li>
+                <li>Stefano Gaspard; Spring 2016; Biology</li>
+                <li>Lauren Termine; Spring 2016; Biology</li>
+                <li>Kevin Tsang; Fall 2015; Biology</li>
+                <li>Stefano Gaspard; Fall 2015; Biology</li>
+                <li>Danielle O’Connor; Fall 2015; Biology</li>
+                <li>Nicole Falus; Fall 2015; Biology</li>
+                <li>Danielle O’Connor; Spring 2015; Biology</li>
+                <li>Xi Zhao; Spring 2015; Molecular and Cellular Biology</li>
+                <li>Bezait Tesfaye; Spring 2015; Biology</li>
+                <li>Daniel Charles Thoma Hyde; Spring 2015; Nutrition and Food Science</li>
+                <li>Horonori Teramoto; Spring 2015; Special Animal Science Research</li>
+                <li>Ryan Ho; Spring 2015; Animal and Avian Sciences</li>
+                <li>Ceceilia Nguyen; Fall 2014; Biology</li>
+                <li>Christine W Mui; Fall 2014; Biology</li>
+                <li>Bezait Tesfaye; Fall 2014; Biology</li>
+                <li>Ceceilia Nguyen; Fall 2014; Biology</li>
+                <li>Daniel Charles Thoma Hyde; Fall 2014; Nutrition and Food Science</li>
+                <li>Sam Medwetsky; Fall 2014; Biology</li>
+                <li>Ryan Ho; Fall 2014; Animal and Avian Sciences</li>
+                <li>Christopher Cavern; Spring 2014; Biology</li>
+                <li>Elizabeth Bitsko; Spring 2014; Animal and Avian Sciences</li>
+                <li>Joseph Park; Spring 2014; Biology</li>
+                <li>Ryan Healy; Spring 2014; Biology</li>
+                <li>Karla Garcia; Spring 2014; Special Animal Science Research</li>
+                <li>Gil Bismunt; Fall 2013; Biochemistry</li>
+                <li>Daniel Hewes; Fall 2013; Neurology and Physiology</li>
+                <li>Elizabeth Bitsko; Fall 2013; Animal and Avian Sciences</li>
+                <li>Cassandra Federman; Fall 2013; Food Science (Cornell University)</li>
+                <li>Mariquit Lu; Fall 2013; University of New York</li>
+                <li>Ryan Healy; Fall 2013; Biology</li>
+                <li>Jeffrey Ilechie; Fall 2013; Biology (Frostburg State University)</li>
+                <li>Elizabeth Bitsko; Spring 2013; Animal and Avian Sciences</li>
+                <li>Daniel Hewes; Spring 2013; Neurology and Physiology</li>
+                <li>Cassandra Federman; Spring 2013; Food Science (Cornell University)</li>
+                <li>Mariquit Lu; Spring 2013; University of New York</li>
+                <li>Jeffrey Ilechie; Spring 2013; Biology (Frostburg State University)</li>
+                <li>Daniel Hewes; Fall 2012; Neurology and Physiology</li>
+                <li>Cassandra Federman; Fall 2012; Food Science (Cornell University)</li>
+                <li>Cecilia Nguyen; Fall 2012; Roosevelt High School</li>
+                <li>Geetika Reichmann; Fall 2012; Biochemistry</li>
+                <li>Daniel Hewes; Spring 2012; Neurology and Physiology</li>
+                <li>Cassandra Federman; Spring 2012; Food Science (Cornell University)</li>
+                <li>Kwan Young; Spring 2012; Special Animal Science Research</li>
+                <li>Mathew Levy; Spring 2012; Special Animal Science Research</li>
             </ul>
         </div>
 
         <!-- Footer -->
         <footer class="text-center bg-light text-muted">
             <p>
-                &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://ansc.umd.edu/" target="_blank"
+                &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://www.umd.edu/" target="_blank"
                     >University of Maryland</a
                 >
-                &nbsp;| &nbsp; <a href="https://www.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a>
+                &nbsp;| &nbsp; <a href="https://ansc.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a>
             </p>
         </footer>
         <script

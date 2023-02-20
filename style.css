@@ -1,280 +1,537 @@
-html, body{
-  height: 100%;
+html,
+body {
+    height: 100%;
 }
 
 * {
-    font-family: 'Raleway', sans-serif;
-    font-size: large;
-  }
-  
-  .hr-theme-slash-2 {
+    font-family: Source Sans Pro,sans-serif;
+}
+
+.hr-theme-slash-2 {
     display: flex;
     margin: auto;
     width: 75%;
     align-items: center;
-  }
-  
-  .icon{
-    background-image: url('Images/icon.svg');
+}
+
+.icon {
+    background-image: url("Images/icon.svg");
     background-repeat: no-repeat;
-    background-position:center;
+    background-position: center;
     background-color: inherit;
     width: 70px;
     height: 35px;
     border: none;
-  }
-  
-  .hr-line {
+}
+
+.hr-line {
     width: 100%;
     position: relative;
     margin: 2rem;
     border-bottom: 1px solid rgb(161, 161, 161);
-  }
-  
-  /* Navigation Bar */
-  #UMDLogo{
+}
+
+/* Navigation Bar */
+#LogoHolder {
+    position: relative; 
+    width: 300px;
+}
+
+#UMDLogo {
     height: 75px;
     width: 75px;
-    margin-left: 0.75rem;
     margin-right: 0.75rem;
-  }
-  
-  #LabTitle{
-    font-family: 'Raleway', sans-serif;
-    font-size: 35px;
-  }
-  
-  .navbar {
-    padding: 0.5rem 2rem;
-  }
+    padding: 3px;
+}
 
-  .navbar-light .navbar-nav .active .nav-link {
-    color: #73A959;
-  }
-  
-  
-  
-  .navbar-light .navbar-nav .nav-link:hover {
+#LabTitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.navbar {
+    padding: 0.1rem 2rem;
+}
+
+.navbar-toggler {
+    margin: 1rem 0rem;
+}
+
+.navbar-light .navbar-nav .active .nav-link {
+    color: #73a959;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
     color: rgb(49, 49, 49);
-  }
-  
-  .navbar-light .navbar-nav .nav-link:focus {
+}
+
+.navbar-light .navbar-nav .nav-link:focus {
     color: #4b7237;
-  }
-  
-  /* Page Headers */
-  .page-header {
-    text-align: center;
+}
+
+/* Page Headers */
+.page-header {
     color: white;
-    position: relative;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     font-size: 50px;
-  }
-  #publications-image {
+}
+
+.page-header p {
+    font-size: large;
+}
+
+#publications-image {
     background: url("Images/writing.jpeg") no-repeat fixed;
     background-size: cover;
     height: 500px;
-  }
-  #research-image {
+}
+#research-image {
     background: url("Images/media.jpeg") no-repeat fixed;
     background-size: cover;
     height: 500px;
-  }
-  
-  #members-image {
+}
+
+#members-image {
     background: url("Images/group-pic.jpeg") no-repeat fixed;
     background-size: cover;
     height: 500px;
-  }
-  
-  #contact-image {
+}
+
+#farm-image {
+    background:url('Images/rando-farm.jpeg') no-repeat fixed;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+}
+
+#farm-study-image {
+    background:url('Images/study.jpg') no-repeat fixed;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+}
+
+#farm-recommendations-image {
+    background:url('Images/hands.jpg') no-repeat fixed;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+}
+
+#farm-outreach-image {
+    background:url('Images/crowd.jpg') no-repeat fixed;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+}
+
+#farm-publications-image {
+    background:url('Images/papers.jpg') no-repeat fixed;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+}
+
+#contact-image {
     background: url("Images/lab.jpeg") no-repeat fixed;
     background-size: cover;
     height: 500px;
-  }
-  
-  .parallax{
+}
+
+#media-image {
+    background: url("Images/social-media.jpeg") no-repeat fixed;
+    background-size: cover;
+    height: 500px;
+}
+
+#conferences-image {
+    background: url("Images/microphone.jpg") no-repeat fixed;
+    background-size: cover;
+    height: 500px;
+}
+
+.parallax {
     margin-bottom: 4rem;
-  }
-  
-  .parallax::before {
-    content: '';
+}
+
+.parallax::before {
+    content: "";
     display: block;
     position: absolute;
     background-color: #000;
     opacity: 0.5;
     width: 100%;
     height: 500px;
-  }
-  
-  .parallax-inner {
-    padding-top: 230px;
+}
+
+
+/* #farm-image .parallax2::before{
+    content: "";
+    display: block;
+    position: absolute;
+    background: linear-gradient(60deg, rgba(183, 211, 152, 1) 25%,rgba(183, 211, 152, 0.8), rgba(183, 211, 152, 0.25), rgba(183, 211, 152, 0.1));
+    width: 100%;
+    height: 100%;
+} */
+
+.parallax-inner {
+    padding-top: 250px;
     padding-bottom: 250px;
-  }
-  
-  
-  /* Carousel */
-  #slideshow{
+    position: relative;
+}
+
+/* Carousel - Homepage*/
+#slideshow {
     margin-bottom: 4rem;
     height: 80%;
-  }
-  
-  .carousel-caption{
-    font-family: 'Raleway', sans-serif;
+}
+
+#slideshow .carousel-caption {
+    font-family: "Raleway", sans-serif;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    left:0%;
-    right:0%;
+    left: 0%;
+    right: 0%;
     bottom: 0%;
     padding-right: 20%;
     padding-left: 20%;
     padding-top: 30vh;
     line-height: normal;
     height: 100%;
-  }
-  .carousel-item{
+}
+.carousel-item {
     height: 100%;
-
-  }
-  .carousel-inner {
+}
+.carousel-inner {
     height: 100%;
     width: 100%;
-  }
-  
-  .carousel-inner img {
+}
+
+#slideshow .carousel-inner img {
     filter: brightness(35%);
     object-fit: cover;
     object-position: center;
     height: inherit;
     background: rgb(49, 49, 49);
-  }
-  
-  .carousel-control-prev, .carousel-control-next {
-    width: 20%
-  }
-  
-  /* Lab Updates and News */
-  .lab-updates td {
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 20%;
+}
+
+.carousel-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.carousel-center p {
+    font-size: large;
+}
+
+/* Carousel - Conferences */
+.conferences-carousel {
+    width: 40rem;
+    height: 25rem;
+}
+
+.conferences-carousel:hover .carousel-caption {
+    opacity: 1;
+}
+
+.conferences-carousel .carousel-caption {
+    text-align: left;
+    background-image:  linear-gradient(to top, rgba(49,49,49,1) 0%,rgba(49,49,49,0.8) 30%, rgba(49,49,49,0.4) 80%, rgba(49, 49, 49, 0));
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    opacity: 0;
+    transition:all 250ms ease-in-out;
+    -webkit-transition:all 250ms ease-in-out;
+    -moz-transition:all 250ms ease-in-out;
+    -o-transition:all 250ms ease-in-out;
+    -ms-transition:all 250ms ease-in-out;
+}
+
+/* Lab Updates and News */
+.lab-updates td {
     text-align: left;
     padding: 0.25rem;
-  }
-  
-  .accordion-button{
+}
+
+.accordion-button {
     font-size: 25px;
-  }
-  
-  .accordion-button:focus{
+}
+
+.accordion-button:focus {
     box-shadow: none;
-  }
-  
-  .accordion-button:not(.collapsed) {
+}
+
+.accordion-button:not(.collapsed) {
     color: #4b7237;
     background-color: #f4f5f8;
-  }
-  
-  .accordion-button:not(.collapsed)::after{
+}
+
+.accordion-button:not(.collapsed)::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2367a349'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  
-  }
-  
-  /* General Body */
-  .highlight {
-    color: #73A959;
+}
+
+/* General Body */
+.highlight {
+    color: #73a959;
     font-size: inherit;
-  }
-  
-  .centered {
-    margin:auto;
-  }
-  
-  .body-section {
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-content {
+    background-color: rgba(10, 10, 15, 0.8);
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.centered {
+    margin: auto;
+}
+
+.body-section {
     margin-top: 2rem;
     padding-bottom: 3rem;
-    width: 60%;
-  }
-  
-  .secondary-section {
-    margin-top: 1rem;
+    width: 65%;
+}
+
+
+.secondary-section {
     padding: 2rem 0;
-    width: 60%;
-  }
-  
-  .research-obj{
+    width: 65%;
+}
+
+.research-obj {
     width: 25rem;
     margin: 1rem;
     padding: 0;
-  }
-  
-  
-  .card-img-top{
-    width: 100%;
-    height: 15rem;
-    object-fit: cover;
-  }
-  
-  .profile{
+}
+
+.profile {
     width: 175px;
     height: 200px;
     object-fit: cover;
     align-self: center;
-  }
-  
-  .btn-primary {
-    background-color:rgb(49, 49, 49);
-    border-color:rgb(49, 49, 49);
-  }
-  
-  .btn-primary:hover {
-    background-color: #73A959;
-    border-color: #73A959;
-  }
-  
-  .btn-primary:focus {
-    background-color: #4b7237;
-    border-color: #4b7237;
-  }
-  
-  /* Footer */
-  footer {
+}
+
+/* Footer */
+footer {
     padding: 2rem 0;
-  }
-  
-  a {
+}
+
+a {
     color: inherit;
-  }
-  
-  a:hover{
-    color: #73A959;
-  }
-  
-  /* Publication Page */
-  #publications-list li {
+}
+
+a:hover {
+    color: #73a959;
+}
+
+/* Publication Page */
+#publications-list li {
     padding: 0.5rem 0;
-  }
-  
-  /* Research Page */
-  h2 {
+}
+
+/* Research Page */
+h2 {
     font-size: 25px;
-    font-weight: bold;
-  }
-  
-  .dark {
+}
+
+h3 {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.dark {
     background-color: #f4f5f8;
-  }
-  
-  .figure {
+}
+
+#currProj a {
+    text-decoration: none;
+}
+
+.figure {
     margin-top: 2rem;
+}
+
+
+/* Farm Project Page */
+.sidenav {
+    position: sticky;
+    z-index: 1;
+    top: 20px;
   }
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
   
-  } 
-  
-  /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 767px) {
+.sidenav a {
+    padding: 6px 20px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+a:hover {
+    color: #73a959;
+}
+
+.current {
+    font-weight: bolder!important;
+    color: #87c06b!important;
+    font-size: 20px!important;
+  }
+
+.sidenav .small-link{
+    font-size: 18px;
+    font-weight:normal;
+}
+
+.body-section-for-project {
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.body-section-for-project p {
+    line-height: 1.8;
+}
+
+/* Conferences Timeline */
+#timeline {
+    position: relative;
+    display: table;
+    bottom: 0rem;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+}
+#timeline h3 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+#timeline #line:after {
+    content: '';
+    width: 2px;
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0rem;
+    left: 58px;
+    z-index: 1;
+    background: #c5c5c5;
+}
+
+
+
+#timeline section.year {
+    position: relative;
+}
+
+#timeline section.year section {
+    position: relative;
+    padding-bottom: 1.25em;
+    margin-bottom: 2.5em;
+}
+
+#timeline section.year section h4 {
+    position: absolute;
+    bottom: 0;
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0 0 0 85px;
+    color: grey;
+}
+
+#timeline section.year section ul {
+    list-style-type: none;
+    padding: 0 0 0 75px;
+    margin: -1.35rem 0 1em;
+}
+
+
+
+
+
+#timeline section.year section ul:last-child {
+    margin-bottom: 0;
+}
+
+
+#timeline section.year section ul:first-of-type:after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: #c5c5c5;
+    border: 2px solid #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    left: 52px;
+    top: 7px;
+    z-index: 2;
+}
+
+
+#timeline section.year section ul li {
+    margin-left: 0.5rem;
+}
+
+
+#timeline section.year section ul li:not(:first-child) {
+    margin-top: 0.5rem;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 767px) {
     .body-section {
-      margin-top: 6rem;
-      width: 80%;
+        margin-top: 6rem;
+        width: 80%;
     }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .lab-updates {
+    display: none;
+  }
+}
+
+.navbar-nav li:hover .dropdown-menu {
+    display: block;
+    border: none;
+    left: -60%;
   }

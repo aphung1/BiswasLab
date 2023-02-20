@@ -21,10 +21,12 @@
     </head>
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-xl navbar-light bg-light">
             <a href="index.html" class="navbar-brand">
-                <img src="Images/UMDLogo.jpg" alt="UMD Logo" id="UMDLogo" />
-                <span id="LabTitle">BISWAS LAB</span>
+                <div id="LogoHolder">
+                    <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
+                    <span id="LabTitle">BISWAS LAB</span>
+                </div>
             </a>
             <button
                 class="navbar-toggler"
@@ -42,14 +44,26 @@
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">HOME</a>
                     </li>
-                    <li class="nav-item active">
-                        <a href="research.html" class="nav-link">RESEARCH</a>
-                    </li>
+
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="research.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        RESEARCH
+                      </a>
+                        <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="farm2.html">Mixed Farm Research</a>
+                        </div>
+                      </li>
                     <li class="nav-item">
                         <a href="publications.html" class="nav-link">PUBLICATIONS</a>
                     </li>
                     <li class="nav-item">
+                        <a href="conferences.html" class="nav-link">CONFERENCES</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="members.html" class="nav-link">MEMBERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="media.html" class="nav-link">LAB PHOTOS</a>
                     </li>
                     <li class="nav-item">
                         <a href="contact.html" class="nav-link">CONTACT</a>
@@ -69,21 +83,19 @@
         <div class="body-section centered">
             <h1 style="text-align: center">
                 <span class="highlight"> Research </span>
-                Overview
+                Focuses
             </h1>
-            <hr />
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempus cursus ex nec ultricies.
-                Integer molestie leo elit, a pharetra metus pharetra vitae. Cras pulvinar tempor leo. Aliquam vulputate
-                in lorem vel luctus. Proin eget leo nunc. Nunc nec augue vehicula, laoreet nibh eget, eleifend dolor.
-                Phasellus finibus nisi vitae dolor ultrices congue. Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst.
-                Suspendisse augue ante, rhoncus id tellus vitae, tempus tincidunt mi.
-            </p>
+            <ul>
+                <li>Reducing levels of these bacterial pathogens in food-producing animals and prevent the cross contamination in the food processing plants are effective ways to reduce food safety risks for humans</li>
+                <br><li>Reduction of pre- and post-harvest levels of colonization and contamination with foodborne bacterial pathogens including E. coli O157, Campylobacter jejuni and Salmonella enterica in foods specifically meat and meat products and development of vaccines that prevent colonization of animals by these enteric pathogens which may reduce human gastrointestinal infections</li>
+                <br><li>Investigation the role of natural products in control of colonization of zoonotic/foodborne bacterial pathogens in animal guts and mechanisms of their antimicrobial activity/survival ability in the presence of synthetic antibiotics and/or natural antimicrobial components.</li>
+                <br><li>Development of bioactive pre-biotics, probiotics, and/or its combination (synbitics) for alternative source of therapeutic and sub-therapeutic (growth promoter) components for organic and conventional farm animal production and stimulate the growth probiotic and the production of its metabolites by genetically engineered beneficial bacteria.</li>
+                <br><li>Develop the efficient and faster technology to improve the detection of foodborne enteric bacterial pathogens in food products and other polluted materials</li>
+            </ul>
         </div>
 
         <!-- Why Study Bacterial Pathogens-->
-        <div class="body-section centered">
+        <div class="body-section centered" style="display:none">
             <h1 style="text-align: center">
                 Why study
                 <span class="highlight"> Bacterial Pathogens? </span>
@@ -97,26 +109,101 @@
                 elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst.
                 Suspendisse augue ante, rhoncus id tellus vitae, tempus tincidunt mi.
             </p>
-            <figure class="figure">
-                <img src="Images/map.jpeg" class="figure-img img-fluid" alt="A generic square placeholder image." />
-                <figcaption class="figure-caption">A caption for the above image.</figcaption>
+            <figure class="figure centered d-block">
+                <img
+                    src="Images/map.jpeg"
+                    class="figure-img img-fluid centered d-block"
+                    alt="A generic square placeholder image."
+                />
+                <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
             </figure>
         </div>
 
-        <div class="dark">
-            <!-- Research Projects -->
-            <div id="research-projects" class="body-section centered" style="margin-top: 4rem">
-                <h1 style="text-align: center; padding-top: 3rem">
-                    Research
-                    <span class="highlight"> Focuses </span>
+        <!-- Funded Projects -->
+        <div class="dark" style="padding-top: 2rem; padding-bottom: 1rem">
+            <div class="body-section centered" >
+                <h1 style="text-align: center" >
+                    <span class="highlight"> Funded </span>
+                    Projects
                 </h1>
-                <hr style="width: 100%" />
+                <br>
+                <!-- Funded Projects - Vaccine -->
+                <div id="vaccine">
+                    <h2>Control colonization of pathogenic Salmonella in poultry by autolytic intracellular Salmonella
+                        vaccine.</h2>
+                    <p>
+                        In the US, salmonellosis is the second most common foodborne disease. One of the major
+                        routes of human salmonellosis is believed to be consumption and handling of contaminated
+                        poultry and poultry products, as Salmonella colonizes the chicken gut as part of the normal flora.
+                        Thus, strategies for controlling the colonization of Salmonella in poultry gut, to reduce the
+                        incidence of salmonellosis in humans, are essential. We have developed a lysogenic Salmonella
+                        vaccine strain (ST +P13/19 ) by inserting genes 13 (holing) and 19 (lysozyme) of bacteriophage P22
+                        into downstream of sseA, the chaperone of SPI-2 genes of Salmonella enterica (SE) serovar
+                        Typhimutium (LT2). Thus the expression of both genes were controlled by the sseA promoter in
+                        intracellular conditions. We found that the intracellular viability of ST +P13/19 was reduced &gt;95%
+                        compared to LT2 in chicken macrophage cells, and significantly increased pro-inflammatory
+                        cytokines and endosomal toll-like receptors. In this project, we aim to evaluate the role of this
+                        non-pathogenic and autolytic ST +P13/19 vaccine strain in outcompeting pathogenic SE colonization
+                        and preventing cross-contamination of poultry products in a chick model. To achieve our goals,
+                        we propose these specific aims: 1) Evaluate the protection ability against colonization of various
+                        pathogenic SE serovars like Typhimurium and/or Enteritidis in Broiler chicks; and 2) Evaluate
+                        the host immunity and gut health during the intracellular lysis of the Salmonella vaccine strain in
+                        the chicken intestine. Outcomes of this project will improve the safety of the poultry products
+                        and reduce the human gastrointestinal infection with Salmonella and improve human health.
+                        <br><small class ="text-muted">USDA Funding grant number:</small>
+                    </p>
+                </div>
+    
+                <br>
+                <!-- Funded Projects - Mixed Farm -->
+                <div>
+                    <div class="centered" id="mixed-farm">
+                        <h2>Ecology, Transmission and Control of Salmonella and Shigatoxin Producing E. coli in
+                            Integrated Crop-Livestock Farms</h2>
+                        <p>
+                            Increasing demand for organic food often is not met due to the limited number of
+                            producers engaging/adopting the management complexities fundamental to organic system and
+                            required to meet production parity with conventional systems. Complexities involve soil
+                            fertility/nutrients, diverse soil biological communities, soil health, and use of cover crops and
+                            animal manures often on integrated crop-livestock farms (ICLF). Microbial ecology on ICLF
+                            also can impact food safety through pathogen transfer between animals and crops. Recent reports
+                            of pathogen contaminated products sold in local organic retail, roadside and farmers markets
+                            highlight the need for assessment of the ecological patterns of bacterial pathogens, when they
+                            occur on ICLFs, and their survival/transfer to crops through use of raw or composted manure-
+                            based soil amendments, or by workers, equipment, and vectors. We propose to assess the
+                            ecological patterns of two major bacterial pathogens, Salmonella enterica (SE) and shigatoxin-
+                            producing E. coli (STEC), including their survival/transmission pathways and develop control
+                            strategies. The project objectives are to a) Determine the sources, survival ability in the farm
+                            environment and contamination pathways of SE and STEC; b) Develop practical means to
+                            control SE and STEC farm environment and eliminate from produce by using alternative natural
+                            antimicrobial components; and c) Disseminate outcomes of the project for controlling
+                            contamination by on-farm practices and the best options to eliminate these pathogens from the
+                            produce to diverse stakeholders. The study will generate extensive data on the dynamics of these
+                            bacterial pathogens in ICLF and its products and offer effective control strategies.
+                            <br><small class ="text-muted">USDA Funding grant number: 029848-00001</small>
+                        </p>
+                        <a href="farm2.html" target="_blank">See more about the Mixed Farm Project >></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="currProj">
+            <!-- Research Projects -->
+            <div id="research-projects" class=" centered">
+                <h1 style="text-align: center; padding-top: 3rem">
+                    Current
+                    <span class="highlight"> Projects </span>
+                </h1>
             </div>
 
             <!-- Food Safety -->
             <div id="food-safety">
                 <div class="secondary-section centered">
                     <h2>Food Safety</h2>
+                    <h3>Main Contributors: 
+                        <a href="members.html#Biswas" target="_blank">Biswas</a></h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempus cursus ex nec
                         ultricies. Integer molestie leo elit, a pharetra metus pharetra vitae. Cras pulvinar tempor leo.
@@ -137,11 +224,7 @@
                     </figure>
                 </div>
             </div>
-            <div class="hr-theme-slash-2">
-                <div class="hr-line"></div>
-                <a class="icon" href="#contamination"></a>
-                <div class="hr-line"></div>
-            </div>
+
             <!-- Contamination -->
             <div id="contamination" class="secondary-section centered">
                 <h2>Contamination</h2>
@@ -162,11 +245,6 @@
                     />
                     <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
                 </figure>
-            </div>
-            <div class="hr-theme-slash-2">
-                <div class="hr-line"></div>
-                <a class="icon" href="#probiotic"></a>
-                <div class="hr-line"></div>
             </div>
 
             <!-- Probiotics -->
@@ -193,11 +271,6 @@
                     </figure>
                 </div>
             </div>
-            <div class="hr-theme-slash-2">
-                <div class="hr-line"></div>
-                <a class="icon" href="#detection"></a>
-                <div class="hr-line"></div>
-            </div>
 
             <!-- Detection -->
             <div id="detection" class="secondary-section centered">
@@ -221,6 +294,7 @@
                 </figure>
             </div>
         </div>
+
         <!-- Footer -->
         <footer class="text-center bg-light text-muted">
             <p>

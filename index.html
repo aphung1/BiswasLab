@@ -19,10 +19,13 @@
     </head>
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-xl navbar-light bg-light">
             <a href="index.html" class="navbar-brand">
-                <img src="Images/UMDLogo.jpg" alt="UMD Logo" id="UMDLogo" />
-                <span id="LabTitle">BISWAS LAB</span>
+                <div id="LogoHolder">
+                    <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
+                    <span id="LabTitle">BISWAS LAB</span>
+                </div>
+
             </a>
             <button
                 class="navbar-toggler"
@@ -31,8 +34,7 @@
                 data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -40,14 +42,26 @@
                     <li class="nav-item active">
                         <a href="index.html" class="nav-link">HOME</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="research.html" class="nav-link">RESEARCH</a>
-                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="research.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        RESEARCH
+                      </a>
+                        <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="farm2.html">Mixed Farm Research</a>
+                        </div>
+                      </li>
                     <li class="nav-item">
                         <a href="publications.html" class="nav-link">PUBLICATIONS</a>
                     </li>
                     <li class="nav-item">
+                        <a href="conferences.html" class="nav-link">CONFERENCES</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="members.html" class="nav-link">MEMBERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="media.html" class="nav-link">LAB PHOTOS</a>
                     </li>
                     <li class="nav-item">
                         <a href="contact.html" class="nav-link">CONTACT</a>
@@ -56,68 +70,128 @@
             </div>
         </nav>
 
-		
-
         <!-- Slideshow -->
-        <div id="slideshow" class="carousel slide" data-bs-ride="carousel" > 
-			<div class="carousel-inner centered">
+        <div id="slideshow" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner centered">
                 <div class="carousel-item active" data-bs-interval="10000">
-                    <div class="carousel-caption" style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(Images/culture.jpg);">
-                        <h1>The Biswas Lab</h1>
-                        <p>
-                            A lab dedicated to improving food safety.<br />Learn more about our work at the University
-                            of Maryland
-                        </p>
+                    <div
+                        class="carousel-caption"
+                        style="
+                            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                                url(Images/culture.jpg);
+                            position: relative;
+                        "
+                    >
+                        <div class="carousel-center">
+                            <h1>The Biswas Lab</h1>
+                            <p>
+                                A lab dedicated to improving food safety by developing mechanisms against foodborne pathogens. Learn more about our work at the
+                                University of Maryland.
+                            </p>
+                            <a
+                            href="research.html"
+                            class="btn btn-secondary shadow-none mb-3 ms-3"
+                            style="vertical-align: text-bottom; width: fit-content; margin-top: 1rem;"
+                            >See Current Projects</a
+                            >
+                        </div>
                     </div>
                 </div>
-				<div class="carousel-item " data-bs-interval="10000">
-                    <div class="carousel-caption" style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(Images/fowls.jpg);">
-                        <h1>Foodborne Illnesses Worldwide</h1>
-                        <p>
-                            Food unsafe for consumption causes 600 million cases of foodborne diseases and 420,000 deaths every year, and 56 million people die each year (Ritchie and Roser, 2018; WHO, 2015).
-                        </p>
+                <div class="carousel-item" data-bs-interval="10000">
+                    <div
+                        class="carousel-caption"
+                        style="
+                            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                                url(Images/cows.jpg);
+                        "
+                    >
+                        <div class="carousel-center">
+                            <h1>Rumen is a rich microbial ecosystems harboring many zoonotic pathogens</h1>
+                            <p>
+                                In this study, we aimed to inhibit the growth of enterohemorrhagic Escherichia coli in a simulated rumen system with collected 
+                                rumen fluids (RFs) using live probiotics, synbiotics, and their metabolites. <a href="https://doi.org/10.1093/femsec/fiac128" target="_blank"
+                                >10.1093/femsec/fiac128</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-				<div class="carousel-item " data-bs-interval="10000">
-                    <div class="carousel-caption" style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(Images/berries.jpg);">
-                        <h1>Berry Pomace</h1>
-                        <p>
-                            In 2019, lab members studied the prebiotic-effects of compounds found in berry pomace to stimulate the growth of beneficial microbes and simultaneously compete with bacterial pathogens.
-                        </p>
+                <div class="carousel-item" data-bs-interval="10000">
+                    <div
+                        class="carousel-caption"
+                        style="
+                            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                                url(Images/fowls.jpg);
+                        "
+                    >
+                        <div class="carousel-center">
+                            <h1>Intracellular autolytic whole cell Salmonella vaccine</h1>
+                            <p>
+                                Salmonella enterica (SE) is commonly found as the normal flora of various animals that is attributed to causing at least 1.2 million infections annually. 
+                                Vaccinating poultry against SE is a sustainable approach that can reduce SE in the host, 
+                                preventing future infections in humans. <a href="https://doi.org/10.1016/j.vaccine.2022.10.013" target="_blank"
+                                >10.1016/j.vaccine.2022.10.013</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-				<div class="carousel-item " data-bs-interval="10000">
-                    <div class="carousel-caption" style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(Images/umd.jpg);">
-                        <h1>Lab Updates and News</h1>
-                        <table class="centered lab-updates">
-							<tr>
-							  <td>12/30/21</td>
-							  <td>Website launched!</td>
-							</tr>
-							<tr>
-							  <td>7/18/21</td>
-							  <td>Attended IAFP Annual Meeting at Arizona</td>
-							</tr>
-							<tr>
-							  <td>6/1/21</td>
-							  <td>Welcome to the team, Matthew Wall and Phuong Nyuyen</td>
-							</tr>
-						  </table>
-						  <a
-						  href="index.html#news-section"
-						  class="btn btn-secondary shadow-none mb-3 ms-3"
-						  style="vertical-align: text-bottom; width: fit-content; margin-top: 1rem"
-						  >See More Below</a
-					  >
+                <div class="carousel-item" data-bs-interval="10000">
+                    <div
+                        class="carousel-caption"
+                        style="
+                            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                                url(Images/probiotics.jpg);
+                        "
+                    >
+                        <div class="carousel-center">
+                            <h1>Antagonistic Effects of Conjugated Linoleic Acids</h1>
+                            <p>
+                                Probiotics in fermented foods or commercially available supplements benefit the host by providing metabolites and peptides. 
+                                The production of these metabolites varies with the available substrates or prebiotics present in the system and their concentration. <a href="https://doi.org/10.4315/JFP-21-414" target="_blank"
+                                >10.4315/JFP-21-414. </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                
+                <div class="carousel-item" data-bs-interval="10000">
+                    <div
+                        class="carousel-caption"
+                        style="
+                            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                                url(Images/umd.jpg);
+                        "
+                    >
+                        <div class="carousel-center">
+                            <h1>Lab Updates and News</h1>
+                            <table class="centered lab-updates">
+                                <tr>
+                                    <td>12/30/21</td>
+                                    <td>Website launched!</td>
+                                </tr>
+                                <tr>
+                                    <td>7/18/21</td>
+                                    <td>Attended IAFP Annual Meeting at Arizona</td>
+                                </tr>
+                                <tr>
+                                    <td>6/1/21</td>
+                                    <td>Welcome to the team, Matthew Wall and Phuong Nyuyen</td>
+                                </tr>
+                            </table>
+                            <a
+                                href="index.html#news-section"
+                                class="btn btn-secondary shadow-none mb-3 ms-3"
+                                style="vertical-align: text-bottom; width: fit-content; margin-top: 1rem"
+                                >See More Below</a
+                            >
+                        </div>
+                    </div>
+                </div>
             </div>
             <ul class="carousel-indicators">
                 <li data-bs-target="#slideshow" data-bs-slide-to="0" class="active"></li>
                 <li data-bs-target="#slideshow" data-bs-slide-to="1"></li>
                 <li data-bs-target="#slideshow" data-bs-slide-to="2"></li>
                 <li data-bs-target="#slideshow" data-bs-slide-to="3"></li>
+                <li data-bs-target="#slideshow" data-bs-slide-to="4"></li>
             </ul>
 
             <a class="carousel-control-prev" href="#slideshow" role="button" data-bs-slide="prev">
@@ -129,177 +203,196 @@
         </div>
 
         <!-- Who We Are Section -->
-        <div class="container-fluid body-section">
+        <div class="container-fluid body-section centered">
             <div class="row justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6" style="padding-left: 0">
                     <h1>Who <span class="highlight">We</span> Are</h1>
-                    <hr />
-                    <p>
-                        filler text filler text filler textfiller text filler text filler text filler text filler text
-                        filler text filler text filler text filler text filler text filler text filler text filler text
-                        filler text filler text
+                    <p style="text-align: justify;
+                    text-justify: inter-word;">
+                        Under the direction of Dr. Debabrata Biswas, our mission is to improve safety by understanding the 
+                        bacterial pathogens behind foodborne illnesses. We aim to uncover novel mechanisms to control 
+                        the spread and colonization of these bacteria in food processing plants and animal reservoirs. Our expertise
+                        falls along:
+                        <ul>
+                            <li>Bacteriology</li>
+                            <li>Foodborne Pathogens</li>
+                            <li>Vaccine</li>
+                            <li>Alternative Therapeutics</li>
+                            <li>Alternative Growth Promoters</li>
+                        </ul>
                     </p>
                 </div>
                 <div class="col-lg-6">
                     <img
                         class="img-fluid"
                         style="object-fit: cover; min-height: 230px"
-                        src="Images/UMD-aerial.jpg"
-                        alt="Picture of UMD campus"
+                        src="Images/lab-selfie.jpg"
+                        alt="Picture of the lab"
                     />
                 </div>
             </div>
         </div>
 
         <!-- Research Objectives Section -->
-        <div class="container-fluid body-section centered" style="width: 90%">
+        <div class="container-fluid body-section centered">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1><span class="highlight">Research</span> Focuses</h1>
+                    <h1><span class="highlight">Current</span> Projects</h1>
+                    <p>Learn more about our current work in the lab.</p>
                 </div>
             </div>
-            <hr class="centered" style="width: 75%; margin-bottom: 1rem" />
-            <div class="row justify-content-center">
-                <div class="card col-sm-6 research-obj">
-                    <img src="Images/salmonella.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Food Safety</h5>
-                        <p class="card-text">
-                            Reducing levels of these bacterial pathogens in food-producing animals and prevent the cross
-                            contamination in the food processing plants are effective ways to reduce food safety risks
-                            for humans
-                        </p>
+            <div class="row justify-content-center" style="margin: 0.5rem;">
+                <div class="col-md-3" style="vertical-align: middle; padding: 0.5rem">
+                    <div style="background-image: url('Images/salmonella.jpg'); background-size:cover; background-position: center center; min-height: 200px; width: 100%; height: 100%;">
                     </div>
-                    <a
-                        href="research.html#food-safety"
-                        class="btn btn-primary shadow-none mb-3 ms-3"
-                        style="vertical-align: text-bottom; width: fit-content"
-                        >Read More</a
-                    >
                 </div>
-                <div class="card col-sm-6 research-obj">
-                    <img src="Images/poultry farm.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Contamination</h5>
+                <div class="col-md-9">
+                    <div class="card-body p-2">
+                        <h5 class="card-title">Control colonization of pathogenic Salmonella in poultry by autolytic intracellular Salmonella
+                        vaccine.</h5>
                         <p class="card-text">
-                            Reduction of pre- and post-harvest levels of colonization and contamination with foodborne
-                            bacterial pathogens including E. coli O157, Campylobacter jejuni and Salmonella enterica in
-                            foods specifically meat and meat products and development of vaccines that prevent
-                            colonization of animals by these enteric pathogens which may reduce human gastrointestinal
-                            infections
+                        In the US, salmonellosis is the second most common foodborne disease. One of the major
+                        routes of human salmonellosis is believed to be consumption and handling of contaminated
+                        poultry and poultry products, as Salmonella colonizes the chicken gut as part of the normal flora.
+                        <a href="research.html#vaccine">Read more>></a>
                         </p>
+                        <p class="card-text"><small class="text-muted">Funded Project</small></p>
                     </div>
-                    <a
-                        href="research.html#contamination"
-                        class="btn btn-primary shadow-none mb-3 ms-3"
-                        style="vertical-align: text-bottom; width: fit-content"
-                        >Read More</a
-                    >
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="card col-sm-6 research-obj">
-                    <img src="Images/pills.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Probiotic</h5>
-                        <p class="card-text">
-                            Development of bioactive pre-biotics, probiotics, and/or its combination (synbitics) for
-                            alternative source of therapeutic and sub-therapeutic (growth promoter) components for
-                            organic and conventional farm animal production and stimulate the growth probiotic and the
-                            production of its metabolites by genetically engineered beneficial bacteria.
-                        </p>
+            <div class="row justify-content-center" style="margin: 0.5rem;">
+                <div class="col-md-3" style="vertical-align: middle; padding: 0.5rem">
+                    <div style="background-image: url('Images/cow-field.jpg'); background-size:cover; background-position: center center; min-height: 200px;width: 100%; height: 100%;">
                     </div>
-                    <a
-                        href="research.html#probiotic"
-                        class="btn btn-primary shadow-none mb-3 ms-3"
-                        style="vertical-align: text-bottom; width: fit-content"
-                        >Read More</a
-                    >
                 </div>
-                <div class="card col-sm-6 research-obj">
-                    <img src="Images/tube.jpg" class="card-img-top" alt="..." />
-                    <div class="card-body">
-                        <h5 class="card-title">Detection</h5>
+                <div class="col-md-9">
+                    <div class="card-body p-2">
+                        <h5 class="card-title">Ecology, Transmission and Control of Salmonella and Shigatoxin Producing E. coli in Integrated Crop-Livestock Farms
+                        </h5>
                         <p class="card-text">
-                            Develop the efficient and faster technology to improve the detection of foodborne enteric
-                            bacterial pathogens in food products and other polluted materials
+                            Increasing demand for organic food often is not met due to the limited number of producers engaging/adopting the management complexities
+                             fundamental to organic system and required to meet production parity with conventional systems. 
+                        <a href="research.html#mixed-farm">Read more>></a>
+                        </p>
+                        <p class="card-text"><small class="text-muted">Funded Project</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin: 0.5rem;">
+                <div class="col-md-3" style="vertical-align: middle; padding: 0.5rem">
+                    <div style="background-image: url('Images/salmonella.jpg'); background-size:cover; background-position: center center; min-height: 200px; width: 100%; height: 100%;">
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body p-2">
+                        <h5 class="card-title">Control colonization of pathogenic Salmonella in poultry by autolytic intracellular Salmonella
+                        vaccine.</h5>
+                        <p class="card-text">
+                        In the US, salmonellosis is the second most common foodborne disease. One of the major
+                        routes of human salmonellosis is believed to be consumption and handling of contaminated
+                        poultry and poultry products, as Salmonella colonizes the chicken gut as part of the normal flora.
+                        <a href="research.html#vaccine">Read more>></a>
                         </p>
                     </div>
-                    <a
-                        href="research.html#detection"
-                        class="btn btn-primary shadow-none mb-3 ms-3"
-                        style="vertical-align: text-bottom; width: fit-content"
-                        >Read More</a
-                    >
                 </div>
             </div>
         </div>
 
-		<!-- Lab Updates and News Section -->
+        <!-- Lab Updates and News Section -->
         <div id="news-section" class="container-fluid body-section">
-			<div class="row">
+            <div class="row">
                 <div class="col-12 text-center">
                     <h1><span class="highlight">Lab Updates</span> and <span class="highlight">News</span></h1>
                 </div>
             </div>
-			<hr>
-			<div class="accordion accordion-flush">
-				<div class="accordion-item">
-				  <h2 class="accordion-header" id="news-2021">
-					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
-					  2021
-					</button>
-					
-				  </h2>
-				  <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="news-2021">
-					<div class="accordion-body">
-						<table class="lab-updates">
-                            <tr>
-                                <td>12/30/21</td>
-                                <td>Website launched!</td>
-                            </tr>
-                            <tr>
-                                <td>7/18/21</td>
-                                <td>Attended IAFP Annual Meeting at Arizona</td>
-                            </tr>
-                            <tr>
-                                <td>6/1/21</td>
-                                <td>Welcome to the team, Matthew Wall and Phuong Nyuyen</td>
-                            </tr>
-                        </table>
-					</div>
-				  </div>
-				</div>
-				<div class="accordion-item">
-				  <h2 class="accordion-header" id="news-2020">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-					  2020
-					</button>
-				  </h2>
-				  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="news-2020">
-					<div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-				  </div>
-				</div>
-				<div class="accordion-item">
-				  <h2 class="accordion-header" id="news-2019">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-					  2019
-					</button>
-				  </h2>
-				  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="news-2019">
-					<div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-				  </div>
-				</div>
-			  </div>
-		</div>
+            <hr />
+            <div class="accordion accordion-flush">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="news-2021">
+                        <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne"
+                            aria-expanded="true"
+                            aria-controls="flush-collapseOne"
+                        >
+                            2021
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="news-2021">
+                        <div class="accordion-body">
+                            <table class="lab-updates">
+                                <tr>
+                                    <td>12/30/21</td>
+                                    <td>Website launched!</td>
+                                </tr>
+                                <tr>
+                                    <td>7/18/21</td>
+                                    <td>Attended IAFP Annual Meeting at Arizona</td>
+                                </tr>
+                                <tr>
+                                    <td>6/1/21</td>
+                                    <td>Welcome to the team, Matthew Wall and Phuong Nyuyen</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="news-2020">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseTwo"
+                        >
+                            2020
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="news-2020">
+                        <div class="accordion-body">
+                            Placeholder content for this accordion, which is intended to demonstrate the
+                            <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
+                            this being filled with some actual content.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="news-2019">
+                        <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseThree"
+                        >
+                            2019
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="news-2019">
+                        <div class="accordion-body">
+                            Placeholder content for this accordion, which is intended to demonstrate the
+                            <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
+                            exciting happening here in terms of content, but just filling up the space to make it look,
+                            at least at first glance, a bit more representative of how this would look in a real-world
+                            application.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer class="text-center bg-light text-muted">
             <p>
-                &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://ansc.umd.edu/" target="_blank"
+                &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://www.umd.edu/" target="_blank"
                     >University of Maryland</a
                 >
-                &nbsp;| &nbsp; <a href="https://www.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a>
+                &nbsp;| &nbsp; <a href="https://ansc.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a>
             </p>
         </footer>
         <script

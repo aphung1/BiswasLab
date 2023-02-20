@@ -21,10 +21,12 @@
     </head>
     <body>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-xl navbar-light bg-light">
             <a href="index.html" class="navbar-brand">
-                <img src="Images/UMDLogo.jpg" alt="UMD Logo" id="UMDLogo" />
-                <span id="LabTitle">BISWAS LAB</span>
+                <div id="LogoHolder">
+                    <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
+                    <span id="LabTitle">BISWAS LAB</span>
+                </div>
             </a>
             <button
                 class="navbar-toggler"
@@ -42,14 +44,26 @@
                     <li class="nav-item">
                         <a href="index.html" class="nav-link">HOME</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="research.html" class="nav-link">RESEARCH</a>
-                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="research.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        RESEARCH
+                      </a>
+                        <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="farm2.html">Mixed Farm Research</a>
+                        </div>
+                      </li>
                     <li class="nav-item">
                         <a href="publications.html" class="nav-link">PUBLICATIONS</a>
                     </li>
                     <li class="nav-item">
+                        <a href="conferences.html" class="nav-link">CONFERENCES</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="members.html" class="nav-link">MEMBERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="media.html" class="nav-link">LAB PHOTOS</a>
                     </li>
                     <li class="nav-item active">
                         <a href="contact.html" class="nav-link">CONTACT</a>
@@ -80,8 +94,8 @@
                             >Department of Cell Biology & Molecular Genetics</a
                         >
                         <br />
-                        <a href="https://ansc.umd.edu/" style="text-decoration: none"
-                            >Department of Animal & Avian Sciences</a
+                        <a href="https://cfs3.umd.edu/" style="text-decoration: none"
+                            >Center for Food Safety and Security Systems</a
                         >
                         <br />
                         1413 AnSc/AgEn Building <br />
@@ -90,7 +104,7 @@
                         Office Phone:
                         <a href="tel:(301)405-3791"> (301)405-3791 </a> <br />
                         Lab Phone:
-                        <a href="tel:(301)314-6832"> (301)314-6832 </a> <br />
+                        <a href="tel:(301)405-1677"> (301)405-1677 </a> <br />
                         Email: dbiswas@umd.edu
                         <a href="mailto:dbiswas@umd.edu"><img src="Images/envelope.svg" /></a>
                     </p>
@@ -111,11 +125,11 @@
         <!-- Footer -->
         <footer class="text-center bg-light text-muted">
             <p>
-                &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://ansc.umd.edu/" target="_blank"
+                &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://www.umd.edu/" target="_blank"
                     >University of Maryland</a
                 >
                 &nbsp;| &nbsp;
-                <a href="https://www.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a>
+                <a href="https://ansc.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a>
             </p>
         </footer>
         <script
