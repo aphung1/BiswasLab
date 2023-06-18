@@ -1,313 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-            crossorigin="anonymous"
-        />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Publications</title>
-    </head>
-    <body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-xl navbar-light bg-light">
-            <a href="index.html" class="navbar-brand">
-                <div id="LogoHolder">
-                    <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
-                    <span id="LabTitle">BISWAS LAB</span>
-                </div>
-            </a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Publications</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+      <a href="index.html" class="navbar-brand">
+        <div id="LogoHolder">
+          <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
+          <span id="LabTitle">BISWAS LAB</span>
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">HOME</a>
+          </li>
+
+          <li class="nav-item dropdown active">
+            <a
+              class="nav-link dropdown-toggle"
+              href="research.html"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
             >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">HOME</a>
-                    </li>
-
-                    <li class="nav-item dropdown active">
-                        <a class="nav-link dropdown-toggle" href="research.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        RESEARCH
-                      </a>
-                        <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="farm2.html">Mixed Farm Research</a>
-                        </div>
-                      </li>
-                    <li class="nav-item">
-                        <a href="publications.html" class="nav-link">PUBLICATIONS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="conferences.html" class="nav-link">CONFERENCES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="members.html" class="nav-link">MEMBERS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="media.html" class="nav-link">LAB PHOTOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">CONTACT</a>
-                    </li>
-                </ul>
+              RESEARCH
+            </a>
+            <div
+              class="dropdown-menu bg-light"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <a class="dropdown-item" href="farm.html">Mixed Farm Research</a>
             </div>
-        </nav>
+          </li>
+          <li class="nav-item">
+            <a href="publications.html" class="nav-link">PUBLICATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a href="conferences.html" class="nav-link">CONFERENCES</a>
+          </li>
+          <li class="nav-item">
+            <a href="members.html" class="nav-link">MEMBERS</a>
+          </li>
+          <li class="nav-item">
+            <a href="media.html" class="nav-link">LAB PHOTOS</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-        <!-- Header -->
-        <section id="research-image" class="parallax">
-            <div class="parallax-inner">
-                <h1 class="page-header">Research</h1>
-            </div>
-        </section>
+    <!-- Header -->
+    <section id="research-image" class="parallax">
+      <div class="parallax-inner">
+        <h1 class="page-header">Research</h1>
+      </div>
+    </section>
 
-        <!-- Research Objective-->
-        <div class="body-section centered">
-            <h1 style="text-align: center">
-                <span class="highlight"> Research </span>
-                Focuses
-            </h1>
-            <ul>
-                <li>Reducing levels of these bacterial pathogens in food-producing animals and prevent the cross contamination in the food processing plants are effective ways to reduce food safety risks for humans</li>
-                <br><li>Reduction of pre- and post-harvest levels of colonization and contamination with foodborne bacterial pathogens including E. coli O157, Campylobacter jejuni and Salmonella enterica in foods specifically meat and meat products and development of vaccines that prevent colonization of animals by these enteric pathogens which may reduce human gastrointestinal infections</li>
-                <br><li>Investigation the role of natural products in control of colonization of zoonotic/foodborne bacterial pathogens in animal guts and mechanisms of their antimicrobial activity/survival ability in the presence of synthetic antibiotics and/or natural antimicrobial components.</li>
-                <br><li>Development of bioactive pre-biotics, probiotics, and/or its combination (synbitics) for alternative source of therapeutic and sub-therapeutic (growth promoter) components for organic and conventional farm animal production and stimulate the growth probiotic and the production of its metabolites by genetically engineered beneficial bacteria.</li>
-                <br><li>Develop the efficient and faster technology to improve the detection of foodborne enteric bacterial pathogens in food products and other polluted materials</li>
-            </ul>
+    <!-- Research Objective-->
+    <div class="body-section centered">
+      <h1 class="subtitle">RESEARCH FOCUSES</h1>
+      <hr />
+      <ul class="left-aligned">
+        <li>
+          Reducing levels of these bacterial pathogens in food-producing animals
+          and prevent the cross contamination in the food processing plants are
+          effective ways to reduce food safety risks for humans
+        </li>
+        <br />
+        <li>
+          Reduction of pre- and post-harvest levels of colonization and
+          contamination with foodborne bacterial pathogens including E. coli
+          O157, Campylobacter jejuni and Salmonella enterica in foods
+          specifically meat and meat products and development of vaccines that
+          prevent colonization of animals by these enteric pathogens which may
+          reduce human gastrointestinal infections
+        </li>
+        <br />
+        <li>
+          Investigation the role of natural products in control of colonization
+          of zoonotic/foodborne bacterial pathogens in animal guts and
+          mechanisms of their antimicrobial activity/survival ability in the
+          presence of synthetic antibiotics and/or natural antimicrobial
+          components.
+        </li>
+        <br />
+        <li>
+          Development of bioactive pre-biotics, probiotics, and/or its
+          combination (synbitics) for alternative source of therapeutic and
+          sub-therapeutic (growth promoter) components for organic and
+          conventional farm animal production and stimulate the growth probiotic
+          and the production of its metabolites by genetically engineered
+          beneficial bacteria.
+        </li>
+        <br />
+        <li>
+          Develop the efficient and faster technology to improve the detection
+          of foodborne enteric bacterial pathogens in food products and other
+          polluted materials
+        </li>
+      </ul>
+    </div>
+
+    <!-- Funded Projects -->
+    <div class="dark">
+      <div class="body-section centered">
+        <h1 class="subtitle">FUNDED PROJECTS</h1>
+        <hr />
+        <!-- Funded Projects - Vaccine -->
+        <div id="vaccine" class="secondary-section">
+          <h2>
+            Control colonization of pathogenic Salmonella in poultry by
+            autolytic intracellular Salmonella vaccine.
+          </h2>
+          <p>
+            In the US, salmonellosis is the second most common foodborne
+            disease. One of the major routes of human salmonellosis is believed
+            to be consumption and handling of contaminated poultry and poultry
+            products, as Salmonella colonizes the chicken gut as part of the
+            normal flora. Thus, strategies for controlling the colonization of
+            Salmonella in poultry gut, to reduce the incidence of salmonellosis
+            in humans, are essential. We have developed a lysogenic Salmonella
+            vaccine strain (ST +P13/19 ) by inserting genes 13 (holing) and 19
+            (lysozyme) of bacteriophage P22 into downstream of sseA, the
+            chaperone of SPI-2 genes of Salmonella enterica (SE) serovar
+            Typhimutium (LT2). Thus the expression of both genes were controlled
+            by the sseA promoter in intracellular conditions. We found that the
+            intracellular viability of ST +P13/19 was reduced &gt;95% compared
+            to LT2 in chicken macrophage cells, and significantly increased
+            pro-inflammatory cytokines and endosomal toll-like receptors. In
+            this project, we aim to evaluate the role of this non-pathogenic and
+            autolytic ST +P13/19 vaccine strain in outcompeting pathogenic SE
+            colonization and preventing cross-contamination of poultry products
+            in a chick model. To achieve our goals, we propose these specific
+            aims: 1) Evaluate the protection ability against colonization of
+            various pathogenic SE serovars like Typhimurium and/or Enteritidis
+            in Broiler chicks; and 2) Evaluate the host immunity and gut health
+            during the intracellular lysis of the Salmonella vaccine strain in
+            the chicken intestine. Outcomes of this project will improve the
+            safety of the poultry products and reduce the human gastrointestinal
+            infection with Salmonella and improve human health.
+            <br /><small class="text-muted">USDA Funding grant number:</small>
+          </p>
         </div>
-
-        <!-- Why Study Bacterial Pathogens-->
-        <div class="body-section centered" style="display:none">
-            <h1 style="text-align: center">
-                Why study
-                <span class="highlight"> Bacterial Pathogens? </span>
-            </h1>
-            <hr />
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempus cursus ex nec ultricies.
-                Integer molestie leo elit, a pharetra metus pharetra vitae. Cras pulvinar tempor leo. Aliquam vulputate
-                in lorem vel luctus. Proin eget leo nunc. Nunc nec augue vehicula, laoreet nibh eget, eleifend dolor.
-                Phasellus finibus nisi vitae dolor ultrices congue. Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst.
-                Suspendisse augue ante, rhoncus id tellus vitae, tempus tincidunt mi.
-            </p>
-            <figure class="figure centered d-block">
-                <img
-                    src="Images/map.jpeg"
-                    class="figure-img img-fluid centered d-block"
-                    alt="A generic square placeholder image."
-                />
-                <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-            </figure>
+        <!-- Funded Projects - Mixed Farm -->
+        <div id="mixed-farm" class="secondary-section">
+          <h2>
+            Ecology, Transmission and Control of Salmonella and Shigatoxin
+            Producing E. coli in Integrated Crop-Livestock Farms
+          </h2>
+          <p>
+            Increasing demand for organic food often is not met due to the
+            limited number of producers engaging/adopting the management
+            complexities fundamental to organic system and required to meet
+            production parity with conventional systems. Complexities involve
+            soil fertility/nutrients, diverse soil biological communities, soil
+            health, and use of cover crops and animal manures often on
+            integrated crop-livestock farms (ICLF). Microbial ecology on ICLF
+            also can impact food safety through pathogen transfer between
+            animals and crops. Recent reports of pathogen contaminated products
+            sold in local organic retail, roadside and farmers markets highlight
+            the need for assessment of the ecological patterns of bacterial
+            pathogens, when they occur on ICLFs, and their survival/transfer to
+            crops through use of raw or composted manure- based soil amendments,
+            or by workers, equipment, and vectors. We propose to assess the
+            ecological patterns of two major bacterial pathogens, Salmonella
+            enterica (SE) and shigatoxin- producing E. coli (STEC), including
+            their survival/transmission pathways and develop control strategies.
+            The project objectives are to a) Determine the sources, survival
+            ability in the farm environment and contamination pathways of SE and
+            STEC; b) Develop practical means to control SE and STEC farm
+            environment and eliminate from produce by using alternative natural
+            antimicrobial components; and c) Disseminate outcomes of the project
+            for controlling contamination by on-farm practices and the best
+            options to eliminate these pathogens from the produce to diverse
+            stakeholders. The study will generate extensive data on the dynamics
+            of these bacterial pathogens in ICLF and its products and offer
+            effective control strategies.
+            <br /><small class="text-muted"
+              >USDA Funding grant number: 029848-00001</small
+            >
+          </p>
+          <a href="farm.html" target="_blank"
+            >See more about the Mixed Farm Project >></a
+          >
         </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="body-section centered" id="currProj">
+      <!-- Research Projects -->
+      <div id="research-projects">
+        <h1 class="subtitle">CURRENT PROJECTS</h1>
+        <hr />
+      </div>
 
-        <!-- Funded Projects -->
-        <div class="dark" style="padding-top: 2rem; padding-bottom: 1rem">
-            <div class="body-section centered" >
-                <h1 style="text-align: center" >
-                    <span class="highlight"> Funded </span>
-                    Projects
-                </h1>
-                <br>
-                <!-- Funded Projects - Vaccine -->
-                <div id="vaccine">
-                    <h2>Control colonization of pathogenic Salmonella in poultry by autolytic intracellular Salmonella
-                        vaccine.</h2>
-                    <p>
-                        In the US, salmonellosis is the second most common foodborne disease. One of the major
-                        routes of human salmonellosis is believed to be consumption and handling of contaminated
-                        poultry and poultry products, as Salmonella colonizes the chicken gut as part of the normal flora.
-                        Thus, strategies for controlling the colonization of Salmonella in poultry gut, to reduce the
-                        incidence of salmonellosis in humans, are essential. We have developed a lysogenic Salmonella
-                        vaccine strain (ST +P13/19 ) by inserting genes 13 (holing) and 19 (lysozyme) of bacteriophage P22
-                        into downstream of sseA, the chaperone of SPI-2 genes of Salmonella enterica (SE) serovar
-                        Typhimutium (LT2). Thus the expression of both genes were controlled by the sseA promoter in
-                        intracellular conditions. We found that the intracellular viability of ST +P13/19 was reduced &gt;95%
-                        compared to LT2 in chicken macrophage cells, and significantly increased pro-inflammatory
-                        cytokines and endosomal toll-like receptors. In this project, we aim to evaluate the role of this
-                        non-pathogenic and autolytic ST +P13/19 vaccine strain in outcompeting pathogenic SE colonization
-                        and preventing cross-contamination of poultry products in a chick model. To achieve our goals,
-                        we propose these specific aims: 1) Evaluate the protection ability against colonization of various
-                        pathogenic SE serovars like Typhimurium and/or Enteritidis in Broiler chicks; and 2) Evaluate
-                        the host immunity and gut health during the intracellular lysis of the Salmonella vaccine strain in
-                        the chicken intestine. Outcomes of this project will improve the safety of the poultry products
-                        and reduce the human gastrointestinal infection with Salmonella and improve human health.
-                        <br><small class ="text-muted">USDA Funding grant number:</small>
-                    </p>
-                </div>
-    
-                <br>
-                <!-- Funded Projects - Mixed Farm -->
-                <div>
-                    <div class="centered" id="mixed-farm">
-                        <h2>Ecology, Transmission and Control of Salmonella and Shigatoxin Producing E. coli in
-                            Integrated Crop-Livestock Farms</h2>
-                        <p>
-                            Increasing demand for organic food often is not met due to the limited number of
-                            producers engaging/adopting the management complexities fundamental to organic system and
-                            required to meet production parity with conventional systems. Complexities involve soil
-                            fertility/nutrients, diverse soil biological communities, soil health, and use of cover crops and
-                            animal manures often on integrated crop-livestock farms (ICLF). Microbial ecology on ICLF
-                            also can impact food safety through pathogen transfer between animals and crops. Recent reports
-                            of pathogen contaminated products sold in local organic retail, roadside and farmers markets
-                            highlight the need for assessment of the ecological patterns of bacterial pathogens, when they
-                            occur on ICLFs, and their survival/transfer to crops through use of raw or composted manure-
-                            based soil amendments, or by workers, equipment, and vectors. We propose to assess the
-                            ecological patterns of two major bacterial pathogens, Salmonella enterica (SE) and shigatoxin-
-                            producing E. coli (STEC), including their survival/transmission pathways and develop control
-                            strategies. The project objectives are to a) Determine the sources, survival ability in the farm
-                            environment and contamination pathways of SE and STEC; b) Develop practical means to
-                            control SE and STEC farm environment and eliminate from produce by using alternative natural
-                            antimicrobial components; and c) Disseminate outcomes of the project for controlling
-                            contamination by on-farm practices and the best options to eliminate these pathogens from the
-                            produce to diverse stakeholders. The study will generate extensive data on the dynamics of these
-                            bacterial pathogens in ICLF and its products and offer effective control strategies.
-                            <br><small class ="text-muted">USDA Funding grant number: 029848-00001</small>
-                        </p>
-                        <a href="farm2.html" target="_blank">See more about the Mixed Farm Project >></a>
-                    </div>
-                </div>
-            </div>
+      <!-- Food Safety -->
+      <div id="phenolic">
+        <div class="secondary-section">
+          <h2>
+            Control of foodborne bacteria through use of plant-derived phenolic
+            compounds
+          </h2>
+          <h3>
+            Main Contributors:
+            <a href="members.html#Zabdiel" target="_blank"
+              >Zabdiel Alvarado-Martinez</a
+            >
+          </h3>
+          <p>
+            Salmonella enterica is one of the major bacterial pathogens
+            responsible for the burden of foodborne illness in the USA. In
+            addition to this, an increasing pattern of antibiotic resistance
+            necessitates the development of novel antimicrobials. Plants remain
+            a prime source for novel compounds with bioactive potential, many of
+            which can be found in the form of phenolic acids. These have
+            demonstrated antimicrobial potential against Salmonella enterica
+            serovar Typhimurium, while also impairing specific virulence
+            factors. Further research is being performed to elucidate the
+            mechanisms of action underlying compound efficacy, and their effect
+            on cellular functions of the bacteria, while also assessing their
+            impact on other bacterial communities within the gut microbiome.
+          </p>
+          <figure class="figure">
+            <img
+              src="Images/antibiotics-09-00668-g005.jpeg"
+              class="figure-img img-fluid rounded"
+              alt="A generic square placeholder image with rounded corners in a figure."
+            />
+            <figcaption class="figure-caption">
+              Scanning electron microscopy (SEM) images of untreated ST as
+              negative control (A1,A2), as well as treated ST with GA (B1,B2),
+              PA (C1,C2), VA (D1,D2), taken at 1 μm (A1–D1) and 2 μm (A2–D2)
+              magnification.
+            </figcaption>
+          </figure>
         </div>
+      </div>
 
+      <!-- Contamination -->
+      <div id="bacteriophage" class="secondary-section centered">
+        <h2>
+          A Highly Effective Bacteriophage-1252 to Control Multiple Serovars of
+          Salmonella enterica
+        </h2>
+        <h3>
+          Main Contributors:
+          <a href="members.html#Jeff" target="_blank">Chuan-Wei (Jeff) Tung</a>
+        </h3>
+        <p>
+          Salmonella enterica (S. enterica) is the most common foodborne
+          pathogen worldwide, leading to massive economic loss and a significant
+          burden on the healthcare system. The primary source of S. enterica
+          remains contaminated or undercooked poultry products. Considering the
+          number of foodborne illnesses with multiple antibiotic resistant S.
+          enterica, new controlling approaches are necessary. Bacteriophage
+          (phage) therapies have emerged as a promising alternative to
+          controlling bacterial pathogens. However, the limitation on the lysis
+          ability of most phages is their species-specificity to the bacterium.
+          S. enterica has various serovars, and several major serovars are
+          involved in gastrointestinal diseases in the USA. In this study,
+          Salmonella bacteriophage-1252 (phage-1252) was isolated and found to
+          have the highest lytic activity against multiple serovars of S.
+          enterica, including Typhimurium, Enteritidis, Newport, Heidelberg,
+          Kentucky, and Gallinarum. Whole-genome sequencing analysis revealed
+          phage-1252 is a novel phage strain that belongs to the genus
+          Duplodnaviria in the Myoviridae family, and consists of a 244,421 bp
+          dsDNA, with a G + C content of 48.51%. Its plaque diameters are
+          approximately 2.5 mm to 0.5 mm on the agar plate. It inhibited
+          Salmonella Enteritidis growth after 6 h. The growth curve showed that
+          the latent and rise periods were approximately 40 min and 30 min,
+          respectively. The burst size was estimated to be 56 PFU/cell. It can
+          stabilize and maintain original activity between 4°C and 55°C for 1
+          hr. These results indicate that phage-1252 is a promising candidate
+          for controlling multiple S. enterica serovars in food production.
+        </p>
+        <figure class="figure">
+          <img
+            src="Images/bacteriophage.png"
+            class="figure-img img-fluid rounded"
+            alt="A generic square placeholder image with rounded corners in a figure."
+          />
+          <figcaption class="figure-caption">
+            Phenotypic and biological characteristics of phage 1252. Phage
+            plaque formed on bi-phasic agar plates when cultured in a lawn of
+            bacterial host cell (S. Enteritidis). Arrows indicate plaques of
+            different sizes (2.5mm to 0.5mm).
+          </figcaption>
+        </figure>
+      </div>
 
-        <div id="currProj">
-            <!-- Research Projects -->
-            <div id="research-projects" class=" centered">
-                <h1 style="text-align: center; padding-top: 3rem">
-                    Current
-                    <span class="highlight"> Projects </span>
-                </h1>
-            </div>
-
-            <!-- Food Safety -->
-            <div id="food-safety">
-                <div class="secondary-section centered">
-                    <h2>Food Safety</h2>
-                    <h3>Main Contributors: 
-                        <a href="members.html#Biswas" target="_blank">Biswas</a></h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempus cursus ex nec
-                        ultricies. Integer molestie leo elit, a pharetra metus pharetra vitae. Cras pulvinar tempor leo.
-                        Aliquam vulputate in lorem vel luctus. Proin eget leo nunc. Nunc nec augue vehicula, laoreet
-                        nibh eget, eleifend dolor. Phasellus finibus nisi vitae dolor ultrices congue. Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in
-                        faucibus. In hac habitasse platea dictumst. Suspendisse augue ante, rhoncus id tellus vitae,
-                        tempus tincidunt mi.
-                    </p>
-                    <figure class="figure centered d-block">
-                        <img
-                            src="Images/food_factory.jpeg"
-                            style="max-height: 350px"
-                            class="figure-img img-fluid centered d-block"
-                            alt="A generic square placeholder image."
-                        />
-                        <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-                    </figure>
-                </div>
-            </div>
-
-            <!-- Contamination -->
-            <div id="contamination" class="secondary-section centered">
-                <h2>Contamination</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempus cursus ex nec ultricies.
-                    Integer molestie leo elit, a pharetra metus pharetra vitae. Cras pulvinar tempor leo. Aliquam
-                    vulputate in lorem vel luctus. Proin eget leo nunc. Nunc nec augue vehicula, laoreet nibh eget,
-                    eleifend dolor. Phasellus finibus nisi vitae dolor ultrices congue. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac
-                    habitasse platea dictumst. Suspendisse augue ante, rhoncus id tellus vitae, tempus tincidunt mi.
-                </p>
-                <figure class="figure centered d-block">
-                    <img
-                        src="Images/market.jpeg"
-                        style="max-height: 350px"
-                        class="figure-img img-fluid centered d-block"
-                        alt="A generic square placeholder image."
-                    />
-                    <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-                </figure>
-            </div>
-
-            <!-- Probiotics -->
-            <div id="probiotic">
-                <div class="secondary-section centered">
-                    <h2>Probiotics</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempus cursus ex nec
-                        ultricies. Integer molestie leo elit, a pharetra metus pharetra vitae. Cras pulvinar tempor leo.
-                        Aliquam vulputate in lorem vel luctus. Proin eget leo nunc. Nunc nec augue vehicula, laoreet
-                        nibh eget, eleifend dolor. Phasellus finibus nisi vitae dolor ultrices congue. Lorem ipsum dolor
-                        sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in
-                        faucibus. In hac habitasse platea dictumst. Suspendisse augue ante, rhoncus id tellus vitae,
-                        tempus tincidunt mi.
-                    </p>
-                    <figure class="figure centered d-block">
-                        <img
-                            src="Images/ampicillin.png"
-                            style="max-height: 350px"
-                            class="figure-img img-fluid centered d-block"
-                            alt="A generic square placeholder image."
-                        />
-                        <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-                    </figure>
-                </div>
-            </div>
-
-            <!-- Detection -->
-            <div id="detection" class="secondary-section centered">
-                <h2>Detection</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempus cursus ex nec ultricies.
-                    Integer molestie leo elit, a pharetra metus pharetra vitae. Cras pulvinar tempor leo. Aliquam
-                    vulputate in lorem vel luctus. Proin eget leo nunc. Nunc nec augue vehicula, laoreet nibh eget,
-                    eleifend dolor. Phasellus finibus nisi vitae dolor ultrices congue. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac
-                    habitasse platea dictumst. Suspendisse augue ante, rhoncus id tellus vitae, tempus tincidunt mi.
-                </p>
-                <figure class="figure centered d-block">
-                    <img
-                        src="Images/swab.jpeg"
-                        style="max-height: 350px"
-                        class="figure-img img-fluid centered d-block"
-                        alt="A generic square placeholder image."
-                    />
-                    <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
-                </figure>
-            </div>
+      <!-- Probiotics -->
+      <div id="causes">
+        <div class="secondary-section centered">
+          <h2>
+            Causative agents for fowl typhoid and pullorum disease in poultry
+            and approach to control
+          </h2>
+          <h3>
+            Main Contributors:
+            <a href="members.html#Dita" target="_blank">Dita Julianingsih</a>
+          </h3>
+          <p>
+            Due to the rise in consumer demand for organic products, many
+            conventional poultry farms are now growing poultry without
+            antibiotics or synthetic chemicals. In addition to this,
+            pasture/organic poultry farms have increased significantly in the
+            U.S. and they are also antibiotic- and chemical-free. Both
+            antibiotic-free conventional and pasture poultry farmers are facing
+            the re-emergence of bacterial diseases, including fowl typhoid
+            caused by Salmonella enterica subsp. enterica serovar Gallinarum
+            biovars Gallinarum (S. Gallinarum) and pullorum disease caused by
+            Salmonella enterica subsp. enterica serovar Gallinarum biovars
+            Pullorum (S. Pullorum). These diseases cause higher mortality rate
+            in the birds and lead to non-profitable poultry farming. In this
+            study, we have investigated S. Gallinarum and S. Pullorum prevalence
+            in the environment and farms' products. We also determined
+            antimicrobial resistance patterns of S. Gallinarum and S. Pullorum.
+            To achieve this goal, we aim to investigate potential sources and
+            modes of entry for these bacterial pathogens. We have collected
+            1,285 samples from farms and investigated the prevalence of S.
+            Gallinarum and S. Pullorum within farm ecology/environment by using
+            cultural and molecular techniques. We have also determined the
+            antibiotic resistance pattern of the isolates following CLSI
+            guidelines.
+          </p>
         </div>
+      </div>
+    </div>
 
-        <!-- Footer -->
-        <footer class="text-center bg-light text-muted">
-            <p>
-                &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://ansc.umd.edu/" target="_blank"
-                    >University of Maryland</a
-                >
-                &nbsp;| &nbsp; <a href="https://www.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a>
-            </p>
-        </footer>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+    <!-- Footer -->
+    <footer class="text-center bg-light text-muted">
+      <p>
+        &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a
+          href="https://ansc.umd.edu/"
+          target="_blank"
+          >University of Maryland</a
+        >
+        &nbsp;| &nbsp;
+        <a href="https://www.umd.edu/" target="_blank"
+          >Department of Animal & Avian Sciences</a
+        >
+      </p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

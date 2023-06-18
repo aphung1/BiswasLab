@@ -1,507 +1,667 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-            crossorigin="anonymous"
-        />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Publications</title>
-    </head>
-    <body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-xl navbar-light bg-light">
-            <a href="index.html" class="navbar-brand">
-                <div id="LogoHolder">
-                    <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
-                    <span id="LabTitle">BISWAS LAB</span>
-                </div>
-            </a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Publications</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+      <a href="index.html" class="navbar-brand">
+        <div id="LogoHolder">
+          <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
+          <span id="LabTitle">BISWAS LAB</span>
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">HOME</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="research.html"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
             >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">HOME</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="research.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        RESEARCH
-                      </a>
-                        <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="farm2.html">Mixed Farm Research</a>
-                        </div>
-                      </li>
-                    <li class="nav-item">
-                        <a href="publications.html" class="nav-link">PUBLICATIONS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="conferences.html" class="nav-link">CONFERENCES</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="members.html" class="nav-link">MEMBERS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="media.html" class="nav-link">LAB PHOTOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">CONTACT</a>
-                    </li>
-                </ul>
+              RESEARCH
+            </a>
+            <div
+              class="dropdown-menu bg-light"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <a class="dropdown-item" href="farm.html">Mixed Farm Research</a>
             </div>
-        </nav>
+          </li>
+          <li class="nav-item">
+            <a href="publications.html" class="nav-link">PUBLICATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a href="conferences.html" class="nav-link">CONFERENCES</a>
+          </li>
+          <li class="nav-item active">
+            <a href="members.html" class="nav-link">MEMBERS</a>
+          </li>
+          <li class="nav-item">
+            <a href="media.html" class="nav-link">LAB PHOTOS</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-        <!-- Header -->
-        <section id="members-image" class="parallax">
-            <div class="parallax-inner">
-                <h1 class="page-header">Members of the Lab</h1>
-            </div>
-        </section>
+    <!-- Header -->
+    <section id="members-image" class="parallax">
+      <div class="parallax-inner">
+        <h1 class="page-header">Members of the Lab</h1>
+      </div>
+    </section>
 
-        <!-- About Dr. Biswas Section -->
-        <div class="container-fluid body-section" id="Biswas">
-            <div class="row justify-content-center">
-                <h1><span class="highlight">Principal Investigator</span></h1>
-                <hr />
-                <div class="col-lg-4 mb-3">
-                    <img
-                        class="img-fluid"
-                        style="min-height: 350px; object-fit: cover; display: inline-block"
-                        src="Images/biswas.jpg"
-                        alt="Picture of Dr.Biswas"
-                    />
-                </div>
-                <div class="col-lg-8" style="text-align: justify">
-                    <p>
-                        Dr. Debabrata Biswas is a Professor of Food Safety in the Department of Animal and Avian Sciences, 
-                        and the Center for Food Safety and Security Systems (CFS3) at the University of Maryland, College Park.
-                         Dr. Biswas is a bacteriologist and has committed to develop crosscutting research programs in food 
-                         safety area. In recent years, he has initiated several research projects on bacteriology specifically
-                          host-foodborne bacteria interactions with the researchers from Food Science, Biological Engineering, 
-                          Plant, and Animal Sciences. To achieve the goal, his researches target to control of enteric bacterial
-                           pathogens including Salmonella, enterohemorrhagic E. coli (0157:H7), Listeria monocytogenes and 
-                           Campylobacter jejuni in foods and their colonization in animal reservoirs. His research also investigates
-                            the role of natural organic products in control of foodborne bacterial colonization in animals and 
-                            mechanism of antimicrobial activity of these components. 
-                    </p>
-                    <p>
-                        <strong>Email: </strong>
-                        dbiswas@umd.edu
-                        <a href="mailto:dbiswas@umd.edu"><img src="Images/envelope.svg" /></a>
-                    </p>
-                </div>
-            </div>
+    <!-- About Dr. Biswas Section -->
+    <div class="container-fluid body-section" id="Biswas">
+      <div class="row justify-content-center">
+        <h1>Principal Investigator</h1>
+        <hr />
+        <div class="col-lg-4 mb-3">
+          <img
+            class="img-fluid"
+            style="min-height: 350px; object-fit: cover; display: inline-block"
+            src="Images/biswas.jpg"
+            alt="Picture of Dr.Biswas"
+          />
         </div>
+        <div class="col-lg-8">
+          <p>
+            Dr. Debabrata Biswas is a Professor of Food Safety in the Department
+            of Animal and Avian Sciences, and the Center for Food Safety and
+            Security Systems (CFS3) at the University of Maryland, College Park.
+            Dr. Biswas is a bacteriologist and has committed to develop
+            crosscutting research programs in food safety area. In recent years,
+            he has initiated several research projects on bacteriology
+            specifically host-foodborne bacteria interactions with the
+            researchers from Food Science, Biological Engineering, Plant, and
+            Animal Sciences. To achieve the goal, his researches target to
+            control of enteric bacterial pathogens including Salmonella,
+            enterohemorrhagic E. coli (0157:H7), Listeria monocytogenes and
+            Campylobacter jejuni in foods and their colonization in animal
+            reservoirs. His research also investigates the role of natural
+            organic products in control of foodborne bacterial colonization in
+            animals and mechanism of antimicrobial activity of these components.
+          </p>
+          <p>
+            <strong>Email: </strong>
+            dbiswas@umd.edu
+            <a href="mailto:dbiswas@umd.edu"
+              ><img src="Images/envelope.svg"
+            /></a>
+          </p>
+        </div>
+      </div>
+    </div>
 
-        <!-- Graduate Students Section -->
-        <div class="container-fluid body-section">
-            <div class="row justify-content-center">
-                <h1><span class="highlight">Postdoctoral Research Associates </span></h1>
-                <hr />
+    <!-- Graduate Students Section -->
+    <div class="container-fluid body-section">
+      <div class="row justify-content-center">
+        <h1>Postdoctoral Research Associates</h1>
+        <hr />
+      </div>
+    </div>
+    <!-- Graduate Students Section -->
+    <div class="container-fluid body-section">
+      <div class="row justify-content-center">
+        <h1>Graduate Students</h1>
+        <hr />
+        <!-- Start of Card -->
+        <div class="card border-0 mb-3">
+          <div class="row">
+            <div class="col-lg-4 col-xl-3 d-flex align-items-center">
+              <img
+                src="Images/zabdiel.jpeg"
+                class="profile mx-auto d-block"
+                alt="..."
+              />
             </div>
-        </div>
-        <!-- Graduate Students Section -->
-        <div class="container-fluid body-section">
-            <div class="row justify-content-center">
-                <h1><span class="highlight"> Graduate Students </span></h1>
-                <hr />
-                <!-- Start of Card -->
-                <div class="card border-0 mb-3">
-                    <div class="row">
-                        <div class="col-lg-4 col-xl-3">
-                            <img src="Images/profile-NEEDTOCHANGE.jpeg" class="profile mx-auto d-block" alt="..." />
-                        </div>
-                        <div class="col-lg-8 col-xl-9">
-                            <div class="card-body">
-                                <h5 class="card-title mb-0">Arpita Aditya, M.S.</h5>
-                                <p class="card-text"><span class="text-muted">Graduate Research Assistant</span></p>
-                                <p class="card-text">
-                                    <strong>Research Interests: </strong> This is a wider card with supporting text
-                                    below as a natural lead-in to additional content. This content is a little bit
-                                    longer.
-                                </p>
-                                <p>
-                                    <strong>Email: </strong>
-                                    aaditya1@umd.edu
-                                    <a href="mailto:aaditya1@umd.edu"><img src="Images/envelope.svg" /></a>
-                                    <br>
-                                    <strong>LinkedIn Profile: </strong><a href="https://www.linkedin.com/in/arpita-aditya-a7404922/">
-                                        <img src="Images/linkedin.svg" style="max-height: 20px">
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Start of Card -->
-                <div class="card border-0 mb-3">
-                    <div class="row">
-                        <div class="col-lg-4 col-xl-3">
-                            <img src="Images/profile-NEEDTOCHANGE.jpeg" class="profile mx-auto d-block" alt="..." />
-                        </div>
-                        <div class="col-lg-8 col-xl-9">
-                            <div class="card-body">
-                                <h5 class="card-title mb-0">Zabdiel Alvarado-Martinez</h5>
-                                <p class="card-text"><span class="text-muted">Graduate Research Assistant</span></p>
-                                <p class="card-text">
-                                    <strong>Research Interests: </strong> This is a wider card with supporting text
-                                    below as a natural lead-in to additional content. This content is a little bit
-                                    longer.
-                                </p>
-                                <p>
-                                    <strong>Email: </strong>
-                                    zalvara1@umd.edu
-                                    <a href="mailto:zalvara1@umd.edu"><img src="Images/envelope.svg" /></a>
-                                    <br>
-                                    <strong>LinkedIn Profile: </strong><a href="https://www.linkedin.com/in/zabdiel-alvarado-mart%C3%ADnez-02206112b/">
-                                        <img src="Images/linkedin.svg" style="max-height: 20px">
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Start of Card -->
-                <div class="card border-0 mb-3">
-                    <div class="row">
-                        <div class="col-lg-4 col-xl-3">
-                            <img src="Images/profile-NEEDTOCHANGE.jpeg" class="profile mx-auto d-block" alt="..." />
-                        </div>
-                        <div class="col-lg-8 col-xl-9">
-                            <div class="card-body">
-                                <h5 class="card-title mb-0">Zajeba Tabashsum, M.S.</h5>
-                                <p class="card-text"><span class="text-muted">Graduate Research Assistant</span></p>
-                                <p class="card-text">
-                                    <strong>Research Interests: </strong> This is a wider card with supporting text
-                                    below as a natural lead-in to additional content. This content is a little bit
-                                    longer.
-                                </p>
-                                <p>
-                                    <strong>Email: </strong>
-                                    ztabashs@umd.edu
-                                    <a href="mailto:ztabashs@umd.edu"><img src="Images/envelope.svg" /></a>
-                                    <br>
-                                    <strong>LinkedIn Profile: </strong><a href="https://www.linkedin.com/in/zajeba-tabashsum-b8861685/">
-                                        <img src="Images/linkedin.svg" style="max-height: 20px">
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Start of Card -->
-                <div class="card border-0 mb-3">
-                    <div class="row">
-                        <div class="col-lg-4 col-xl-3">
-                            <img src="Images/profile-NEEDTOCHANGE.jpeg" class="profile mx-auto d-block" alt="..." />
-                        </div>
-                        <div class="col-lg-8 col-xl-9">
-                            <div class="card-body">
-                                <h5 class="card-title mb-0">Chuan-Wei (Jeff) Tung, M.S.(?)</h5>
-                                <p class="card-text"><span class="text-muted">Graduate Research Assistant</span></p>
-                                <p class="card-text">
-                                    <strong>Research Interests: </strong> This is a wider card with supporting text
-                                    below as a natural lead-in to additional content. This content is a little bit
-                                    longer.
-                                </p>
-                                <p>
-                                    <strong>Email: </strong>
-                                    vmtung@umd.edu
-                                    <a href="mailto:vmtung@umd.edu"><img src="Images/envelope.svg" /></a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-lg-8 col-xl-9">
+              <div class="card-body" id="Zabdiel">
+                <h5 class="card-title mb-0">Zabdiel Alvarado-Martinez</h5>
+                <p class="card-text">
+                  <span class="text-muted">Graduate Research Assistant</span>
+                </p>
+                <p class="card-text">
+                  <strong>Research Interests: </strong> Study the use of
+                  phenolic acids against the foodborne pathogen Salmonella
+                  enterica serovar Typhimurium, while also discovering
+                  underlying mechanisms of action of the compounds and their
+                  effect on cellular functions.
+                </p>
+                <p>
+                  <strong>Email: </strong>
+                  zalvara1@umd.edu
+                  <a href="mailto:zalvara1@umd.edu"
+                    ><img src="Images/envelope.svg"
+                  /></a>
+                  <br />
+                  <strong>LinkedIn Profile: </strong
+                  ><a
+                    href="https://www.linkedin.com/in/zabdiel-alvarado-mart%C3%ADnez-02206112b/"
+                  >
+                    <img src="Images/linkedin.svg" class="linkedin-icon" />
+                  </a>
+                </p>
+              </div>
             </div>
+          </div>
         </div>
-
-        <!-- Undergraduate Students Section -->
-        <div class="container-fluid body-section">
-            <div class="row justify-content-center">
-                <h1><span class="highlight"> Undergraduate Students </span></h1>
-                <hr />
-                <!-- Start of Card -->
-                <div class="card border-0 mb-3">
-                    <div class="row">
-                        <div class="col-lg-4 col-xl-3">
-                            <img src="Images/profile-NEEDTOCHANGE.jpeg" class="profile mx-auto d-block" alt="..." />
-                        </div>
-                        <div class="col-lg-8 col-xl-9">
-                            <div class="card-body">
-                                <h5 class="card-title mb-0">Phuong Nguyen</h5>
-                                <p class="card-text"><span class="text-muted">Major:...</span></p>
-                                <p class="card-text">
-                                    <strong>Research Interests: </strong> This is a wider card with supporting text
-                                    below as a natural lead-in to additional content. This content is a little bit
-                                    longer.
-                                </p>
-                                <p>
-                                    <strong>Email: </strong>
-                                    idk
-                                    <a href="mailto:idk"><img src="Images/envelope.svg" /></a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Start of Card -->
-                <div class="card border-0 mb-3">
-                    <div class="row">
-                        <div class="col-lg-4 col-xl-3">
-                            <img src="Images/profile-NEEDTOCHANGE.jpeg" class="profile mx-auto d-block" alt="..." />
-                        </div>
-                        <div class="col-lg-8 col-xl-9">
-                            <div class="card-body">
-                                <h5 class="card-title mb-0">Anna Phung</h5>
-                                <p class="card-text">
-                                    <span class="text-muted">Major: Computer Science; Minor: Statistics</span>
-                                </p>
-                                <p class="card-text">
-                                    <strong>Research Interests: </strong> This is a wider card with supporting text
-                                    below as a natural lead-in to additional content. This content is a little bit
-                                    longer.
-                                </p>
-                                <p>
-                                    <strong>Email: </strong>
-                                    aphung1@umd.edu
-                                    <a href="mailto:aphung1@umd.edu"><img src="Images/envelope.svg" /></a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Start of Card -->
-                <div class="card border-0 mb-3">
-                    <div class="row">
-                        <div class="col-lg-4 col-xl-3">
-                            <img src="Images/profile-NEEDTOCHANGE.jpeg" class="profile mx-auto d-block" alt="..." />
-                        </div>
-                        <div class="col-lg-8 col-xl-9">
-                            <div class="card-body">
-                                <h5 class="card-title mb-0">Grace Suh</h5>
-                                <p class="card-text"><span class="text-muted">Major:...</span></p>
-                                <p class="card-text">
-                                    <strong>Research Interests: </strong> This is a wider card with supporting text
-                                    below as a natural lead-in to additional content. This content is a little bit
-                                    longer.
-                                </p>
-                                <p>
-                                    <strong>Email: </strong>
-                                    idk
-                                    <a href="mailto:idk"><img src="Images/envelope.svg" /></a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Start of Card -->
-                <div class="card border-0 mb-3">
-                    <div class="row">
-                        <div class="col-lg-4 col-xl-3">
-                            <img src="Images/profile-NEEDTOCHANGE.jpeg" class="profile mx-auto d-block" alt="..." />
-                        </div>
-                        <div class="col-lg-8 col-xl-9">
-                            <div class="card-body">
-                                <h5 class="card-title mb-0">Matthew Wall</h5>
-                                <p class="card-text"><span class="text-muted">Major:...</span></p>
-                                <p class="card-text">
-                                    <strong>Research Interests: </strong> This is a wider card with supporting text
-                                    below as a natural lead-in to additional content. This content is a little bit
-                                    longer.
-                                </p>
-                                <p>
-                                    <strong>Email: </strong>
-                                    idk
-                                    <a href="mailto:idk"><img src="Images/envelope.svg" /></a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Start of Card -->
+        <div class="card border-0 mb-3">
+          <div class="row">
+            <div class="col-lg-4 col-xl-3 d-flex align-items-center">
+              <img
+                src="Images/dita.jpeg"
+                class="profile mx-auto d-block"
+                alt="..."
+              />
             </div>
+            <div class="col-lg-8 col-xl-9">
+              <div class="card-body" id="Dita">
+                <h5 class="card-title mb-0">Dita Julianingsih</h5>
+                <p class="card-text">
+                  <span class="text-muted">Graduate Research Assistant</span>
+                </p>
+                <p>
+                  <strong>Email: </strong>
+                  djuliani@umd.edu
+                  <a href="mailto:djuliani@umd.edu"
+                    ><img src="Images/envelope.svg"
+                  /></a>
+                  <br />
+                  <strong>LinkedIn Profile: </strong
+                  ><a
+                    href="https://www.linkedin.com/in/dita-julianingsih-939064230/"
+                  >
+                    <img src="Images/linkedin.svg" class="linkedin-icon" />
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <!-- Alumni Section -->
-        <div class="container-fluid body-section">
-            <h1>
-                <span class="highlight"> Alumni </span>
-            </h1>
-            <hr />
-            <h2>Postdoctoral:</h2>
-            <ul>
-                <li>Mengfei Peng; July, 2018</li>
-                <li>Serajus Salaheen; July, 2017</li>
-                <li>Seon Woo Kim; April, 2015</li>
-                <li>Vinod Nagarangan; September, 2017; Scientist at Seoul University, Seoul, Korea</li>
-                <li>Jungsoo Joo; September, 2015 - March, 2017; Researcher at Washington, DC</li>
-                <li>Nitto Chowdhury; December, 2013 - October, 2014; Research Scientist at Penn State University
-                <li>Hongshun Yang; April, 2013 - Sptember, 2013; Assistant Professor at Singapore National University, Singapore </li>
-                <li>Shuvra K. Dey; December, 2011 - November, 2012; Assistant Professor at JN University, Dhaka</li>
-            </ul>
-
-            <h2>Doctoral:</h2>
-            <ul>
-                <li>Sanjaya Mijar; 2019 - 2023; Animal and Avian Sciences; Pursuing Ph.D.</li>
-                <li>Zajeba Tabashsum; 2018 - 2021; Mol. and Cellular Biology; Pursuing Ph.D.</li>
-                <li>Zabdiel Martinez; 2017 - 2020; Mol. and Cellular Biology; Pursuing Ph.D.</li>
-                <li>Arpita Aditiya; 2017 - 2020; Animal and Avian Sciences; Pursuing Ph.D.</li>
-                <li>Mengfei Peng; 2012 - 2017; Mol. & Cellular Biology Ph.D.; Graduated</li>
-                <li>Serajus Salaheen; 2012 - 2017; Animal and Avian Sciences Ph.D.; Graduated</li>
-            </ul>
-
-            <h2>Master's:</h2>
-            <ul>
-                <li>Zajeba Tabashsum; 2016 - 2017; Animal and Avian Sciences; Graduated </li>
-                <li>Cassandra Federman; 2013 - 2015; Animal and Avian Sciences; Graduated </li>
-                <li>Laura Del-Colo; 2014 - 2015; Animal and Avian Sciences; Graduated </li>
-                <li>Jose A. Almario; 2011 - 2014; Animal and Avian Sciences; Graduated </li>      
-            </ul>
-
-            <h2>Undergraduate:</h2>
-            <ul>
-                <li>Jacob Bhatti; Fall 2019; Biology</li>
-                <li>Nana-Frekua Kennedy; Fall 2019; Biology</li>
-                <li>Yoav Daniel Heymann; Fall 2019; Biology</li>
-                <li>Andy Tourng; Fall 2019; Biology (Research Scholar)</li>
-                <li>Mayur Ananth Krishana; Fall 2019; Biology</li>
-                <li>Mia Anne Lang; Fall 2019; Biology</li>
-                <li>Ashely Houser; Spring 2019; Animal and Avian Sciences</li>
-                <li>Ahlam Akmel; Spring 2019; Animal and Avian Sciences</li>
-                <li>Nana-Frekua Kennedy; Spring 2019; Biology</li>
-                <li>Nishi Shah; Spring 2019; Biology</li>
-                <li>Joselyn Padilla; Spring 2019; Biology</li>
-                <li>Alana Young; Spring 2019; Animal and Avian Sciences</li>
-                <li>Mia Anne Lang; Spring 2019; Biology</li>
-                <li>Andy Tourng; Fall 2018; Biology (Research Scholar)</li>
-                <li>Ashely Houser; Fall 2018; Animal and Avian Sciences</li>
-                <li>Ahlam Akmel; Fall 2018; Animal and Avian Sciences</li>
-                <li>Avinaash Sadhu; Fall 2018; Biological Sciences</li>
-                <li>Blair Arriola; Fall 2018; Biochemistry</li>
-                <li>Jacob Bhatti; Fall 2018; Biology</li>
-                <li>Joselyn Padilla; Fall 2018; Biology</li>
-                <li>Jacob Bhatti; Spring 2018; Biology</li>
-                <li>Ahlam Akmel; Spring 2018; Animal and Avian Sciences</li>
-                <li>Avinaash Sadhu; Spring 2018; Biological Sciences</li>
-                <li>Eliana April; Spring 2018; Animal and Avian Sciences</li>
-                <li>Iliana Kahan; Spring 2018; Public Health</li>
-                <li>Joselyn Padilla; Spring 2018; Biology</li>
-                <li>Eliana April; Fall 2017; Animal and Avian Sciences</li>
-                <li>Eliana Kahan; Fall 2017; Special Animal Science Research</li>
-                <li>Jocelynn Padilla; Fall 2017; Biology</li>
-                <li>Michael Carrion; Fall 2017; Biology (Research Scholar)</li>
-                <li>Puja Patel; Fall 2017; Biology</li>
-                <li>Anne Tavera; Fall 2017; Animal and Avian Sciences</li>
-                <li>Cassandra Bernhardt; Fall 2017; Animal and Avian Sciences</li>
-                <li>Iliana Kahan; Fall 2017; Public Health</li>
-                <li>Juliana April; Fall 2017; Special Animal Science Research</li>
-                <li>Neerav Patel; Fall 2017; Biochemistry</li>
-                <li>Puja Patel; Summer 2017; Biology</li>
-                <li>Neerav Patel; Summer 2017; Biochemistry</li>
-                <li>Michael Carrion; Summer 2017; Biology (Research Scholar)</li>
-                <li>Allison Lee; Spring 2017; Special Animal Science Research</li>
-                <li>Christine Mui; Spring 2017; Special Animal Science Research</li>
-                <li>Eliana Kahan; Spring 2017; Special Animal Science Research</li>
-                <li>Neerav Patel; Spring 2017; Biochemistry</li>
-                <li>Eliana April; Spring 2017; Animal and Avian Sciences</li>
-                <li>Catherine Comis; Spring 2017; Experimental studies</li>
-                <li>Alexandra Dolegui; Fall 2016; Public Health</li>
-                <li>Anthony Dattilio; Fall 2016; Biochemistry</li>
-                <li>Catherine Comis; Fall 2016; Animal and Avian Sciences</li>
-                <li>Thomas Tran; Fall 2016; Biology</li>
-                <li>Allison Lee; Fall 2016; Special Animal Science Research</li>
-                <li>Vivian Mui; Fall 2016; Animal and Avian Sciences</li>
-                <li>Anne Tavera; Summer 2016; Animal and Avian Sciences</li>
-                <li>Hironori Teramoto; Summer 2016; Biochemistry</li>
-                <li>Lauren Termine; Summer 2016; Biology</li>
-                <li>Cassandra Bernhardt; Summer 2016; Animal and Avian Sciences</li>
-                <li>Kevin Tsang; Summer 2016; Biology</li>
-                <li>Anthony Dattilio; Summer 2016; Biology</li>
-                <li>Catherine Comis; Summer 2016; Animal and Avian Sciences</li>
-                <li>Vivian Mui; Summer 2016; Animal and Avian Sciences</li>
-                <li>Kevin Tsang; Spring 2016; Biology</li>
-                <li>Nicole Falus; Spring 2016; Biology</li>
-                <li>Stefano Gaspard; Spring 2016; Biology</li>
-                <li>Lauren Termine; Spring 2016; Biology</li>
-                <li>Kevin Tsang; Fall 2015; Biology</li>
-                <li>Stefano Gaspard; Fall 2015; Biology</li>
-                <li>Danielle O’Connor; Fall 2015; Biology</li>
-                <li>Nicole Falus; Fall 2015; Biology</li>
-                <li>Danielle O’Connor; Spring 2015; Biology</li>
-                <li>Xi Zhao; Spring 2015; Molecular and Cellular Biology</li>
-                <li>Bezait Tesfaye; Spring 2015; Biology</li>
-                <li>Daniel Charles Thoma Hyde; Spring 2015; Nutrition and Food Science</li>
-                <li>Horonori Teramoto; Spring 2015; Special Animal Science Research</li>
-                <li>Ryan Ho; Spring 2015; Animal and Avian Sciences</li>
-                <li>Ceceilia Nguyen; Fall 2014; Biology</li>
-                <li>Christine W Mui; Fall 2014; Biology</li>
-                <li>Bezait Tesfaye; Fall 2014; Biology</li>
-                <li>Ceceilia Nguyen; Fall 2014; Biology</li>
-                <li>Daniel Charles Thoma Hyde; Fall 2014; Nutrition and Food Science</li>
-                <li>Sam Medwetsky; Fall 2014; Biology</li>
-                <li>Ryan Ho; Fall 2014; Animal and Avian Sciences</li>
-                <li>Christopher Cavern; Spring 2014; Biology</li>
-                <li>Elizabeth Bitsko; Spring 2014; Animal and Avian Sciences</li>
-                <li>Joseph Park; Spring 2014; Biology</li>
-                <li>Ryan Healy; Spring 2014; Biology</li>
-                <li>Karla Garcia; Spring 2014; Special Animal Science Research</li>
-                <li>Gil Bismunt; Fall 2013; Biochemistry</li>
-                <li>Daniel Hewes; Fall 2013; Neurology and Physiology</li>
-                <li>Elizabeth Bitsko; Fall 2013; Animal and Avian Sciences</li>
-                <li>Cassandra Federman; Fall 2013; Food Science (Cornell University)</li>
-                <li>Mariquit Lu; Fall 2013; University of New York</li>
-                <li>Ryan Healy; Fall 2013; Biology</li>
-                <li>Jeffrey Ilechie; Fall 2013; Biology (Frostburg State University)</li>
-                <li>Elizabeth Bitsko; Spring 2013; Animal and Avian Sciences</li>
-                <li>Daniel Hewes; Spring 2013; Neurology and Physiology</li>
-                <li>Cassandra Federman; Spring 2013; Food Science (Cornell University)</li>
-                <li>Mariquit Lu; Spring 2013; University of New York</li>
-                <li>Jeffrey Ilechie; Spring 2013; Biology (Frostburg State University)</li>
-                <li>Daniel Hewes; Fall 2012; Neurology and Physiology</li>
-                <li>Cassandra Federman; Fall 2012; Food Science (Cornell University)</li>
-                <li>Cecilia Nguyen; Fall 2012; Roosevelt High School</li>
-                <li>Geetika Reichmann; Fall 2012; Biochemistry</li>
-                <li>Daniel Hewes; Spring 2012; Neurology and Physiology</li>
-                <li>Cassandra Federman; Spring 2012; Food Science (Cornell University)</li>
-                <li>Kwan Young; Spring 2012; Special Animal Science Research</li>
-                <li>Mathew Levy; Spring 2012; Special Animal Science Research</li>
-            </ul>
+        <!-- Start of Card -->
+        <div class="card border-0 mb-3">
+          <div class="row">
+            <div class="col-lg-4 col-xl-3 d-flex align-items-center">
+              <img
+                src="Images/zajeba.jpeg"
+                class="profile mx-auto d-block"
+                alt="..."
+              />
+            </div>
+            <div class="col-lg-8 col-xl-9">
+              <div class="card-body" id="Zajeba">
+                <h5 class="card-title mb-0">Zajeba Tabashsum, M.S.</h5>
+                <p class="card-text">
+                  <span class="text-muted">Graduate Research Assistant</span>
+                </p>
+                <p class="card-text">
+                  <strong>Research Interests: </strong> I work on the the
+                  combined role of prebiotic and prebiotic (synbiotics) in
+                  modulating gut microflora of chickens and its role in
+                  competitively excluding enteric bacterial pathogens,
+                  particularly Campylobacter colonization in the chicken gut and
+                  its influence on the host immunity and overall health.
+                </p>
+                <p>
+                  <strong>Email: </strong>
+                  ztabashs@umd.edu
+                  <a href="mailto:ztabashs@umd.edu"
+                    ><img src="Images/envelope.svg"
+                  /></a>
+                  <br />
+                  <strong>LinkedIn Profile: </strong
+                  ><a
+                    href="https://www.linkedin.com/in/zajeba-tabashsum-b8861685/"
+                  >
+                    <img src="Images/linkedin.svg" class="linkedin-icon" />
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- Start of Card -->
+        <div class="card border-0 mb-3">
+          <div class="row">
+            <div class="col-lg-4 col-xl-3 d-flex align-items-center">
+              <img
+                src="Images/jeff.jpeg"
+                class="profile mx-auto d-block"
+                alt="..."
+              />
+            </div>
+            <div class="col-lg-8 col-xl-9">
+              <div class="card-body" id="Jeff">
+                <h5 class="card-title mb-0">Chuan-Wei (Jeff) Tung, M.S.</h5>
+                <p class="card-text">
+                  <span class="text-muted">Graduate Research Assistant</span>
+                </p>
+                <p class="card-text">
+                  <strong>Research Interests: </strong> I am a researcher whose
+                  main focus is on identifying bacteriophages that have the
+                  ability to kill Salmonella, a type of bacteria that can cause
+                  foodborne illness in humans. To achieve this, I use the
+                  genomic DNA of bacteriophage endolysin, which is a protein
+                  that can break down the cell wall of bacteria. I express and
+                  purify the recombinant endolysin, which can then be applied
+                  externally to bacteria, leading to rapid cell lysis and
+                  bacterial death. This approach has the potential to be used as
+                  a means of controlling Salmonella and improving food safety.
+                </p>
+                <p>
+                  <strong>Email: </strong>
+                  vmtung@umd.edu
+                  <a href="mailto:vmtung@umd.edu"
+                    ><img src="Images/envelope.svg"
+                  /></a>
+                  <br />
+                  <strong>LinkedIn Profile: </strong
+                  ><a
+                    href="https://www.linkedin.com/in/chuan-wei-tung-123826204/"
+                  >
+                    <img src="Images/linkedin.svg" class="linkedin-icon" />
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <!-- Footer -->
-        <footer class="text-center bg-light text-muted">
-            <p>
-                &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://www.umd.edu/" target="_blank"
-                    >University of Maryland</a
-                >
-                &nbsp;| &nbsp; <a href="https://ansc.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a>
-            </p>
-        </footer>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+    <!-- Undergraduate Students Section -->
+    <div class="container-fluid body-section">
+      <div class="row justify-content-center">
+        <h1>Undergraduate Students</h1>
+        <hr />
+        <!-- Start of Card -->
+        <div class="card border-0 mb-3">
+          <div class="row">
+            <div class="col-lg-4 col-xl-3 d-flex align-items-center">
+              <img
+                src="Images/profile-NEEDTOCHANGE.jpeg"
+                class="profile mx-auto d-block"
+                alt="..."
+              />
+            </div>
+            <div class="col-lg-8 col-xl-9">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Phuong Nguyen</h5>
+                <p class="card-text">
+                  <span class="text-muted">Major:...</span>
+                </p>
+                <p class="card-text">
+                  <strong>Research Interests: </strong> This is a wider card
+                  with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.
+                </p>
+                <p>
+                  <strong>Email: </strong>
+                  idk
+                  <a href="mailto:idk"><img src="Images/envelope.svg" /></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Start of Card -->
+        <div class="card border-0 mb-3">
+          <div class="row">
+            <div class="col-lg-4 col-xl-3 d-flex align-items-center">
+              <img
+                src="Images/profile-NEEDTOCHANGE.jpeg"
+                class="profile mx-auto d-block"
+                alt="..."
+              />
+            </div>
+            <div class="col-lg-8 col-xl-9">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Anna Phung</h5>
+                <p class="card-text">
+                  <span class="text-muted"
+                    >Major: Computer Science; Minor: Statistics</span
+                  >
+                </p>
+                <p class="card-text">
+                  <strong>Research Interests: </strong> This is a wider card
+                  with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.
+                </p>
+                <p>
+                  <strong>Email: </strong>
+                  aphung1@umd.edu
+                  <a href="mailto:aphung1@umd.edu"
+                    ><img src="Images/envelope.svg"
+                  /></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Start of Card -->
+        <div class="card border-0 mb-3">
+          <div class="row">
+            <div class="col-lg-4 col-xl-3 d-flex align-items-center">
+              <img
+                src="Images/profile-NEEDTOCHANGE.jpeg"
+                class="profile mx-auto d-block"
+                alt="..."
+              />
+            </div>
+            <div class="col-lg-8 col-xl-9">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Grace Suh</h5>
+                <p class="card-text">
+                  <span class="text-muted">Major:...</span>
+                </p>
+                <p class="card-text">
+                  <strong>Research Interests: </strong> This is a wider card
+                  with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.
+                </p>
+                <p>
+                  <strong>Email: </strong>
+                  idk
+                  <a href="mailto:idk"><img src="Images/envelope.svg" /></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Start of Card -->
+        <div class="card border-0 mb-3">
+          <div class="row">
+            <div class="col-lg-4 col-xl-3 d-flex align-items-center">
+              <img
+                src="Images/profile-NEEDTOCHANGE.jpeg"
+                class="profile mx-auto d-block"
+                alt="..."
+              />
+            </div>
+            <div class="col-lg-8 col-xl-9">
+              <div class="card-body">
+                <h5 class="card-title mb-0">Matthew Wall</h5>
+                <p class="card-text">
+                  <span class="text-muted">Major:...</span>
+                </p>
+                <p class="card-text">
+                  <strong>Research Interests: </strong> This is a wider card
+                  with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.
+                </p>
+                <p>
+                  <strong>Email: </strong>
+                  idk
+                  <a href="mailto:idk"><img src="Images/envelope.svg" /></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alumni Section -->
+    <div class="container-fluid body-section">
+      <h1>Alumni</h1>
+      <hr />
+      <h2>Postdoctoral:</h2>
+      <ul>
+        <li>Mengfei Peng; July, 2018</li>
+        <li>Serajus Salaheen; July, 2017</li>
+        <li>Seon Woo Kim; April, 2015</li>
+        <li>
+          Vinod Nagarangan; September, 2017; Scientist at Seoul University,
+          Seoul, Korea
+        </li>
+        <li>
+          Jungsoo Joo; September, 2015 - March, 2017; Researcher at Washington,
+          DC
+        </li>
+        <li>
+          Nitto Chowdhury; December, 2013 - October, 2014; Research Scientist at
+          Penn State University
+        </li>
+        <li>
+          Hongshun Yang; April, 2013 - Sptember, 2013; Assistant Professor at
+          Singapore National University, Singapore
+        </li>
+        <li>
+          Shuvra K. Dey; December, 2011 - November, 2012; Assistant Professor at
+          JN University, Dhaka
+        </li>
+      </ul>
+
+      <h2>Doctoral:</h2>
+      <ul>
+        <li>Arpita Aditya; January, 2022</li>
+        <li>
+          Sanjaya Mijar; 2019 - 2023; Animal and Avian Sciences; Pursuing Ph.D.
+        </li>
+        <li>
+          Zajeba Tabashsum; 2018 - 2021; Mol. and Cellular Biology; Pursuing
+          Ph.D.
+        </li>
+        <li>
+          Zabdiel Martinez; 2017 - 2020; Mol. and Cellular Biology; Pursuing
+          Ph.D.
+        </li>
+        <li>
+          Arpita Aditiya; 2017 - 2020; Animal and Avian Sciences; Pursuing Ph.D.
+        </li>
+        <li>
+          Mengfei Peng; 2012 - 2017; Mol. & Cellular Biology Ph.D.; Graduated
+        </li>
+        <li>
+          Serajus Salaheen; 2012 - 2017; Animal and Avian Sciences Ph.D.;
+          Graduated
+        </li>
+      </ul>
+
+      <h2>Master's:</h2>
+      <ul>
+        <li>
+          Zajeba Tabashsum; 2016 - 2017; Animal and Avian Sciences; Graduated
+        </li>
+        <li>
+          Cassandra Federman; 2013 - 2015; Animal and Avian Sciences; Graduated
+        </li>
+        <li>
+          Laura Del-Colo; 2014 - 2015; Animal and Avian Sciences; Graduated
+        </li>
+        <li>
+          Jose A. Almario; 2011 - 2014; Animal and Avian Sciences; Graduated
+        </li>
+      </ul>
+
+      <h2>Undergraduate:</h2>
+      <ul>
+        <li>Jacob Bhatti; Fall 2019; Biology</li>
+        <li>Nana-Frekua Kennedy; Fall 2019; Biology</li>
+        <li>Yoav Daniel Heymann; Fall 2019; Biology</li>
+        <li>Andy Tourng; Fall 2019; Biology (Research Scholar)</li>
+        <li>Mayur Ananth Krishana; Fall 2019; Biology</li>
+        <li>Mia Anne Lang; Fall 2019; Biology</li>
+        <li>Ashely Houser; Spring 2019; Animal and Avian Sciences</li>
+        <li>Ahlam Akmel; Spring 2019; Animal and Avian Sciences</li>
+        <li>Nana-Frekua Kennedy; Spring 2019; Biology</li>
+        <li>Nishi Shah; Spring 2019; Biology</li>
+        <li>Joselyn Padilla; Spring 2019; Biology</li>
+        <li>Alana Young; Spring 2019; Animal and Avian Sciences</li>
+        <li>Mia Anne Lang; Spring 2019; Biology</li>
+        <li>Andy Tourng; Fall 2018; Biology (Research Scholar)</li>
+        <li>Ashely Houser; Fall 2018; Animal and Avian Sciences</li>
+        <li>Ahlam Akmel; Fall 2018; Animal and Avian Sciences</li>
+        <li>Avinaash Sadhu; Fall 2018; Biological Sciences</li>
+        <li>Blair Arriola; Fall 2018; Biochemistry</li>
+        <li>Jacob Bhatti; Fall 2018; Biology</li>
+        <li>Joselyn Padilla; Fall 2018; Biology</li>
+        <li>Jacob Bhatti; Spring 2018; Biology</li>
+        <li>Ahlam Akmel; Spring 2018; Animal and Avian Sciences</li>
+        <li>Avinaash Sadhu; Spring 2018; Biological Sciences</li>
+        <li>Eliana April; Spring 2018; Animal and Avian Sciences</li>
+        <li>Iliana Kahan; Spring 2018; Public Health</li>
+        <li>Joselyn Padilla; Spring 2018; Biology</li>
+        <li>Eliana April; Fall 2017; Animal and Avian Sciences</li>
+        <li>Eliana Kahan; Fall 2017; Special Animal Science Research</li>
+        <li>Jocelynn Padilla; Fall 2017; Biology</li>
+        <li>Michael Carrion; Fall 2017; Biology (Research Scholar)</li>
+        <li>Puja Patel; Fall 2017; Biology</li>
+        <li>Anne Tavera; Fall 2017; Animal and Avian Sciences</li>
+        <li>Cassandra Bernhardt; Fall 2017; Animal and Avian Sciences</li>
+        <li>Iliana Kahan; Fall 2017; Public Health</li>
+        <li>Juliana April; Fall 2017; Special Animal Science Research</li>
+        <li>Neerav Patel; Fall 2017; Biochemistry</li>
+        <li>Puja Patel; Summer 2017; Biology</li>
+        <li>Neerav Patel; Summer 2017; Biochemistry</li>
+        <li>Michael Carrion; Summer 2017; Biology (Research Scholar)</li>
+        <li>Allison Lee; Spring 2017; Special Animal Science Research</li>
+        <li>Christine Mui; Spring 2017; Special Animal Science Research</li>
+        <li>Eliana Kahan; Spring 2017; Special Animal Science Research</li>
+        <li>Neerav Patel; Spring 2017; Biochemistry</li>
+        <li>Eliana April; Spring 2017; Animal and Avian Sciences</li>
+        <li>Catherine Comis; Spring 2017; Experimental studies</li>
+        <li>Alexandra Dolegui; Fall 2016; Public Health</li>
+        <li>Anthony Dattilio; Fall 2016; Biochemistry</li>
+        <li>Catherine Comis; Fall 2016; Animal and Avian Sciences</li>
+        <li>Thomas Tran; Fall 2016; Biology</li>
+        <li>Allison Lee; Fall 2016; Special Animal Science Research</li>
+        <li>Vivian Mui; Fall 2016; Animal and Avian Sciences</li>
+        <li>Anne Tavera; Summer 2016; Animal and Avian Sciences</li>
+        <li>Hironori Teramoto; Summer 2016; Biochemistry</li>
+        <li>Lauren Termine; Summer 2016; Biology</li>
+        <li>Cassandra Bernhardt; Summer 2016; Animal and Avian Sciences</li>
+        <li>Kevin Tsang; Summer 2016; Biology</li>
+        <li>Anthony Dattilio; Summer 2016; Biology</li>
+        <li>Catherine Comis; Summer 2016; Animal and Avian Sciences</li>
+        <li>Vivian Mui; Summer 2016; Animal and Avian Sciences</li>
+        <li>Kevin Tsang; Spring 2016; Biology</li>
+        <li>Nicole Falus; Spring 2016; Biology</li>
+        <li>Stefano Gaspard; Spring 2016; Biology</li>
+        <li>Lauren Termine; Spring 2016; Biology</li>
+        <li>Kevin Tsang; Fall 2015; Biology</li>
+        <li>Stefano Gaspard; Fall 2015; Biology</li>
+        <li>Danielle O’Connor; Fall 2015; Biology</li>
+        <li>Nicole Falus; Fall 2015; Biology</li>
+        <li>Danielle O’Connor; Spring 2015; Biology</li>
+        <li>Xi Zhao; Spring 2015; Molecular and Cellular Biology</li>
+        <li>Bezait Tesfaye; Spring 2015; Biology</li>
+        <li>
+          Daniel Charles Thoma Hyde; Spring 2015; Nutrition and Food Science
+        </li>
+        <li>Horonori Teramoto; Spring 2015; Special Animal Science Research</li>
+        <li>Ryan Ho; Spring 2015; Animal and Avian Sciences</li>
+        <li>Ceceilia Nguyen; Fall 2014; Biology</li>
+        <li>Christine W Mui; Fall 2014; Biology</li>
+        <li>Bezait Tesfaye; Fall 2014; Biology</li>
+        <li>Ceceilia Nguyen; Fall 2014; Biology</li>
+        <li>
+          Daniel Charles Thoma Hyde; Fall 2014; Nutrition and Food Science
+        </li>
+        <li>Sam Medwetsky; Fall 2014; Biology</li>
+        <li>Ryan Ho; Fall 2014; Animal and Avian Sciences</li>
+        <li>Christopher Cavern; Spring 2014; Biology</li>
+        <li>Elizabeth Bitsko; Spring 2014; Animal and Avian Sciences</li>
+        <li>Joseph Park; Spring 2014; Biology</li>
+        <li>Ryan Healy; Spring 2014; Biology</li>
+        <li>Karla Garcia; Spring 2014; Special Animal Science Research</li>
+        <li>Gil Bismunt; Fall 2013; Biochemistry</li>
+        <li>Daniel Hewes; Fall 2013; Neurology and Physiology</li>
+        <li>Elizabeth Bitsko; Fall 2013; Animal and Avian Sciences</li>
+        <li>
+          Cassandra Federman; Fall 2013; Food Science (Cornell University)
+        </li>
+        <li>Mariquit Lu; Fall 2013; University of New York</li>
+        <li>Ryan Healy; Fall 2013; Biology</li>
+        <li>
+          Jeffrey Ilechie; Fall 2013; Biology (Frostburg State University)
+        </li>
+        <li>Elizabeth Bitsko; Spring 2013; Animal and Avian Sciences</li>
+        <li>Daniel Hewes; Spring 2013; Neurology and Physiology</li>
+        <li>
+          Cassandra Federman; Spring 2013; Food Science (Cornell University)
+        </li>
+        <li>Mariquit Lu; Spring 2013; University of New York</li>
+        <li>
+          Jeffrey Ilechie; Spring 2013; Biology (Frostburg State University)
+        </li>
+        <li>Daniel Hewes; Fall 2012; Neurology and Physiology</li>
+        <li>
+          Cassandra Federman; Fall 2012; Food Science (Cornell University)
+        </li>
+        <li>Cecilia Nguyen; Fall 2012; Roosevelt High School</li>
+        <li>Geetika Reichmann; Fall 2012; Biochemistry</li>
+        <li>Daniel Hewes; Spring 2012; Neurology and Physiology</li>
+        <li>
+          Cassandra Federman; Spring 2012; Food Science (Cornell University)
+        </li>
+        <li>Kwan Young; Spring 2012; Special Animal Science Research</li>
+        <li>Mathew Levy; Spring 2012; Special Animal Science Research</li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center bg-light text-muted">
+      <p>
+        &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a
+          href="https://www.umd.edu/"
+          target="_blank"
+          >University of Maryland</a
+        >
+        &nbsp;| &nbsp;
+        <a href="https://ansc.umd.edu/" target="_blank"
+          >Department of Animal & Avian Sciences</a
+        >
+      </p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

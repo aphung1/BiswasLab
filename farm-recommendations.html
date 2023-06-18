@@ -1,195 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-            crossorigin="anonymous"
-        />
-        <script>
-//             $(window).scroll(function () {
-//    var position = window.pageYOffset;
-//    $('.section').each(function () {
-//      var target = $(this).offset().top;
-//      var id = $(this).attr('id');
-//      var navLinks = $('.sidenav a');
-//      if (position >= target - $( window ).height()/2) {
-//        navLinks.removeClass('current');
-//        $('.sidenav a[href="#' + id + '"]').addClass('current');
-//      }
-//    });
-// });
-        </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script>
+      $(window).scroll(function () {
+        var position = window.pageYOffset;
+        $(".section").each(function () {
+          var target = $(this).offset().top;
+          var id = $(this).attr("id");
+          var navLinks = $(".sidenav a");
+          if (position >= target - $(window).height() / 2) {
+            navLinks.removeClass("current");
+            $('.sidenav a[href="#' + id + '"]').addClass("current");
+          }
+        });
+      });
+    </script>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Biswas Lab</title>
-    </head>
-    <body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-xl navbar-light bg-light">
-            <a href="index.html" class="navbar-brand">
-                <div id="LogoHolder">
-                    <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
-                    <span id="LabTitle">BISWAS LAB</span>
-                </div>
-            </a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Biswas Lab</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+      <a href="index.html" class="navbar-brand">
+        <div id="LogoHolder">
+          <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
+          <span id="LabTitle">BISWAS LAB</span>
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="farm.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="farm-study.html" class="nav-link">OUR STUDY</a>
+          </li>
+          <li class="nav-item active">
+            <a href="farm-recommendations.html" class="nav-link"
+              >RECOMMENDATIONS</a
             >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="farm2.html" class="nav-link">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="farm-study.html" class="nav-link">OUR STUDY</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="farm-recommendations.html" class="nav-link">RECOMMENDATIONS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="farm-publications.html" class="nav-link">PUBLICATIONS</a>
-                    </li>
-                </ul>
+          </li>
+          <li class="nav-item">
+            <a href="farm-outreach.html" class="nav-link">OUTREACH</a>
+          </li>
+          <li class="nav-item">
+            <a href="farm-publications.html" class="nav-link">PUBLICATIONS</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <section id="farm-recommendations-image" class="parallax">
+      <section class="parallax-inner">
+        <div class="page-header">
+          <h1>Risks and Recommendations</h1>
+        </div>
+      </section>
+    </section>
+    <div class="container-fluid body-section-for-project">
+      <div class="row">
+        <div class="col-md-3 d-none d-md-block sidenav-wrapper">
+          <div class="sidenav">
+            <a href="#presentation">Presentation</a>
+            <a href="#introduction"
+              >The Major Risk Factors at the Preharvest Level</a
+            >
+            <a class="small-link" href="#farm-animals"
+              >Farm Animals as a Food Safety Risk</a
+            >
+            <a class="small-link" href="#workers"
+              >Workers/visitors as a food safety risk</a
+            >
+            <a class="small-link" href="#environment"
+              >Environment as a food safety risk</a
+            >
+            <a href="#remarks">Final Safety Remarks</a>
+            <a href="#acknowledgements">Acknowledgements</a>
+          </div>
+        </div>
+        <div class="col-md-9 farm-content">
+          <div id="presentation" class="section">
+            <h1>Presentation</h1>
+            <hr />
+            <br />
+            <div class="iframe-container">
+              <iframe
+                src="https://docs.google.com/presentation/d/e/2PACX-1vQ_zyVpQbY4zyg_kRNRZ5HL-dssAz4Gth77eHGgkaVxNm87y-ZB_OLygw0A0svwaQ/embed?start=false&loop=false&delayms=3000"
+                frameborder="0"
+                allowfullscreen="true"
+                mozallowfullscreen="true"
+                webkitallowfullscreen="true"
+              ></iframe>
             </div>
-        </nav>
-
-
-        <!-- Header -->
-        <section style="position: relative" id="farm-recommendations-image" class="parallax">
-                <section class="parallax-inner">
-                    <div class="page-header">
-                            <h1>Recommendations</h1>
-                            <p>See what research we have done to improve food safety in mixed farms
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-
-                    </div>
-                </section>
-                
-        </section>
-
-
-                <!-- Who We Are Section -->
-                <div class="container-fluid body-section-for-project">
-                    <div class="row">
-                        <div class="col-md-3 d-none d-md-block" style="border-right: #f2f2f2 1px solid; ">
-                            <div class="sidenav" style="text-align:right;">
-                                <a class="small-link" href="#what-is-a-mixed-farm">Suboptimal Practices</a>
-                                <a class="small-link" href="#what-is-a-mixed-farm">Cross-contamination Risks</a>
-                                <a class="small-link" href="#what-is-a-mixed-farm">Recommendations for Farmers</a>
-                                <a class="small-link" href="#about-the-study">Outreach</a>
-                              </div>
-                        </div>
-                        <div class="col-md-9" style="padding-right: 15%; padding-left: 3rem;">
-                            <div id="introduction" class="section">
-                                <h1>Introduction</h1>
-                            </div>
-                            <div id="what-is-a-mixed-farm" class="section">
-                                <h2>What is a mixed farm?</h2>
-                                <p style="line-height: 1.8;">
-                                    Integrated crop-livestock farm (ICLF), also known as polyface or mixed crop-livestock farming (MCLF), is a traditional type of commercial agricultural practice associated with the production of both crops and animals on one farm.
-                                    After decades of successful commercial scale farming performance, ICLF practices are growing rapidly in the US, especially in the Mid-Atlantic and Northeast regions. A large number of ICLF farms are non-certified or in organic transition, and they contribute a significant amount of fresh produce and meat products - specifically lamb and goat meat - to the US organic food supply chain. Products from ICLFs are sold in either farmers markets, foadside stands, and/or local retail markets. The USDA promotes farmers markets across the country, and currently more than 8,000 farmers markets are now listed in the National Farmers Market Directory.
-                                
-                                <br><br>
-                                
-                                 Recent reports say that products grown from ICLFs are contaminated with several bacterial pathogens at significantly higher levels than conventionally grown produce. This may be in part due to the close proximity of animal and produce operations on the same farm, which could increase the potential for cross-contamination between animal reservoirs and fresh produce.
-                                    The most common bacterial pathogens involved in reported outbreaks were sigatoxin producing Escheria coli (STEC) and Salmonella enterica (SE). Major reservoirs for both SE and STEC are farm animals including poultry, pig, goat, and cattle where they can survive in soil, water and plants and contaminate produce.
-                                 <br><br>
-                                    Given the numbers of foodborne illnesses with these two pathogens, the economic impacts in the range of $1.6 billion and $190 million, respectively.
-                                </p>
-                                <div class="row justify-content-center" >
-                                    <img
-                                    class="img-fluid"
-                                    style="object-fit: cover; float:right; margin: 2rem;"
-                                    src="Images/mixed-farm.jpeg"
-                                    alt="Picture of UMD campus"
-                                />
-                            </div>
-                            <div id="about-the-study" class="section">
-                                <h2>About the Study </h2>
-                                <p>
-                                    Our study aims to evaluate the persistence of SE and STEC in the environment of ICLFs, or in host/reservoirs, and the process by which produce becomes contaminated. This project will also develop effective practices to control contamination of ICLF products by these pathogens at the pre-harvest stage and assess the role of natural antimicrobial to eliminate these emerging zoonotic agents from ICLF products at the post-harvest level.
-                                </p>
-                            </div>
-
-                            <div id="our-findings" class="section">
-                                <h1 style="margin-top: 2rem;"> Our Findings</h1>
-                                <p>From 2019 to 2021, the lab collected 3,000 samples from farms around Maryland and Virginia and consolidated
-                                    our findings to provide recommendations for maintaining a safe farm.
-                                </p>
-                            </div>
-                            <div id="risks" class="section">
-                                <h2 >Risks of an Integrated Farm</h2>
-                                <p>
-                                    Integrated crop-livestock farm (ICLF), also known as polyface or mixed crop-livestock farming (MCLF), is a traditional type of commercial agricultural practice associated with the production of both crops and animals on one farm. After decades of successful commercial scale farming performance, ICLF practices are growing rapidly in the US, especially in the Mid-Atlantic and Northeast regions. A large number of ICLF farms are non-certified or in organic transition, and they contribute a significant amount of fresh produce and meat products - specifically lamb and goat meat - to the US organic food supply chain. Products from ICLFs are sold in either farmers markets, foadside stands, and/or local retail markets. The USDA promotes farmers markets across the country, and currently more than 8,000 farmers markets are now listed in the National Farmers Market Directory.
-                                </p>
-                            </div>
-
-                            <!-- Pros/Cons Section -->
-                            <div id="pros-and-cons" class="section">
-                                <div class="container-fluid">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-6" style="background-color:#f0f4f7; padding: 3rem">
-                                            <h2>Pros</h2>
-                                            <hr />
-                                            <p>
-                                                Integrated crop-livestock farm (ICLF), also known as polyface or mixed crop-livestock farming (MCLF), is a traditional type of commercial agricultural practice associated with the production of both crops and animals on one farm. After decades of successful commercial scale farming performance, ICLF practices are growing rapidly in the US, especially in the Mid-Atlantic and Northeast regions. A large number of ICLF farms are non-certified or in organic transition, and they contribute a significant amount of fresh produce and meat products - specifically lamb and goat meat - to the US organic food supply chain. Products from ICLFs are sold in either farmers markets, foadside stands, and/or local retail markets. The USDA promotes farmers markets across the country, and currently more than 8,000 farmers markets are now listed in the National Farmers Market Directory.
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-6" style="background-color:#f0f4f7; padding: 3rem">
-                                            <h2>Cons</h2>
-                                            <hr />
-                                            <p>
-                                                Integrated crop-livestock farm (ICLF), also known as polyface or mixed crop-livestock farming (MCLF), is a traditional type of commercial agricultural practice associated with the production of both crops and animals on one farm. After decades of successful commercial scale farming performance, ICLF practices are growing rapidly in the US, especially in the Mid-Atlantic and Northeast regions. A large number of ICLF farms are non-certified or in organic transition, and they contribute a significant amount of fresh produce and meat products - specifically lamb and goat meat - to the US organic food supply chain. Products from ICLFs are sold in either farmers markets, foadside stands, and/or local retail markets. The USDA promotes farmers markets across the country, and currently more than 8,000 farmers markets are now listed in the National Farmers Market Directory.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        
-                            <div id="advice" class="section">
-                                <h2>Advice for Management</h2>
-                                <p>
-                                    Integrated crop-livestock farm (ICLF), also known as polyface or mixed crop-livestock farming (MCLF), is a traditional type of commercial agricultural practice associated with the production of both crops and animals on one farm. After decades of successful commercial scale farming performance, ICLF practices are growing rapidly in the US, especially in the Mid-Atlantic and Northeast regions. A large number of ICLF farms are non-certified or in organic transition, and they contribute a significant amount of fresh produce and meat products - specifically lamb and goat meat - to the US organic food supply chain. Products from ICLFs are sold in either farmers markets, foadside stands, and/or local retail markets. The USDA promotes farmers markets across the country, and currently more than 8,000 farmers markets are now listed in the National Farmers Market Directory.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                        
-                </div>
-                </div>
-
-        <!-- Footer -->
-        <footer class="text-center bg-light text-muted">
+          </div>
+          <br />
+          <div id="introduction" class="section">
+            <h1>The Major Risk Factors at the Preharvest Level</h1>
+            <hr />
             <p>
-                &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://www.umd.edu/" target="_blank"
-                    >University of Maryland</a
-                >
-                &nbsp;| &nbsp; <a href="https://ansc.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a>
+              There are three identified factors that can compromise food
+              safety.
             </p>
-        </footer>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+            <ul>
+              <li>
+                Farm animals in backyard farm (BF) and integrated crop-livestock
+                farm (ICLF) are a food safety risk
+              </li>
+              <li>
+                Workers/visitors are a food safety risk as well as a risk to
+                themselves
+              </li>
+              <li>
+                Farm environment, specifically manure, and compost are a food
+                safety risk
+              </li>
+            </ul>
+          </div>
+          <br />
+          <div id="farm-animals" class="section">
+            <h2>Farm Animals as a Food Safety Risk</h2>
+            <hr />
+            <p>
+              Animals including livestock, pets, wild animals, birds, pest and
+              rodents carry variety of human pathogens.
+            </p>
+            <div class="centered">
+              <figure class="figure">
+                <img class="img-fluid" src="Images/Cycle.png" />
+                <figcaption class="figure-caption centered">
+                  Figure 1. Cycle of contamination
+                </figcaption>
+              </figure>
+            </div>
+            <p>
+              These pathogens can spread to humans and the environment, and then
+              from the environment to humans through food and water. Many
+              pathogens can colonize animal gut and increase their number. The
+              resulting infected animal feces poses an issue by increasing the
+              spread of zoonotic pathogens.
+            </p>
+            <div id="animal-rec" class="dark-box">
+              <h3>Recommendation for reducing farm animal-based risks</h3>
+              <ul>
+                <li>
+                  Consider proximity (location/position) of animals to produce
+                  fields, water sources and flood areas
+                </li>
+                <li>
+                  Position crop areas appropriately, with barriers in place if
+                  they are near animals or areas at risk of runoff by
+                  considering nearby manure drops, manure lagoons or compost
+                  piles, neighbors’ activity (farms and residences), etc.
+                </li>
+                <li>
+                  Add barriers either:
+                  <ul>
+                    <li>
+                      Passive barriers: vegetative strips, fences, uphill, keep
+                      compost covered
+                    </li>
+                    <li>
+                      Active barriers: plant less-risky crops; have workers
+                      “wash out” between working with animals/produce; if
+                      possible work with produce first, then animals
+                    </li>
+                    <li>
+                      Discourage wildlife/animals from entering production areas
+                      by fencing, animal training, visual deterrents, sonic
+                      canons, animal relocation, discouraging areas to roost or
+                      nest, maintaining buildings in good conditions, keeping up
+                      with pest control programs
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Anyone working with the animals should understand risks and be
+                  trained to minimize risks, particularly:
+                  <ul>
+                    <li>
+                      Workers’ activity manual should outline procedures for
+                      different activities that are found in the field
+                    </li>
+                    <li>
+                      Employ “no harvest buffer zones” around sites of
+                      significant animal intrusion
+                    </li>
+                    <li>
+                      Radius around intrusion is determined by feces frequency,
+                      trampling, splatter from rain or irrigation
+                    </li>
+                    <li>
+                      Cull produce, flag, bury, or remove feces from field
+                      depending on harvest dates and repicking, clean hands and
+                      tools
+                    </li>
+                    <li>Consider keeping a wildlife monitoring log</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <br />
+          <div id="workers" class="section">
+            <h2>Workers/visitors as a food safety risk</h2>
+            <hr />
+            <p>
+              Workers/visitors may carry human pathogens, such as Shigella,
+              Hepatitis A, Norovirus, Cyclospora and others, as a carrier or
+              asymptotically infected and/or mild sickness. These persons can
+              spread pathogens to animal/plant as well as environment.
+              Workers/visitors who are working with multiple farm components,
+              can transfer pathogens (Salmonella and E. coli) from one component
+              to others such as animals and plant/produce. Improper/unhygienic
+              toilets or bathrooms enable workers to spread pathogens through
+              the fecal-oral route, illness, and injury. Workers/visitors are
+              often the last to touch produce before it reaches the consumer
+              through clothing, footwear, or personal tools.
+            </p>
+            <div class="centered">
+              <figure class="figure">
+                <img class="img-fluid row-img" src="Images/farmers.png" />
+                <figcaption class="figure-caption centered">
+                  Figure 2A and 2B. Farmers working in the fields
+                </figcaption>
+              </figure>
+            </div>
+            <br />
+            <div id="workers-rec" class="dark-box">
+              <h3>
+                Recommendation to reduce risk due to visitors/malpractice of
+                workers
+              </h3>
+              <ul>
+                <li>
+                  Good worker trainings including hand washing, cleaning and
+                  sanitization, reporting illness and compensation significantly
+                  reduce the risks of incidents and create health working
+                  environment
+                </li>
+                <li>
+                  Provide appropriate water for drinking, break areas for
+                  eating, stocked facilities that are regularly maintained,
+                  signage to enforce good hygiene practices and making available
+                  first aid kits
+                </li>
+                <li>
+                  Have SOP (Standard Operating Procedures) plans in place for
+                  injured person specifically recommendation for 1) cleaning,
+                  bandaging, and using glove over Band-Aid, 2) discard
+                  contaminated produce, 3) clean and sanitize tools, 4)
+                  prevent/compensate working with sickness (nausea, diarrhea,
+                  fever)
+                </li>
+                <li>
+                  Provide handwashing-training at the beginning , proper paper
+                  towels and soap
+                </li>
+                <li>
+                  Handwashing signs focus on:
+                  <ul>
+                    <li>
+                      Wash both front and backs of hands, wrists, as well as in
+                      between the fingers and rub 20 sec or more
+                    </li>
+                    <li>Rinse hands thoroughly with clean water</li>
+                    <li>Dry with a paper towel</li>
+                    <li>Turn off faucet with used towel</li>
+                    <li>Throw the paper towel in a trash can</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <br />
+          <div id="environment" class="section">
+            <h2>Environment as a food safety risk</h2>
+            <hr />
+            <p>
+              Manure or animal waste particularly feces are a great source of
+              nutrients and the best way of recycle waste and soil amendment,
+              but the whole process possesses a risk of:
+            </p>
+            <ul>
+              <li>Soil and/water contamination through runoff</li>
+              <li>
+                Contamination of:
+                <ul>
+                  <li>
+                    Plants, particularly produce grown on the soil amended with
+                    incomplete compost
+                  </li>
+                  <li>Grasses and grazing animals</li>
+                  <li>
+                    Surrounding wild animal, subsequently animal food products
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Other environmental factors such as infiltration of wild
+                animals, birds, pest and rodents also possess risks of
+                cross-contamination of food products and the spread of
+                animal/zoonotic diseases
+              </li>
+            </ul>
+            <div class="centered">
+              <figure class="figure">
+                <img class="img-fluid" src="Images/compost.png" />
+                <figcaption class="figure-caption centered">
+                  Figure 3. Chickens resting on manure stockpiles
+                </figcaption>
+              </figure>
+            </div>
+            <br />
+            <div id="environment-rec" class="dark-box">
+              <h3>Recommendation to reduce environment-based risks</h3>
+              <ul>
+                <li>
+                  <b>Proximity:</b> If you have animals on the farm, consider
+                  their proximity to produce fields and water sources:
+                  <ul>
+                    <li>
+                      Position crop areas appropriately, with barriers in place
+                      if they are near animals or areas at risk of runoff and
+                      flooding by considering nearby manure drops, manure
+                      lagoons or compost piles, neighbors’ activity (farms and
+                      residences), etc.
+                    </li>
+                  </ul>
+                </li>
+                <br />
+                <li>
+                  <b>Prevention:</b> The following measures can be taken to
+                  prevent cross-contaminate other farm components:
+                  <ul>
+                    <li>
+                      Consider using specific clothing and boots to work with
+                      soil amendments
+                    </li>
+                    <li>
+                      Keep soil amendments covered – a bird dropping on compost
+                      makes it manure again
+                    </li>
+                    <li>
+                      Implement barriers to prevent runoff in produce area
+                    </li>
+                    <li>
+                      Put barriers either passive or active or both barriers
+                      such as vegetative strips and fence; keep compost and
+                      manure covered and plant less-risky crops uphill
+                    </li>
+                    <li>
+                      Have workers “wash out” between working with animals and
+                      produce; work with produce first, then animals, if
+                      possible
+                    </li>
+                    <li>
+                      Separate finished compost from un-finished and know manure
+                      treatment times and temperatures to make compost
+                    </li>
+                    <li>
+                      As pathogens can survive in untreated manure, the
+                      following time intervals must be maintained between manure
+                      application and harvest of contact produce (lettuce,
+                      carrots), 120 days, and non-contact produce (peppers,
+                      corn), 90 days
+                    </li>
+                  </ul>
+                </li>
+                <br />
+                <li>
+                  <b>Training:</b>
+                  <ul>
+                    <li>
+                      Develop SOPs for animal and manure handling and finding
+                      feces in the field including hand washing, proper cleaning
+                      and sanitizing technique for equipment, changing clothes
+                      or shoes during moving to one component to other (plant to
+                      animal or animal to plant)
+                    </li>
+                    <li>
+                      Safe harvest training includes outlining procedures if
+                      significant activity is found in the field
+                    </li>
+                    <li>
+                      Cull produce, flag, bury, or remove feces from field
+                      depending on harvest dates and repicking, clean hands and
+                      tools
+                    </li>
+                    <li>Consider keeping a wildlife movement monitoring log</li>
+                    <li>
+                      Employ “no grown/harvest buffer zones” around sites of
+                      significant animal intrusion
+                    </li>
+                    <li>
+                      Provide information about animal specific pathogens, their
+                      transmission pathways and potential prevention
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <br />
+          <div id="remarks" class="section">
+            <h1>Final Safety Remarks</h1>
+            <hr />
+            <ul>
+              <li>
+                Workers, farm livestock, and created waste materials including
+                feces are potential sources/reservoirs of pathogens for either
+                human, or animal or both and pathogens can spread from one farm
+                component to another
+              </li>
+              <li>
+                Vectors such as unexpected wild-animals, birds, rodents, and
+                insects often also cross contaminate or introduce pathogens
+              </li>
+              <li>
+                Considering the farm location and its animal/plant products,
+                farmers or experts should develop a SOP and safety rules
+              </li>
+              <li>
+                Training the workers and imposing the rules are the key to make
+                safer products in ICLFs
+              </li>
+            </ul>
+          </div>
+
+          <br />
+          <div id="acknowledgements" class="section">
+            <h1>Acknowledgements</h1>
+            <hr />
+            <p>
+              This is the outcomes of a research project funded by USDA-NIFA
+              (#20185110628809)
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <!-- Footer -->
+    <footer class="text-center bg-light text-muted">
+      <p>
+        &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a
+          href="https://www.umd.edu/"
+          target="_blank"
+          >University of Maryland</a
+        >
+        &nbsp;| &nbsp;
+        <a href="https://ansc.umd.edu/" target="_blank"
+          >Department of Animal & Avian Sciences</a
+        >
+      </p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

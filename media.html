@@ -1,794 +1,1143 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style>
-            * {
-            box-sizing: border-box;
-            }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
 
-            /* Position the image container (needed to position the left and right arrows) */
-            .container {
-            position: relative;
-            }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lab Photos</title>
 
-            /* Hide the images by default */
-            .mySlides {
-            display: none;
-            }
+    <script>
+      $(document).ready(function () {
+        images = $(".cursor");
+        miniThumbnails = $(".mini-thumbnail");
+        index = 0;
 
-            .mySlides img{
-                object-fit: cover;
-            width: 100%;
-            height: 400px;
-            }
+        miniThumbnails.click(function () {
+          miniThumbnails.eq(index).removeClass("active");
+          index = miniThumbnails.index($(this));
+          showcaseImage(index);
+        });
+        $(".cursor").click(function () {
+          miniThumbnails.eq(index).removeClass("active");
+          index = images.index($(this));
+          showcaseImage(index);
+        });
+        $("#prev").click(() => {
+          miniThumbnails.eq(index).removeClass("active");
+          index = index <= 0 ? images.length - 1 : index - 1;
+          console.log(index);
+          showcaseImage(index);
+        });
+        $("#next").click(() => {
+          miniThumbnails.eq(index).removeClass("active");
+          index = index >= images.length - 1 ? 0 : index + 1;
+          console.log(index);
+          console.log(images.length);
+          showcaseImage(index);
+        });
 
-            /* Add a pointer when hovering over the thumbnail images */
-            .cursor {
-                cursor: pointer;
-                height:200px;
-                object-fit: cover;
-                overflow: hidden;
-            }
+        function showcaseImage(index) {
+          image = images.eq(index);
+          if (image.hasClass("video")) {
+            $("#showcase-img")[0].style.display = "none";
+            $("#showcase-video")[0].style.display = "block";
+            video_source = images
+              .eq(index)
+              .attr("src")
+              .replace(/\..+$/, ".mp4");
+            $("source").attr("src", video_source);
+            $("#showcase-video")[0].load();
+          } else {
+            $("#showcase-video")[0].style.display = "none";
+            $("#showcase-img")[0].style.display = "block";
+            $("#showcase-img").attr("src", image.attr("src"));
+          }
+          miniThumbnails.eq(index).addClass("active");
+          miniThumbnails.eq(index)[0].scrollIntoView();
+          $("#caption").text(miniThumbnails.eq(index).attr("alt"));
+        }
+      });
+    </script>
+  </head>
+  <body id="media-body">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+      <a href="index.html" class="navbar-brand">
+        <div id="LogoHolder">
+          <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
+          <span id="LabTitle">BISWAS LAB</span>
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">HOME</a>
+          </li>
 
-            /* Next & previous buttons */
-            .prev,
-            .next {
-            cursor: pointer;
-            position: absolute;
-            top: 40%;
-            width: auto;
-            padding: 16px;
-            margin-top: -50px;
-            color: white;
-            font-weight: bold;
-            font-size: 20px;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            -webkit-user-select: none;
-            }
-
-            /* Position the "next button" to the right */
-            .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-            }
-
-
-
-            /* Number text (1/3 etc) */
-            .numbertext {
-            color: #f2f2f2;
-            font-size: 12px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
-            }
-
-
-
-            /* Six columns side by side */
-            .col-3 {
-            float: left;
-                display: inline-block;
-            }
-
-            /* Six columns side by side */
-            #scroll img{
-            object-fit: cover;
-            height: 100%;
-            width: 175px;
-            }
-
-            /* Add a transparency effect for thumnbail images */
-            .demo:hover {
-            opacity: 0.6;
-            transform: translateY(-10px);
-            }
-
-            
-
-            .active,
-            .demo {
-            opacity: 1;
-            }
-
-            .modal-header {
-                position: relative;
-            }
-
-            .modal-dialog {
-                height: 90%; 
-                max-width: none;
-            }
-
-            .modal-content {
-                height: 100%; 
-                width: 100%;
-            }
-
-            .modal-body {
-                height: 75%; 
-                width: 100%;
-            }
-
-            .modal-footer {
-                height: 15%;
-                padding: 0;
-            }
-
-            .mini-thumbnail:hover {
-                opacity: 0.7;
-            }
-
-            #scroll {
-                height: 100%;
-            }
-
-            #showcase {
-                height: 100%;
-                width: 100%;
-                left: 50%;
-                transform: translate(-50%, 0);
-                object-fit: contain;
-            }
-
-            #showcase-img {
-                height: 100%;
-                width: 100%;
-                transform: translate(50%, 0);
-                object-fit: contain;
-            }
-
-
-            #showcase-video {
-                height: 100%;
-                width: 80%;
-                transform: translate(75%, 0);
-                object-fit: contain;
-            }
-
-            #caption {
-                color:silver;
-                position: absolute;
-                bottom: 0;
-                width: 100%;
-                left: 0;
-                bottom: -0.5rem;
-                text-align: center;
-                margin-bottom: 0;
-                max-height: 100%;
-                overflow-y: scroll;
-                padding: 0 0.75rem;
-            }
-
-            @media (max-width: 767.98px) {
-                .cursor {
-                    height: 300px;
-                }
-
-                .modal-dialog{
-                    height: 70%;
-                    margin-top: 3rem !important;
-                }
-
-            }
-
-        </style>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-            crossorigin="anonymous"
-        />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Lab Photos</title>
-<!--         <script>
-            let slideIndex = 1;
-            showSlides(slideIndex);
-
-            // Next/previous controls
-            function plusSlides(n) {
-            showSlides(slideIndex += n);
-            }
-
-            // Thumbnail image controls
-            function currentSlide(n) {
-            showSlides(slideIndex = n);
-            }
-
-            function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("demo");
-            let captionText = document.getElementById("caption");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            captionText.innerHTML = dots[slideIndex-1].alt;
-            }
-        </script> -->
-
-        <script>
-            $(document).ready(function(){
-                images = $(".cursor");
-                miniThumbnails = $(".mini-thumbnail");
-                index = 0;
-
-                miniThumbnails.click(function(){
-                    miniThumbnails.eq(index).removeClass("active")
-                    index = miniThumbnails.index($(this));
-                    showcaseImage(index);
-                });
-                $(".cursor").click(function(){
-                    miniThumbnails.eq(index).removeClass("active")
-                    index = images.index($(this));
-                    showcaseImage(index);
-                });
-                $("#prev").click(()=>{
-                    miniThumbnails.eq(index).removeClass("active")
-                    index = index <= 0 ? images.length - 1 : index - 1;
-                    console.log(index);
-                    showcaseImage(index);
-                });
-                $("#next").click(()=>{
-                    miniThumbnails.eq(index).removeClass("active")
-                    index = index >=  images.length - 1? 0 : index + 1;
-                    console.log(index);
-                    console.log(images.length)
-                    showcaseImage(index);
-                });
-
-                function showcaseImage(index){
-                    image =  images.eq(index);
-                    if (image.hasClass("video")){
-                        $("#showcase-img")[0].style.display = "none";
-                        $("#showcase-video")[0].style.display = "block";
-                        video_source = images.eq(index).attr("src").replace(/\..+$/, ".mp4");
-                        $("source").attr("src", video_source);
-                        $("#showcase-video")[0].load();
-                    } else{
-                        $("#showcase-video")[0].style.display = "none";
-                        $("#showcase-img")[0].style.display = "block";
-                        $("#showcase-img").attr("src", image.attr("src"));
-                    }
-                    miniThumbnails.eq(index).addClass("active");
-                    miniThumbnails.eq(index)[0].scrollIntoView();
-                    $("#caption").text(miniThumbnails.eq(index).attr("alt"));
-                }
-            });
-        </script>
-    </head>
-    <body id="media-body">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-xl navbar-light bg-light">
-            <a href="index.html" class="navbar-brand">
-                <div id="LogoHolder">
-                    <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
-                    <span id="LabTitle">BISWAS LAB</span>
-                </div>
-            </a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="research.html"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
             >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">HOME</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="research.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        RESEARCH
-                      </a>
-                        <div class="dropdown-menu bg-light" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="farm2.html">Mixed Farm Research</a>
-                        </div>
-                      </li>
-                    <li class="nav-item">
-                        <a href="publications.html" class="nav-link">PUBLICATIONS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="conferences.html" class="nav-link">CONFERENCES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="members.html" class="nav-link">MEMBERS</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="media.html" class="nav-link">LAB PHOTOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link">CONTACT</a>
-                    </li>
-                </ul>
+              RESEARCH
+            </a>
+            <div
+              class="dropdown-menu bg-light"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <a class="dropdown-item" href="farm.html">Mixed Farm Research</a>
             </div>
-        </nav>
+          </li>
+          <li class="nav-item">
+            <a href="publications.html" class="nav-link">PUBLICATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a href="conferences.html" class="nav-link">CONFERENCES</a>
+          </li>
+          <li class="nav-item">
+            <a href="members.html" class="nav-link">MEMBERS</a>
+          </li>
+          <li class="nav-item active">
+            <a href="media.html" class="nav-link">LAB PHOTOS</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-        <!-- Header -->
-        <section id="media-image" class="parallax">
-            <div class="parallax-inner">
-                <h1 class="page-header">Media</h1>
+    <!-- Header -->
+    <section id="media-image" class="parallax">
+      <div class="parallax-inner">
+        <h1 class="page-header">Lab Photos</h1>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p id="caption"></p>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="showcase">
+              <img id="showcase-img" />
+              <video id="showcase-video" controls>
+                <source type="video/mp4" />
+              </video>
             </div>
-        </section>
 
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width: 70%; max-width: none; margin-inline: auto;" >
-      <div class="modal-content" >
-        <div class="modal-header">
-            <p id="caption" style="vertical-align:bottom"></p>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" style="position:relative;">
-        <div id="showcase">
-            <img id="showcase-img" src="Images/fowls.jpg">
-            <video id = "showcase-video" controls>
-                <source type="video/mp4">
-            </video>
-        </div>
+            <a id="prev">
+              <span class="prev-button">&#10094;</span>
+            </a>
+            <a id="next"><span class="next-button">&#10095;</span></a>
+          </div>
 
-         <a id="prev" style = "position: absolute;   top: 0%;
-          left: 0%; height: 100%; width: 10%;">
-          <span style="position:absolute; top: 50%; left: 5%;     -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); padding-left: 2rem; color: silver">&#10094;</span>
-          </a>
-          <a id="next" style = "position: absolute;   top: 0%;
-          left: 90%; height: 100%; width: 10%;">
-          <span style="position:absolute; top: 50%; right: 5%; -ms-transform: translate(50%, -50%);
-          transform: translate(50%, -50%); padding-right: 2rem; color: silver">&#10095;</span></a>
-        </div>
-     
-        <div class="modal-footer" style="justify-content: center; padding: 0 1rem 1rem 1rem">
+          <div class="modal-footer">
             <!-- Thumbnail images -->
-            <div id="scroll" class="row flex-nowrap" style="overflow-x: auto">
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_4415.jpg' alt='6/15/2021 6:48:06 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/Bob and me-2.JPEG' alt='12/22/2020 5:59:14 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0009.png' alt='8/27/2019 12:40:54 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0016.png' alt='8/27/2019 1:08:36 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/Biswas Lab Selfie Photo 2018.jpg' alt='6/26/2018 6:16:04 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/Biswas lab photo 2018.jpg' alt='6/22/2018 6:17:46 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/Mengfei Peng.jpg' alt='4/2/2018 3:19:00 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/unnamed.jpg' alt='12/18/2017 12:39:34 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/Biswas Lab Photo 2017.jpg' alt='11/1/2017 3:41:30 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/Thomas Loh and Biswas 2016.jpg' alt='10/26/2016 6:59:38 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/Laura Milk.jpg' alt='9/22/2016 1:30:00 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/lab group photo.jpg' alt='7/26/2016 5:12:14 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/20151216_040452.jpg' alt='12/21/2015 12:07:10 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0244.JPG' alt='11/30/2015 6:04:38 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0247.JPG' alt='11/30/2015 6:04:38 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0250.JPG' alt='11/30/2015 6:04:40 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0251.JPG' alt='11/30/2015 6:04:40 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0254.JPG' alt='11/30/2015 6:04:40 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0255.JPG' alt='11/30/2015 6:04:42 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0257.JPG' alt='11/30/2015 6:04:42 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0259.JPG' alt='11/30/2015 6:04:42 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/2015-10-16 12.44.48.jpg' alt='10/16/2015 5:47:50 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_20150824_161852.jpg' alt='8/24/2015 5:37:46 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_8079.JPG' alt='5/11/2015 11:34:28 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/QQ20061218001723.jpg' alt='3/9/2015 10:51:46 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/image1.JPG' alt='1/30/2015 3:10:10 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0239.JPG' alt='8/12/2014 6:36:14 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0238.JPG' alt='8/7/2014 3:48:54 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0234.JPG' alt='8/4/2014 3:17:16 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0235.JPG' alt='8/4/2014 3:17:32 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0229.JPG' alt='8/3/2014 5:24:18 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/photo 3-8.JPG' alt='7/12/2013 9:57:16 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/5qnhUoB2xGP-xw4J0z3EyARwm776f4wlxtMauB4trYE[1].jpg' alt='7/8/2013 11:26:32 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/Group Photo.JPG' alt='6/26/2013 12:32:08 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC02377.JPG' alt='6/4/2013  10:43:16AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_20130503_101143.jpg' alt='5/3/2013 11:23:04 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_20130503_101225.jpg' alt='5/3/2013 11:24:46 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_20130503_101314.jpg' alt='5/3/2013 11:26:16 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0130.JPG' alt='1/30/2013 3:37:24 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0120.JPG' alt='1/23/2013 10:52:36 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0107.JPG' alt='1/16/2013 12:40:12 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0067.JPG' alt='1/9/2013 9:31:02 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0073.JPG' alt='1/9/2013 9:33:20 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0094.JPG' alt='1/9/2013 9:52:58 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0019.JPG' alt='1/1/2013 11:00:04 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0023.JPG' alt='1/1/2013 11:05:52 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0037.JPG' alt='1/1/2013 11:16:02 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC04271.JPG' alt='12/9/2012 7:34:02 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/Cecelia Nguyen-1.JPG' alt='12/3/2012 11:18:32 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC04266.JPG' alt='12/3/2012 8:25:34 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC04253.JPG' alt='11/29/2012 8:41:08 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC04254.JPG' alt='11/29/2012 8:46:24 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC04257.JPG' alt='11/29/2012 8:47:38 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC04259.JPG' alt='11/29/2012 8:48:46 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC04261.JPG' alt='11/29/2012 8:49:26 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC04264.JPG' alt='11/29/2012 10:37:14 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC04250.JPG' alt='11/21/2012 1:07:16 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC_5986.jpg' alt='3/23/2012 3:24:40 PM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/20120307151122.jpg' alt='3/8/2012 9:34:18 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/DSC_0052.JPG' alt='2/2/2012 2:51:06 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0003.JPG' alt='1/1/1980 12:00:36 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0006.JPG' alt='1/1/1980 12:00:56 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0010.JPG' alt='1/1/1980 12:00:08 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0212.JPG' alt='1/1/1980 12:01:12 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0215.JPG' alt='1/1/1980 12:00:26 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0218.JPG' alt='1/1/1980 12:00:12 AM'>
-                <img class='mini-thumbnail' src='Images/photo-gallery/IMG_0220.JPG' alt='1/1/1980 12:00:32 AM'>
-        </div>
+            <div id="scroll" class="row flex-nowrap">
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_4415.jpg"
+                alt="6/15/2021 6:48:06 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/Bob and me-2.JPEG"
+                alt="12/22/2020 5:59:14 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0009.png"
+                alt="8/27/2019 12:40:54 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0016.png"
+                alt="8/27/2019 1:08:36 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/Biswas Lab Selfie Photo 2018.jpg"
+                alt="6/26/2018 6:16:04 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/Biswas lab photo 2018.jpg"
+                alt="6/22/2018 6:17:46 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/Mengfei Peng.jpg"
+                alt="4/2/2018 3:19:00 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/unnamed.jpg"
+                alt="12/18/2017 12:39:34 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/Biswas Lab Photo 2017.jpg"
+                alt="11/1/2017 3:41:30 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/Thomas Loh and Biswas 2016.jpg"
+                alt="10/26/2016 6:59:38 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/Laura Milk.jpg"
+                alt="9/22/2016 1:30:00 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/lab group photo.jpg"
+                alt="7/26/2016 5:12:14 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/20151216_040452.jpg"
+                alt="12/21/2015 12:07:10 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0244.JPG"
+                alt="11/30/2015 6:04:38 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0247.JPG"
+                alt="11/30/2015 6:04:38 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0250.JPG"
+                alt="11/30/2015 6:04:40 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0251.JPG"
+                alt="11/30/2015 6:04:40 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0254.JPG"
+                alt="11/30/2015 6:04:40 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0255.JPG"
+                alt="11/30/2015 6:04:42 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0257.JPG"
+                alt="11/30/2015 6:04:42 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0259.JPG"
+                alt="11/30/2015 6:04:42 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/2015-10-16 12.44.48.jpg"
+                alt="10/16/2015 5:47:50 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_20150824_161852.jpg"
+                alt="8/24/2015 5:37:46 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_8079.JPG"
+                alt="5/11/2015 11:34:28 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/QQ20061218001723.jpg"
+                alt="3/9/2015 10:51:46 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/image1.JPG"
+                alt="1/30/2015 3:10:10 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0239.JPG"
+                alt="8/12/2014 6:36:14 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0238.JPG"
+                alt="8/7/2014 3:48:54 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0234.JPG"
+                alt="8/4/2014 3:17:16 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0235.JPG"
+                alt="8/4/2014 3:17:32 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0229.JPG"
+                alt="8/3/2014 5:24:18 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/photo 3-8.JPG"
+                alt="7/12/2013 9:57:16 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/5qnhUoB2xGP-xw4J0z3EyARwm776f4wlxtMauB4trYE[1].jpg"
+                alt="7/8/2013 11:26:32 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/Group Photo.JPG"
+                alt="6/26/2013 12:32:08 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC02377.JPG"
+                alt="6/4/2013  10:43:16AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_20130503_101143.jpg"
+                alt="5/3/2013 11:23:04 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_20130503_101225.jpg"
+                alt="5/3/2013 11:24:46 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_20130503_101314.jpg"
+                alt="5/3/2013 11:26:16 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0130.JPG"
+                alt="1/30/2013 3:37:24 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0120.JPG"
+                alt="1/23/2013 10:52:36 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0107.JPG"
+                alt="1/16/2013 12:40:12 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0067.JPG"
+                alt="1/9/2013 9:31:02 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0073.JPG"
+                alt="1/9/2013 9:33:20 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0094.JPG"
+                alt="1/9/2013 9:52:58 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0019.JPG"
+                alt="1/1/2013 11:00:04 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0023.JPG"
+                alt="1/1/2013 11:05:52 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0037.JPG"
+                alt="1/1/2013 11:16:02 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC04271.JPG"
+                alt="12/9/2012 7:34:02 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/Cecelia Nguyen-1.JPG"
+                alt="12/3/2012 11:18:32 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC04266.JPG"
+                alt="12/3/2012 8:25:34 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC04253.JPG"
+                alt="11/29/2012 8:41:08 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC04254.JPG"
+                alt="11/29/2012 8:46:24 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC04257.JPG"
+                alt="11/29/2012 8:47:38 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC04259.JPG"
+                alt="11/29/2012 8:48:46 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC04261.JPG"
+                alt="11/29/2012 8:49:26 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC04264.JPG"
+                alt="11/29/2012 10:37:14 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC04250.JPG"
+                alt="11/21/2012 1:07:16 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC_5986.jpg"
+                alt="3/23/2012 3:24:40 PM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/20120307151122.jpg"
+                alt="3/8/2012 9:34:18 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/DSC_0052.JPG"
+                alt="2/2/2012 2:51:06 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0003.JPG"
+                alt="1/1/1980 12:00:36 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0006.JPG"
+                alt="1/1/1980 12:00:56 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0010.JPG"
+                alt="1/1/1980 12:00:08 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0212.JPG"
+                alt="1/1/1980 12:01:12 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0215.JPG"
+                alt="1/1/1980 12:00:26 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0218.JPG"
+                alt="1/1/1980 12:00:12 AM"
+              />
+              <img
+                class="mini-thumbnail"
+                src="Images/photo-gallery/IMG_0220.JPG"
+                alt="1/1/1980 12:00:32 AM"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
     <div class="body-section centered">
-
-
-        <!-- Container for the image gallery -->
-        <div class="container">
-
-    
-            <!-- Thumbnail images -->
-            <div class="row flex-wrap" style="justify-content: space-between; row-gap: 20px;" >
-                <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor active' style='width:100%' src='Images/photo-gallery/IMG_4415.jpg' alt='6/15/2021 6:48:06 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'> 
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/Bob and me-2.JPEG' alt='12/22/2020 5:59:14 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                        <img class='demo cursor video' style='width:100%' src='Images/photo-gallery/IMG_0009.png' alt='12/22/2020 5:59:14 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor video' style='width:100%' src='Images/photo-gallery/IMG_0016.png' alt='8/27/2019 1:08:36 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/Biswas Lab Selfie Photo 2018.jpg' alt='6/26/2018 6:16:04 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/Biswas lab photo 2018.jpg' alt='6/22/2018 6:17:46 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/Mengfei Peng.jpg' alt='4/2/2018 3:19:00 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/unnamed.jpg' alt='12/18/2017 12:39:34 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/Biswas Lab Photo 2017.jpg' alt='11/1/2017 3:41:30 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/Thomas Loh and Biswas 2016.jpg' alt='10/26/2016 6:59:38 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/Laura Milk.jpg' alt='9/22/2016 1:30:00 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/lab group photo.jpg' alt='7/26/2016 5:12:14 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/20151216_040452.jpg' alt='12/21/2015 12:07:10 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0244.JPG' alt='11/30/2015 6:04:38 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0247.JPG' alt='11/30/2015 6:04:38 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0250.JPG' alt='11/30/2015 6:04:40 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0251.JPG' alt='11/30/2015 6:04:40 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0254.JPG' alt='11/30/2015 6:04:40 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0255.JPG' alt='11/30/2015 6:04:42 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0257.JPG' alt='11/30/2015 6:04:42 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0259.JPG' alt='11/30/2015 6:04:42 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/2015-10-16 12.44.48.jpg' alt='10/16/2015 5:47:50 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_20150824_161852.jpg' alt='8/24/2015 5:37:46 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_8079.JPG' alt='5/11/2015 11:34:28 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/QQ20061218001723.jpg' alt='3/9/2015 10:51:46 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/image1.JPG' alt='1/30/2015 3:10:10 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0239.JPG' alt='8/12/2014 6:36:14 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0238.JPG' alt='8/7/2014 3:48:54 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0234.JPG' alt='8/4/2014 3:17:16 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0235.JPG' alt='8/4/2014 3:17:32 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0229.JPG' alt='8/3/2014 5:24:18 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/photo 3-8.JPG' alt='7/12/2013 9:57:16 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/5qnhUoB2xGP-xw4J0z3EyARwm776f4wlxtMauB4trYE[1].jpg' alt='7/8/2013 11:26:32 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/Group Photo.JPG' alt='6/26/2013 12:32:08 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC02377.JPG' alt='6/4/2013  10:43:16AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_20130503_101143.jpg' alt='5/3/2013 11:23:04 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_20130503_101225.jpg' alt='5/3/2013 11:24:46 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_20130503_101314.jpg' alt='5/3/2013 11:26:16 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0130.JPG' alt='1/30/2013 3:37:24 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0120.JPG' alt='1/23/2013 10:52:36 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0107.JPG' alt='1/16/2013 12:40:12 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0067.JPG' alt='1/9/2013 9:31:02 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0073.JPG' alt='1/9/2013 9:33:20 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0094.JPG' alt='1/9/2013 9:52:58 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0019.JPG' alt='1/1/2013 11:00:04 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0023.JPG' alt='1/1/2013 11:05:52 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0037.JPG' alt='1/1/2013 11:16:02 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC04271.JPG' alt='12/9/2012 7:34:02 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/Cecelia Nguyen-1.JPG' alt='12/3/2012 11:18:32 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC04266.JPG' alt='12/3/2012 8:25:34 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC04253.JPG' alt='11/29/2012 8:41:08 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC04254.JPG' alt='11/29/2012 8:46:24 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC04257.JPG' alt='11/29/2012 8:47:38 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC04259.JPG' alt='11/29/2012 8:48:46 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC04261.JPG' alt='11/29/2012 8:49:26 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC04264.JPG' alt='11/29/2012 10:37:14 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC04250.JPG' alt='11/21/2012 1:07:16 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC_5986.jpg' alt='3/23/2012 3:24:40 PM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/20120307151122.jpg' alt='3/8/2012 9:34:18 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/DSC_0052.JPG' alt='2/2/2012 2:51:06 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0003.JPG' alt='1/1/1980 12:00:36 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0006.JPG' alt='1/1/1980 12:00:56 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0010.JPG' alt='1/1/1980 12:00:08 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0212.JPG' alt='1/1/1980 12:01:12 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0215.JPG' alt='1/1/1980 12:00:26 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0218.JPG' alt='1/1/1980 12:00:12 AM'>
-                    </a>
-                   </div>
-                   <div class='col-lg-4 col-md-6 col-sm-12'>
-                    <a data-bs-toggle='modal' data-bs-target='#exampleModal'>
-                     <img class='demo cursor' style='width:100%' src='Images/photo-gallery/IMG_0220.JPG' alt='1/1/1980 12:00:32 AM'>
-                    </a>
-                   </div>
-            </div>
+      <!-- Container for the image gallery -->
+      <div class="container">
+        <!-- Gallery images -->
+        <div id="gallery" class="row flex-wrap">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor active"
+                src="Images/photo-gallery/IMG_4415.jpg"
+                alt="6/15/2021 6:48:06 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/Bob and me-2.JPEG"
+                alt="12/22/2020 5:59:14 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor video"
+                src="Images/photo-gallery/IMG_0009.png"
+                alt="12/22/2020 5:59:14 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor video"
+                src="Images/photo-gallery/IMG_0016.png"
+                alt="8/27/2019 1:08:36 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/Biswas Lab Selfie Photo 2018.jpg"
+                alt="6/26/2018 6:16:04 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/Biswas lab photo 2018.jpg"
+                alt="6/22/2018 6:17:46 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/Mengfei Peng.jpg"
+                alt="4/2/2018 3:19:00 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/unnamed.jpg"
+                alt="12/18/2017 12:39:34 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/Biswas Lab Photo 2017.jpg"
+                alt="11/1/2017 3:41:30 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/Thomas Loh and Biswas 2016.jpg"
+                alt="10/26/2016 6:59:38 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/Laura Milk.jpg"
+                alt="9/22/2016 1:30:00 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/lab group photo.jpg"
+                alt="7/26/2016 5:12:14 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/20151216_040452.jpg"
+                alt="12/21/2015 12:07:10 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0244.JPG"
+                alt="11/30/2015 6:04:38 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0247.JPG"
+                alt="11/30/2015 6:04:38 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0250.JPG"
+                alt="11/30/2015 6:04:40 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0251.JPG"
+                alt="11/30/2015 6:04:40 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0254.JPG"
+                alt="11/30/2015 6:04:40 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0255.JPG"
+                alt="11/30/2015 6:04:42 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0257.JPG"
+                alt="11/30/2015 6:04:42 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0259.JPG"
+                alt="11/30/2015 6:04:42 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/2015-10-16 12.44.48.jpg"
+                alt="10/16/2015 5:47:50 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_20150824_161852.jpg"
+                alt="8/24/2015 5:37:46 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_8079.JPG"
+                alt="5/11/2015 11:34:28 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/QQ20061218001723.jpg"
+                alt="3/9/2015 10:51:46 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/image1.JPG"
+                alt="1/30/2015 3:10:10 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0239.JPG"
+                alt="8/12/2014 6:36:14 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0238.JPG"
+                alt="8/7/2014 3:48:54 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0234.JPG"
+                alt="8/4/2014 3:17:16 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0235.JPG"
+                alt="8/4/2014 3:17:32 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0229.JPG"
+                alt="8/3/2014 5:24:18 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/photo 3-8.JPG"
+                alt="7/12/2013 9:57:16 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/5qnhUoB2xGP-xw4J0z3EyARwm776f4wlxtMauB4trYE[1].jpg"
+                alt="7/8/2013 11:26:32 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/Group Photo.JPG"
+                alt="6/26/2013 12:32:08 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC02377.JPG"
+                alt="6/4/2013  10:43:16AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_20130503_101143.jpg"
+                alt="5/3/2013 11:23:04 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_20130503_101225.jpg"
+                alt="5/3/2013 11:24:46 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_20130503_101314.jpg"
+                alt="5/3/2013 11:26:16 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0130.JPG"
+                alt="1/30/2013 3:37:24 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0120.JPG"
+                alt="1/23/2013 10:52:36 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0107.JPG"
+                alt="1/16/2013 12:40:12 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0067.JPG"
+                alt="1/9/2013 9:31:02 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0073.JPG"
+                alt="1/9/2013 9:33:20 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0094.JPG"
+                alt="1/9/2013 9:52:58 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0019.JPG"
+                alt="1/1/2013 11:00:04 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0023.JPG"
+                alt="1/1/2013 11:05:52 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0037.JPG"
+                alt="1/1/2013 11:16:02 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC04271.JPG"
+                alt="12/9/2012 7:34:02 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/Cecelia Nguyen-1.JPG"
+                alt="12/3/2012 11:18:32 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC04266.JPG"
+                alt="12/3/2012 8:25:34 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC04253.JPG"
+                alt="11/29/2012 8:41:08 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC04254.JPG"
+                alt="11/29/2012 8:46:24 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC04257.JPG"
+                alt="11/29/2012 8:47:38 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC04259.JPG"
+                alt="11/29/2012 8:48:46 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC04261.JPG"
+                alt="11/29/2012 8:49:26 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC04264.JPG"
+                alt="11/29/2012 10:37:14 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC04250.JPG"
+                alt="11/21/2012 1:07:16 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC_5986.jpg"
+                alt="3/23/2012 3:24:40 PM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/20120307151122.jpg"
+                alt="3/8/2012 9:34:18 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/DSC_0052.JPG"
+                alt="2/2/2012 2:51:06 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0003.JPG"
+                alt="1/1/1980 12:00:36 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0006.JPG"
+                alt="1/1/1980 12:00:56 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0010.JPG"
+                alt="1/1/1980 12:00:08 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0212.JPG"
+                alt="1/1/1980 12:01:12 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0215.JPG"
+                alt="1/1/1980 12:00:26 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0218.JPG"
+                alt="1/1/1980 12:00:12 AM"
+              />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <img
+                class="demo cursor"
+                src="Images/photo-gallery/IMG_0220.JPG"
+                alt="1/1/1980 12:00:32 AM"
+              />
+            </a>
+          </div>
         </div>
+      </div>
     </div>
-    </body>
-    <footer>
-        <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-        crossorigin="anonymous"
+  </body>
+  <footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
     ></script>
-    </footer>
+  </footer>
 </html>

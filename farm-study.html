@@ -1,201 +1,821 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-            crossorigin="anonymous"
-        />
-        <script>
-//             $(window).scroll(function () {
-//    var position = window.pageYOffset;
-//    $('.section').each(function () {
-//      var target = $(this).offset().top;
-//      var id = $(this).attr('id');
-//      var navLinks = $('.sidenav a');
-//      if (position >= target - $( window ).height()/2) {
-//        navLinks.removeClass('current');
-//        $('.sidenav a[href="#' + id + '"]').addClass('current');
-//      }
-//    });
-// });
-        </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <script>
+      $(window).scroll(function () {
+        var position = window.pageYOffset;
+        $(".section").each(function () {
+          var target = $(this).offset().top;
+          var id = $(this).attr("id");
+          var navLinks = $(".sidenav a");
+          if (position >= target - $(window).height() / 3) {
+            navLinks.removeClass("current");
+            $('.sidenav a[href="#' + id + '"]').addClass("current");
+          }
+        });
+      });
+    </script>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Biswas Lab</title>
-    </head>
-    <body>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-xl navbar-light bg-light">
-            <a href="index.html" class="navbar-brand">
-                <div id="LogoHolder">
-                    <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
-                    <span id="LabTitle">BISWAS LAB</span>
-                </div>
-            </a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Biswas Lab</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+      <a href="index.html" class="navbar-brand">
+        <div id="LogoHolder">
+          <img src="Images/UMDLogo.png" alt="UMD Logo" id="UMDLogo" />
+          <span id="LabTitle">BISWAS LAB</span>
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="farm.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item active">
+            <a href="farm-study.html" class="nav-link">OUR STUDY</a>
+          </li>
+          <li class="nav-item">
+            <a href="farm-recommendations.html" class="nav-link"
+              >RECOMMENDATIONS</a
             >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="farm2.html" class="nav-link">HOME</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a href="farm-study.html" class="nav-link">OUR STUDY</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="farm-recommendations.html" class="nav-link">RECOMMENDATIONS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="farm-outreach.html" class="nav-link">OUTREACH</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="farm-publications.html" class="nav-link">PUBLICATIONS</a>
-                    </li>
-                </ul>
+          </li>
+          <li class="nav-item">
+            <a href="farm-outreach.html" class="nav-link">OUTREACH</a>
+          </li>
+          <li class="nav-item">
+            <a href="farm-publications.html" class="nav-link">PUBLICATIONS</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <section id="farm-study-image" class="parallax">
+      <section class="parallax-inner">
+        <div class="page-header">
+          <h1>Our Study</h1>
+        </div>
+      </section>
+    </section>
+    <div class="container-fluid body-section-for-project">
+      <div class="row">
+        <div class="col-md-3 d-none d-md-block sidenav-wrapper">
+          <div class="sidenav">
+            <a href="#presentation">Presentation</a>
+            <a href="#introduction">Introduction</a>
+            <a class="small-link" href="#advantages"
+              >Advantages of BF/ICLF Systems</a
+            >
+            <a class="small-link" href="#risks"
+              >Risks associated with ICLF/BF</a
+            >
+            <a class="small-link" href="#illness"
+              >Foodborne illness in the US</a
+            >
+            <a href="#objectives">Objectives of the Study</a>
+            <a href="#procedures">Procedures and Findings</a>
+            <a class="small-link" href="#se"
+              >Salmonella Enterica (SE) Contamination</a
+            >
+            <a class="small-link" href="#stec"
+              >Shiga-toxin producing E. coli (STEC) Contamination</a
+            >
+            <a class="small-link" href="#soil">Soil Health and Amendments</a>
+            <a class="small-link" href="#microflora"
+              >Skin Microflora of ICLF Workers</a
+            >
+            <a class="small-link" href="#waste">Animal Waste</a>
+            <a class="small-link" href="#bpe"
+              >Effects of Berry Pomace Extract</a
+            >
+            <a href="#conclusion">Conclusion and Future Direction</a>
+            <a href="#acknowledgements">Acknowledgements</a>
+          </div>
+        </div>
+        <div class="col-md-9 farm-content">
+          <div id="presentation" class="section">
+            <h1>Presentation</h1>
+            <hr />
+            <br />
+            <div class="iframe-container">
+              <iframe
+                src="https://docs.google.com/presentation/d/e/2PACX-1vTumyWgVti-qqFvCl5jpd9VQZVnmmdOXLgc4UVH-UQHGP8FHliPjdU53jsJr1El2g/embed?start=false&loop=false&delayms=3000"
+                frameborder="0"
+                allowfullscreen="true"
+                mozallowfullscreen="true"
+                webkitallowfullscreen="true"
+              ></iframe>
             </div>
-        </nav>
-
-
-        <!-- Header -->
-        <section style="position: relative" id="farm-study-image" class="parallax">
-                <section class="parallax-inner">
-                    <div class="page-header">
-                            <h1>Our Study</h1>
-                            <p>See what research we have done to improve food safety in mixed farms
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-
-                    </div>
-                </section>
-                
-        </section>
-
-
-                <!-- Who We Are Section -->
-                <div class="container-fluid body-section-for-project">
-                    <div class="row">
-                        <div class="col-md-3 d-none d-md-block" style="border-right: #f2f2f2 1px solid; ">
-                            <div class="sidenav" style="text-align:right;">
-                                <a href="#introduction">Introduction</a>
-                                <a class="small-link" href="#what-is-a-mixed-farm">What is a mixed farm?</a>
-                                <a class="small-link" href="#about-the-study">About the Study</a>
-                                <a  href="#our-findings">Our Findings</a>
-                                <a class="small-link" href="#risks">Risks of an Integrated Farm</a>
-                                <a class="small-link" href="#pros-and-cons">Pros and Cons</a>
-                                <a class="small-link" href="#advice">Advice for Management</a>
-                              </div>
-                        </div>
-                        <div class="col-md-9" style="padding-right: 15%; padding-left: 3rem;">
-                            <div id="introduction" class="section">
-                                <h1>Introduction</h1>
-                            </div>
-                            <div id="what-is-a-mixed-farm" class="section">
-                                <h2>What is a mixed farm?</h2>
-                                <p style="line-height: 1.8;">
-                                    Integrated crop-livestock farm (ICLF), also known as polyface or mixed crop-livestock farming (MCLF), is a traditional type of commercial agricultural practice associated with the production of both crops and animals on one farm.
-                                    After decades of successful commercial scale farming performance, ICLF practices are growing rapidly in the US, especially in the Mid-Atlantic and Northeast regions. A large number of ICLF farms are non-certified or in organic transition, and they contribute a significant amount of fresh produce and meat products - specifically lamb and goat meat - to the US organic food supply chain. Products from ICLFs are sold in either farmers markets, foadside stands, and/or local retail markets. The USDA promotes farmers markets across the country, and currently more than 8,000 farmers markets are now listed in the National Farmers Market Directory.
-                                
-                                <br><br>
-                                
-                                 Recent reports say that products grown from ICLFs are contaminated with several bacterial pathogens at significantly higher levels than conventionally grown produce. This may be in part due to the close proximity of animal and produce operations on the same farm, which could increase the potential for cross-contamination between animal reservoirs and fresh produce.
-                                    The most common bacterial pathogens involved in reported outbreaks were sigatoxin producing Escheria coli (STEC) and Salmonella enterica (SE). Major reservoirs for both SE and STEC are farm animals including poultry, pig, goat, and cattle where they can survive in soil, water and plants and contaminate produce.
-                                 <br><br>
-                                    Given the numbers of foodborne illnesses with these two pathogens, the economic impacts in the range of $1.6 billion and $190 million, respectively.
-                                </p>
-                                <div class="row justify-content-center" >
-                                    <img
-                                    class="img-fluid"
-                                    style="object-fit: cover; float:right; margin: 2rem;"
-                                    src="Images/mixed-farm.jpeg"
-                                    alt="Picture of UMD campus"
-                                />
-                            </div>
-                            <div id="about-the-study" class="section">
-                                <h2>About the Study </h2>
-                                <p>
-                                    Our study aims to evaluate the persistence of SE and STEC in the environment of ICLFs, or in host/reservoirs, and the process by which produce becomes contaminated. This project will also develop effective practices to control contamination of ICLF products by these pathogens at the pre-harvest stage and assess the role of natural antimicrobial to eliminate these emerging zoonotic agents from ICLF products at the post-harvest level.
-                                </p>
-                            </div>
-
-                            <div id="our-findings" class="section">
-                                <h1 style="margin-top: 2rem;"> Our Findings</h1>
-                                <p>From 2019 to 2021, the lab collected 3,000 samples from farms around Maryland and Virginia and consolidated
-                                    our findings to provide recommendations for maintaining a safe farm.
-                                </p>
-                            </div>
-                            <div id="risks" class="section">
-                                <h2 >Risks of an Integrated Farm</h2>
-                                <p>
-                                    Integrated crop-livestock farm (ICLF), also known as polyface or mixed crop-livestock farming (MCLF), is a traditional type of commercial agricultural practice associated with the production of both crops and animals on one farm. After decades of successful commercial scale farming performance, ICLF practices are growing rapidly in the US, especially in the Mid-Atlantic and Northeast regions. A large number of ICLF farms are non-certified or in organic transition, and they contribute a significant amount of fresh produce and meat products - specifically lamb and goat meat - to the US organic food supply chain. Products from ICLFs are sold in either farmers markets, foadside stands, and/or local retail markets. The USDA promotes farmers markets across the country, and currently more than 8,000 farmers markets are now listed in the National Farmers Market Directory.
-                                </p>
-                            </div>
-
-                            <!-- Pros/Cons Section -->
-                            <div id="pros-and-cons" class="section">
-                                <div class="container-fluid">
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-6" style="background-color:#f0f4f7; padding: 3rem">
-                                            <h2>Pros</h2>
-                                            <hr />
-                                            <p>
-                                                Integrated crop-livestock farm (ICLF), also known as polyface or mixed crop-livestock farming (MCLF), is a traditional type of commercial agricultural practice associated with the production of both crops and animals on one farm. After decades of successful commercial scale farming performance, ICLF practices are growing rapidly in the US, especially in the Mid-Atlantic and Northeast regions. A large number of ICLF farms are non-certified or in organic transition, and they contribute a significant amount of fresh produce and meat products - specifically lamb and goat meat - to the US organic food supply chain. Products from ICLFs are sold in either farmers markets, foadside stands, and/or local retail markets. The USDA promotes farmers markets across the country, and currently more than 8,000 farmers markets are now listed in the National Farmers Market Directory.
-                                            </p>
-                                        </div>
-                                        <div class="col-lg-6" style="background-color:#f0f4f7; padding: 3rem">
-                                            <h2>Cons</h2>
-                                            <hr />
-                                            <p>
-                                                Integrated crop-livestock farm (ICLF), also known as polyface or mixed crop-livestock farming (MCLF), is a traditional type of commercial agricultural practice associated with the production of both crops and animals on one farm. After decades of successful commercial scale farming performance, ICLF practices are growing rapidly in the US, especially in the Mid-Atlantic and Northeast regions. A large number of ICLF farms are non-certified or in organic transition, and they contribute a significant amount of fresh produce and meat products - specifically lamb and goat meat - to the US organic food supply chain. Products from ICLFs are sold in either farmers markets, foadside stands, and/or local retail markets. The USDA promotes farmers markets across the country, and currently more than 8,000 farmers markets are now listed in the National Farmers Market Directory.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        
-                            <div id="advice" class="section">
-                                <h2>Advice for Management</h2>
-                                <p>
-                                    Integrated crop-livestock farm (ICLF), also known as polyface or mixed crop-livestock farming (MCLF), is a traditional type of commercial agricultural practice associated with the production of both crops and animals on one farm. After decades of successful commercial scale farming performance, ICLF practices are growing rapidly in the US, especially in the Mid-Atlantic and Northeast regions. A large number of ICLF farms are non-certified or in organic transition, and they contribute a significant amount of fresh produce and meat products - specifically lamb and goat meat - to the US organic food supply chain. Products from ICLFs are sold in either farmers markets, foadside stands, and/or local retail markets. The USDA promotes farmers markets across the country, and currently more than 8,000 farmers markets are now listed in the National Farmers Market Directory.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                        
-                </div>
-                </div>
-
-        <!-- Footer -->
-        <footer class="text-center bg-light text-muted">
+          </div>
+          <br />
+          <div id="introduction" class="section">
+            <h1>Integrated Farm (ICLF)/Backyard Farm (BF)</h1>
+            <hr />
             <p>
-                &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a href="https://www.umd.edu/" target="_blank"
-                    >University of Maryland</a
-                >
-                &nbsp;| &nbsp; <a href="https://ansc.umd.edu/" target="_blank">Department of Animal & Avian Sciences</a>
+              The traditional Backyard Farm (BF) and Integrated Crop-Livestock
+              Farm (ICLF) are major contributors to organic food products,
+              particularly products sold in farmers markets (>10,000 in the US).
+              Throughout the US, 144,530 farms sold >$1.5 billion in fresh
+              edible agricultural products directly to consumers
             </p>
-        </footer>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+            <div class="row justify-content-center">
+              <img
+                class="img-fluid col-md-4 row-img"
+                src="Images/iclf1.png"
+                alt="First picture of iclf"
+              />
+              <img
+                class="img-fluid col-md-4 row-img"
+                src="Images/iclf2.png"
+                alt="Second picture of iclf"
+              />
+              <img
+                class="img-fluid col-md-4 row-img"
+                src="Images/iclf3.png"
+                alt="Third picture of iclf"
+              />
+            </div>
+            <div class="centered">
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/typicaliclf.png"
+                  alt="Picture of a typical ICLF"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 1. Typical ICLF/BF system
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div id="advantages" class="section">
+            <div class="row">
+              <div class="col-lg-7">
+                <h2>Advantages of BF/ICLF Systems</h2>
+                <hr />
+                <ul>
+                  <li>Integrated and sustainable system</li>
+                  <li>Increase crop yields and biological activity</li>
+                  <li>Intensify land use and improve profits</li>
+                  <li>Can help reduce poverty and malnutrition locally</li>
+                  <li>
+                    Recycling by feeding root crops to animals and animal waste
+                    for soil fertility
+                  </li>
+                  <li>ICLFs use excreta to produce biogas and energy</li>
+                  <li>
+                    Trend is growing faster in many states of the US, including
+                    MD
+                  </li>
+                </ul>
+                <div id="risks" class="section">
+                  <h2>Risks associated with ICLF/BF</h2>
+                  <hr />
+                  <ul>
+                    <li>Higher mortality of animal</li>
+                    <li>No alternatives for growth promoters/therapeutics</li>
+                    <li>Often lacking proper planning and landscaping</li>
+                    <li>Pest, rodent and wild-bird infiltration</li>
+                    <li>Lacking training opportunity and research data</li>
+                    <li>Insufficient support and/or regulation</li>
+                    <li>Higher risk of bio-security</li>
+                    <li>
+                      <b> Concern for food safety/cross-contamination </b>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <figure class="figure">
+                  <img
+                    class="img-fluid"
+                    src="Images/advantages.png"
+                    alt="Advantages of BF/ICLF systems"
+                  />
+                  <figcaption class="figure-caption centered">
+                    Figure 2. Advantages of BF/ICLF systems
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div id="illness" class="section">
+            <h2>Foodborne illness in the US</h2>
+            <hr />
+            <p>
+              Each year, 1 out of 6 Americans gets sick from foodborne disease
+              and >3,000 die as a result. Reducing foodborne illness by just 10%
+              would keep 5 million people a year from getting sick. Economic
+              loss of foodborne illness in US comes in around $77 billion
+              annually. A single fatal case of foodborne infection leads to cost
+              of life as well as $7 million. An outbreak or a single recall can
+              push a company out of business.
+            </p>
+            <h3>Many types of food cause foodborne illness</h3>
+            <p>
+              All types of food including produce, fruits, poultry, eggs, beef,
+              pork, dairy products are responsible foodborne illness. Animal
+              products directly cause >60% of the cases of foodborne illness.
+              Farm animals are also involved in produce-borne infection.
+            </p>
+            <div class="row">
+              <div class="col-md-8">
+                <figure class="figure">
+                  <img
+                    class="img-fluid"
+                    src="Images/outbreakTable.png"
+                    alt="List of multistate foodborne bacterial outbreaks (Reported by CDC, 2023)"
+                  />
+                  <figcaption class="figure-caption centered">
+                    Figure 3. List of multistate foodborne bacterial outbreaks
+                    (Reported by CDC, 2023)
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="col-md-4">
+                <figure class="figure">
+                  <img
+                    class="img-fluid"
+                    src="Images/cdc2020.jpg"
+                    alt="Image from CDC 2020 report"
+                  />
+                  <figcaption class="figure-caption centered">
+                    Figure 4. CDC report, 2020
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div id="objectives" class="section">
+            <h1>Objectives of the Study</h1>
+            <hr />
+            <p>
+              <b>Objective-1: </b>Determine the sources, survival and
+              persistence ability in the various components of the ICLF
+              environment and contamination pathways of SE and STEC.
+              <br />
+              <b>Objective-2: </b>Develop practical means to control SE and STEC
+              in ICLF environment and eliminate their survival on harvested
+              fresh produce by developing and using novel farm-friendly manure
+              composting methods and natural antimicrobial sanitizers and wash
+              aids.
+              <br />
+              <b>Objective-3: </b>Disseminate outcomes of the project and
+              measures for controlling fresh produce contamination through
+              on-farm practices and post-harvest processing to diverse
+              stakeholders.
+            </p>
+          </div>
+
+          <br />
+          <div id="procedures" class="section">
+            <h1>Procedures and Findings</h1>
+            <hr />
+            <div class="centered">
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/approaches.png"
+                  alt="Approaches used in this study"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 5. Approaches used in this study
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/sampleSource.png"
+                  alt="Number of sample collected and their sources"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 6. Number of sample collected and their sources
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <br />
+          <div id="se" class="section">
+            <h2>Salmonella Enterica (SE) Contamination</h2>
+            <hr />
+            <div class="centered">
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/SEprimers.png"
+                  alt="PCR primers used to confirm SE"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 7. PCR primers used to confirm SE
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/SEsamples.png"
+                  alt="SE across all collected samples"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 8. SE across all collected samples
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/SEharvest.png"
+                  alt="Prevalence of SE in farm-level and post harvest"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 9. Prevalence of SE in farm-level and post harvest
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/SEserovar.png"
+                  alt="SE serovars by pre-/post-harvest levels"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 10. SE serovars by pre-/post-harvest levels
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/SEphenotype.png"
+                  alt="Antibiotic resistance phenotypes of SE"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 11. Antibiotic resistance phenotypes of SE
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/SEpattern.png"
+                  alt="Antibiotic resistance pattern of SE"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 12. Antibiotic resistance pattern of SE
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <br />
+          <div id="stec" class="section">
+            <h2>Shiga-toxin producing E. coli (STEC) Contamination</h2>
+            <hr />
+            <div class="centered">
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/STECprimer.png"
+                  alt="PCR primers used to confirm STEC"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 13. PCR primers used to confirm STEC
+                </figcaption>
+              </figure>
+
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/STECprevalence.png"
+                  alt="Prevalence of STEC"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 14. Prevalence of STEC
+                </figcaption>
+              </figure>
+
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/STECphenotype.png"
+                  alt="Antibiotic resistance phenotypes of STEC"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 15. Antibiotic resistance phenotypes of STEC
+                </figcaption>
+              </figure>
+
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/STECphenotype2.png"
+                  alt="Antibiotic resistance phenotypes of STEC"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 16. Antibiotic resistance phenotypes of STEC
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <br />
+          <div id="soil" class="section">
+            <h2>Soil Health and Amendments</h2>
+            <hr />
+            <div class="centered">
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/soilHealth.png"
+                  alt="Soil health before and after adding compost"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 17. Soil health before and after adding compost
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/soilProperties.png"
+                  alt="Soil properties"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 18. Soil properties
+                </figcaption>
+              </figure>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-lg-7">
+                <h3>Biological Amendment of Soil and Precautions</h3>
+                <ul>
+                  <li>
+                    Increase fertility, organic matter/humas and other
+                    accompanying properties
+                  </li>
+                  <li>ICLFs use manure/compost to improve soil</li>
+                  <li>
+                    Important for ICLFs to develop proper manure/composting
+                    management practices
+                  </li>
+                  <li>
+                    Improper management could allow survival of pathogenic
+                    organisms which could be transferred to soil and then
+                    produce
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-5">
+                <img
+                  class="img-fluid"
+                  src="Images/soilAmend.png"
+                  alt="Manure stockpile"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 19. Manure stockpile
+                </figcaption>
+              </div>
+            </div>
+            <br />
+            <br />
+            <div class="dark-box">
+              <h3>Recommendation</h3>
+              <ul>
+                <li>
+                  According to the USDA NOP, organic crops grown in manure
+                  amended soils must be withheld from harvest after application:
+                  <ul>
+                    <li>
+                      120 days – edible portion of crop that come in direct
+                      contact with soil, can be splashed by soil (rain,
+                      irrigation)
+                    </li>
+                    <li>
+                      120 days – leafy greens, melons, squash, peas, and other
+                      vegetables
+                    </li>
+                    <li>
+                      90 days – all other food crops including tree fruits,
+                      sweet corn
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  This withholding period is to allow for the reduction of
+                  pathogenic organisms, allowing for the harvest of safe produce
+                </li>
+              </ul>
+            </div>
+          </div>
+          <br />
+
+          <div id="microflora" class="section">
+            <h2>Skin Microflora of ICLF Workers</h2>
+            <hr />
+            <div class="centered">
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/forearm.png"
+                  alt="Microflora on the forearm of ICLF workers"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 20. Microflora on the forearm of ICLF workers
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/skinMicrobiome.png"
+                  alt="Skin microbiome of ICLF workers"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 21. Skin microbiome of ICLF workers
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/forearmMicrobiome.png"
+                  alt="Forearm skin microbiome of ICLF workers"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 22. Forearm skin microbiome of ICLF workers
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/forearmDiversity.png"
+                  alt="Diversity of ICLF workers’ forearm microbiome,  genus level"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 23. Diversity of ICLF workers’ forearm microbiome,
+                  genus level
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <br />
+          <div id="waste" class="section">
+            <h2>Animal Waste</h2>
+            <hr />
+            <h3>Soil microbiome contains composted animal waste</h3>
+            <p>
+              ICLFs practice sustainable sourcing of soil amendment for use as
+              natural fertilizer and soil conditioner for crop production. Crop
+              fertilization by soil incorporation of aged manure or compost may
+              introduce different microbes and alter the soil microbial
+              community. We aim to characterize the influence of aged or
+              composted manure application on the diversity of soil bacterial
+              community in ICLFs. Soil samples from six ICLFs in Maryland were
+              collected before (pre-crop) and during the season (2020-2021) and
+              used to analyze soil bacterial microbiome by 16S-rRNA gene
+              sequencing.
+            </p>
+            <div class="centered">
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/wastePhyla.png"
+                  alt="Abundance of microbial phyla in animal waste containing soil"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 24. Abundance of microbial phyla in animal waste
+                  containing soil
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/wasteGenus.png"
+                  alt="Bacterial genus at pre-season and growing-season in soil containing animal waste"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 25. Bacterial genus at pre-season and growing-season in
+                  soil containing animal waste
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/wasteGenusFarms.png"
+                  alt="Bacterial genus at various farms in animal waste containing soil"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 26. Bacterial genus at various farms in animal waste
+                  containing soil
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/wasteDiversity.png"
+                  alt="Bacterial diversity/commonness in soil containing animal waste"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 27. Bacterial diversity/commonness in soil containing
+                  animal waste
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <br />
+          <div id="bpe" class="section">
+            <h2>Effects of Berry Pomace Extract</h2>
+            <hr />
+            <h3>
+              Plant-derived compounds used to remove pathogens from ICLF produce
+              products
+            </h3>
+            <ul>
+              <li>
+                Berry fruits are antioxidant, antimicrobial, anti-inflammatory
+                and vasodilators
+              </li>
+              <li>
+                Pomace accounts for as much as 20%–30% of the weight of the
+                processed fruit
+              </li>
+              <li>
+                Fruit processing industries generate a huge amount of pomace
+                (>27 million lbs from blueberry and >130 million lbs from
+                blackberry)
+              </li>
+              <li>
+                Easy to use and should not interfere with growth of animal and
+                product quality
+              </li>
+              <li>Consumer friendly</li>
+            </ul>
+            <div class="centered">
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/BPEpreparation.png"
+                  alt="Berry Pomace Extract (BPE) preparation"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 28. Berry Pomace Extract (BPE) preparation
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/BPEmassSpec.png"
+                  alt="HPLC/high mass accuracy TOF mass spec. of BPE"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 29. HPLC/high mass accuracy TOF mass spec. of BPE
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/BPEpathogens.png"
+                  alt="Inhibitory effect of BPE on zoonotic pathogens"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 30. Inhibitory effect of BPE on zoonotic pathogens
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/BPEprobiotics.png"
+                  alt="BPE on probiotics and normal bacteria"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 31. BPE on probiotics and normal bacteria
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  class="img-fluid"
+                  src="Images/BPEreduction.png"
+                  alt="Reduction of produce contamination by BPE"
+                />
+                <figcaption class="figure-caption centered">
+                  Figure 32. Reduction of produce contamination by BPE
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <br />
+          <div id="conclusion" class="section">
+            <h1>Conclusion and Future Direction</h1>
+            <hr />
+            <ul>
+              <li>
+                Prevalence of SE and STEC was high in samples collected from
+                organic farm environments
+              </li>
+              <li>
+                Soil and compost were determined to contain a higher percentage
+                of both pathogens
+              </li>
+              <li>
+                Isolates displayed different patterns of sensitivity towards a
+                wide array of commonly used antibiotics
+              </li>
+              <li>
+                Skin microbiome of farm workers from ICLFs showed a higher level
+                of diversity
+              </li>
+              <li>
+                The concentration of BPE showed inhibitory effect on Salmonella
+                and other foodborne pathogens, but such concentrations were not
+                lethal for beneficial microbes
+              </li>
+              <li>
+                BPEs could be an option for promoting safety of organic food but
+                need commercial farm base trial
+              </li>
+            </ul>
+          </div>
+          <br />
+          <div id="acknowledgements" class="section">
+            <h1>Acknowledgements</h1>
+            <hr />
+            <ul>
+              <li>Farm owners and workers</li>
+              <li>
+                Lab Members:
+                <ul>
+                  <li>Dr. Mengfei Peng (Postdoctoral Fellow, ANSC, UMD)</li>
+                  <li>
+                    Dr. Serajus Salaheen (Scientist, USDA-ARS, Beltsville, MD)
+                  </li>
+                  <li>Zajeba Tabashsum (Ph.D. Student, MOCB, UMD)</li>
+                  <li>Arpita Aditya (Ph.D. Candidate, ANSC, UMD)</li>
+                  <li>Zabdiel Alvarado-Martinez (Ph.D. Student, MOCB, UMD)</li>
+                </ul>
+              </li>
+              <li>
+                CFS<sup>3</sup>:
+                <ul>
+                  <li>Dr. Jianghong Meng (Director, JIFSAN, UMD)</li>
+                </ul>
+              </li>
+              <li>
+                UME:
+                <ul>
+                  <li>Jeff Semler, Extension Agent, UMD</li>
+                  <li>Shauna Henley, Extension Agent, UMD</li>
+                  <li>Mike Dwyer, Director, UME, UMD</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+
+    <!-- Footer -->
+    <footer class="text-center bg-light text-muted">
+      <p>
+        &#169; 2021 Dr. Debabrata Biswas &nbsp;| &nbsp;<a
+          href="https://www.umd.edu/"
+          target="_blank"
+          >University of Maryland</a
+        >
+        &nbsp;| &nbsp;
+        <a href="https://ansc.umd.edu/" target="_blank"
+          >Department of Animal & Avian Sciences</a
+        >
+      </p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
