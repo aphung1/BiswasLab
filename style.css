@@ -2,6 +2,7 @@ html,
 body {
     height: 100%;
     font: 16px "Droid Sans",Trebuchet MS,Arial,Helvetica,sans-serif;
+    line-height: 1.5em;
 }
 
 .icon {
@@ -43,11 +44,11 @@ body {
 }
 
 .navbar-light .navbar-nav .active .nav-link {
-    color: #73a959;
+    color: #659350;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-    color: rgb(49, 49, 49);
+    color: #a8d592;
 }
 
 .navbar-light .navbar-nav .nav-link:focus {
@@ -103,20 +104,6 @@ body {
 
 #farm-recommendations-image {
     background:url('Images/hands.jpg') no-repeat fixed;
-    background-size: cover;
-    height: 500px;
-    width: 100%;
-}
-
-#farm-outreach-image {
-    background:url('Images/crowd.jpg') no-repeat fixed;
-    background-size: cover;
-    height: 500px;
-    width: 100%;
-}
-
-#farm-publications-image {
-    background:url('Images/papers.jpg') no-repeat fixed;
     background-size: cover;
     height: 500px;
     width: 100%;
@@ -191,7 +178,6 @@ body {
     padding-right: 20%;
     padding-left: 20%;
     padding-top: 30vh;
-    line-height: normal;
     height: 100%;
 }
 .carousel-item {
@@ -232,6 +218,16 @@ body {
     vertical-align: text-bottom;
     width: fit-content;
     margin-top: 1rem;
+}
+
+.btn-secondary {
+    background-color: #383838;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #4b7237;
+
 }
 
 #slideshow-culture {
@@ -300,6 +296,10 @@ body {
 /* Research Cards on home page */
 .research-card {
     margin: 0.5rem;
+}
+
+.research-card .card-title {
+    margin-top: 0.5rem;
 }
 
 .thumbnail-container {
@@ -476,6 +476,7 @@ body {
     max-width: 175px;
     width: inherit;
     padding-right: 0px;
+    filter: drop-shadow(0px 0px 3px #4d4d4d);
   }
   
 
@@ -527,8 +528,8 @@ body {
 }
 
 .profile {
-    width: 175px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
     object-fit: cover;
     align-self: center;
     margin-top: auto;
@@ -545,7 +546,7 @@ a {
 }
 
 a:hover {
-    color: #73a959;
+    color: #a8d592;
 }
 
 #publications-list li {
@@ -582,6 +583,7 @@ figure {
     margin-right: auto;
     margin-left: auto;
     object-fit: cover;
+    max-width: 700px;
 }
 
 .figure-caption {
@@ -611,6 +613,8 @@ figure {
     display: block;
 }
 
+
+
 .sidenav a.small-link{
     font-size: 16px;
     font-weight:normal;
@@ -619,17 +623,19 @@ figure {
 }
 
 
-a:hover {
-    color: #73a959;
-}
 
-.sidenav a.small-link:hover{
-    color: #73a959;
-}
 
 .current {
-    color: #73a959!important;
+    color: #659350!important;
   }
+
+.sidenav a.small-link:hover{
+    color: #a8d592;
+}  
+
+.sidenav a:hover {
+    color: #a8d592;
+}
 
 .sidenav .small-link{
     font-size: 16px;
@@ -640,13 +646,10 @@ a:hover {
 
 
 .body-section-for-project {
-    width: 90%;
+    width: 95%;
     word-wrap: break-word;
 }
 
-.body-section-for-project p {
-    line-height: 1.8;
-}
 
 .farm-content {
     padding-left: 3rem;
@@ -663,7 +666,12 @@ a:hover {
 
 .dark-box {
     background-color: #f2f2f2;
-    padding: 2rem
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.dark-box h3{
+    font-style: italic;
+    text-decoration: underline;
 }
 
 /* Conferences Timeline */
@@ -765,12 +773,13 @@ a:hover {
 }
 
 .section {
-    max-width: 800px;
+    max-width: 775px;
 }
 
 .section h1 {
     font-size: 30px;
     margin-bottom: 5px;
+    margin-top: 1rem;
 }
 
 .section h2 {
